@@ -1,4 +1,5 @@
 import React from 'react'
+import { notFound } from "next/navigation";
 import Hero from '../components/Hero'
 import PartnersSection from "../../Home/OurPartner";
 import NarrationOptions from '../components/NarrationOptions';
@@ -18,7 +19,7 @@ const page = async ({ params }: PageProps) => {
   const audiobook = audiobookData.find(item => item.slug === slug);
 
   if (!audiobook) {
-    return <div>Audiobook not found</div>;
+    notFound();
   }
 
   return (
