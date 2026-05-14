@@ -215,7 +215,7 @@ export default function EditingProofreadingPage() {
             <b>Prepare Your Manuscript for Publishing</b>
           </p>
           <p className="mt-3 text-gray-700">
-            A professionally edited book builds credibility, trust, and reader satisfaction. Let Ink Founders refine your manuscript to publishing perfection.
+            A professionally edited book builds credibility, trust, and reader satisfaction. Let <b><a href="https://share.google/i7yXrn8AiGA5wvzYJ" className="">Ink Founders</a></b> refine your manuscript to publishing perfection.
           </p>
         </div>
       </section>

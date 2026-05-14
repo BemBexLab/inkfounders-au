@@ -31,7 +31,7 @@ export default function TheMind() {
                 From ghostwriting to editing and publishing, we offer end-to-end
                 support tailored to your vision. Whether you need help shaping
                 your story or perfecting your manuscript, our experienced team
-                is here to guide you. At Ink Founders, we're committed to
+                is here to guide you. At <b><a href="https://share.google/i7yXrn8AiGA5wvzYJ" className="">Ink Founders</a></b>, we're committed to
                 quality, creativity, and client success, turning your ideas into
                 a professionally published book.
               </p>

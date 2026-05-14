@@ -60,8 +60,8 @@ const defaultGetInTouchContent: GetInTouchContent = {
           You have taken a step towards the journey of success in
           self-publishing but still have a lot to ask? And searching for an
           expert's guidance who can help you in bring your ideas, and voice to
-          reality, but haven't found anyone, then you are at the right place.
-          Ink Founders is for you.
+          reality, but haven't found anyone, then you are at the right place.{" "}
+          <b><a href="https://share.google/i7yXrn8AiGA5wvzYJ" className="">Ink Founders</a></b> is for you.
         </p>
         <p className="mt-3">
           Ink Founders provide a free discussion opportunity where you can clear

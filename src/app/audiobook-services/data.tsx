@@ -57,8 +57,8 @@ export const audiobookData = [
       {
         title: "Audiobook Narration That Goes as Far as Your Story Does",
         paragraphs: [
-          "Whether you are publishing your first book or your tenth, we are here to help you reach listeners all around the world. At Ink Founders, we produce audiobooks that sound professional, feel authentic, and actually get completed on time.",
-          "What sets us apart is that we don’t just record your audiobook and be done with it. We will pair you with the right narrator, take care of all the technicalities, and make sure that the final product is something you are proud to put your name on.",
+          <>Whether you are publishing your first book or your tenth, we are here to help you reach listeners all around the world. At <b><a href="https://share.google/i7yXrn8AiGA5wvzYJ" className="">Ink Founders</a></b>, we produce audiobooks that sound professional, feel authentic, and actually get completed on time.</>,
+          <>What sets us apart is that we don’t just record your audiobook and be done with it. We will pair you with the right narrator, take care of all the technicalities, and make sure that the final product is something you are proud to put your name on.</>,
           "Fair prices. Real timelines. No runaround.",
         ],
         imgSrc: "/audiobooks/image2.webp",
@@ -85,7 +85,7 @@ export const audiobookData = [
     hero: {
       title: <>Polish Your Audiobook Until It Sounds Just Right</>,
       description:
-        "You have recorded your audiobook, now it's time to check whether it actually sounds professional. At Ink Founders, we clean up the audio because we fix pacing issues and remove background noise, and we smooth out any awkward pauses or stumbles.",
+        <>You have recorded your audiobook, now it's time to check whether it actually sounds professional. At <b><a href="https://share.google/i7yXrn8AiGA5wvzYJ" className="">Ink Founders</a></b>, we clean up the audio because we fix pacing issues and remove background noise, and we smooth out any awkward pauses or stumbles.</>,
       buttonText: "Request a Call",
       buttonLink: "/contactus",
     },
@@ -294,14 +294,7 @@ export const audiobookData = [
             company to make sure your audiobook lands on all the major
             platforms. We provide guidance at every stage. You can check out
             what we do at{" "}
-            <a
-              className="text-blue-500 hover:underline"
-              href="/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Ink Founders
-            </a>
+            <b><a href="https://share.google/i7yXrn8AiGA5wvzYJ" className="">Ink Founders</a></b>
             , and let's get your book out there where listeners are waiting.
           </>
         ),

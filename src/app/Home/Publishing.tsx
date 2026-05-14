@@ -37,8 +37,7 @@ export default function Publishing() {
             at every step of your journey, whether it is proofreading, editing,
             formatting, ghostwriting or guiding through the Amazon publishing
             process. We don’t just help you publish your book; we help you reach
-            the right audience and make a strong impact. With the help of Ink
-            Founders, your creative thoughts can be transformed into a powerful,
+            the right audience and make a strong impact. With the help of <b><a href="https://share.google/i7yXrn8AiGA5wvzYJ" className="">Ink Founders</a></b>, your creative thoughts can be transformed into a powerful,
             authentic, and impressive book. Let’s turn your ideas into a
             masterpiece for the world to witness.</p>
 

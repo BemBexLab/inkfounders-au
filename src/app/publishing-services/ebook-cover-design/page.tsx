@@ -202,7 +202,7 @@ export default function CoverDesignPage() {
         <div className="max-w-[1450px] mx-auto text-center">
           <p className={`${robotoMono.className} text-gray-700 text-[15px] leading-relaxed max-w-3xl mx-auto`}>
             <b>Make Your Book Stand Out</b><br />
-            A professionally designed cover significantly increases your book’s chance of success. Let Ink Founders create a cover that captures attention and drives readers to your book.
+            A professionally designed cover significantly increases your book’s chance of success. Let <b><a href="https://share.google/i7yXrn8AiGA5wvzYJ" className="">Ink Founders</a></b> create a cover that captures attention and drives readers to your book.
           </p>
         </div>
       </section>
