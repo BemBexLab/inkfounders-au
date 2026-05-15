@@ -21,7 +21,7 @@ const footerContactItems = [
         />
       </svg>
     ),
-    lines: ["1680 Michigan Ave 700 326", "Miami Beach, FL 33139, USA"],
+    lines: ["1221 Brickell Ave,", "Miami, FL 33131, United States"],
   },
   {
     href: "tel:+17864961231",

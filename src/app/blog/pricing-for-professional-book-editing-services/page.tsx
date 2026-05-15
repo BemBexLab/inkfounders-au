@@ -970,7 +970,7 @@ const Blog2 = () => {
                       <div>
                         <p className="text-sm font-bold text-black">Location</p>
                         <p className="text-sm text-gray-600">
-                          Miami Beach, FL 33139, USA
+                          1221 Brickell Ave, Miami, FL 33131, United States
                         </p>
                       </div>
                     </div>

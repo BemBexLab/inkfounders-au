@@ -21,7 +21,7 @@ export const getInTouchContent: GetInTouchContent = {
       },
       {
         type: "location",
-        label: "1680 Michigan Ave 700 326 Miami Beach, FL 33139, USA",
+        label: "1221 Brickell Ave, Miami, FL 33131, United States",
       },
     ],
   },

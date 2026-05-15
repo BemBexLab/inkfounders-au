@@ -187,7 +187,7 @@ const GetInTouch = ({ data }: GetInTouchProps) => {
                   </svg>
                 </div>
                 <span className={`${robotoMono.className} max-w-[320px] text-left text-[14px] text-[#333333]`}>
-                  1680 Michigan Ave 700 326 Miami Beach, FL 33139, USA
+                  1221 Brickell Ave, Miami, FL 33131, United States
                 </span>
               </div>
             </div>
