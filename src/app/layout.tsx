@@ -23,7 +23,25 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      
+      {/* Global Site Tag (gtag.js) - Google Analytics */}
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-GQXX99WS87"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-GQXX99WS87');
+            `,
+          }}
+        />
+      </head>
       <body
         className={`antialiased ${workSans.className}`}
         suppressHydrationWarning
