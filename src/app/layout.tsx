@@ -33,23 +33,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-MWZNX2J8');`,
           }}
         />
-        {/* Global Site Tag (gtag.js) - Google Analytics */}
-        {/* <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-GQXX99WS87"
-          strategy="afterInteractive"
-        />
-        <Script
-          id="google-analytics"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-GQXX99WS87');
-            `,
-          }}
-        /> */}
+        
       </head>
       <body
         className={`antialiased ${workSans.className}`}
