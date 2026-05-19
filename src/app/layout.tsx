@@ -34,7 +34,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
         {/* Global Site Tag (gtag.js) - Google Analytics */}
-        <Script
+        {/* <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-GQXX99WS87"
           strategy="afterInteractive"
         />
@@ -49,7 +49,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               gtag('config', 'G-GQXX99WS87');
             `,
           }}
-        />
+        /> */}
       </head>
       <body
         className={`antialiased ${workSans.className}`}
