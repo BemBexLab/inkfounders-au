@@ -86,6 +86,7 @@ const defaultGetInTouchContent: GetInTouchContent = {
       {
         type: "location",
         label: "1221 Brickell Ave, Miami, FL 33131, United States",
+        href: "https://maps.app.goo.gl/mibAgwMcMGF8A8ig7"
       },
     ],
   },

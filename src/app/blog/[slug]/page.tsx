@@ -10,6 +10,7 @@ import {
   getReadingTime,
   stripInlineStyles,
 } from "../wpPosts";
+import { createCanonicalMetadata, getCanonicalUrl } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
 
@@ -39,15 +40,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         "",
     ) || undefined;
   const featuredImage = getFeaturedImageFromPost(post);
+  const canonicalUrl = getCanonicalUrl(`/blog/${slug}`);
 
   return {
     title,
     description,
-    alternates: post.yoast_head_json?.canonical
-      ? {
-          canonical: post.yoast_head_json.canonical,
-        }
-      : undefined,
+    ...createCanonicalMetadata(`/blog/${slug}`),
     openGraph: {
       type: "article",
       title: decodeHtmlEntities(
@@ -56,7 +54,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description:
         decodeHtmlEntities(post.yoast_head_json?.og_description || description || "") ||
         undefined,
-      url: post.yoast_head_json?.canonical || post.link || undefined,
+      url: canonicalUrl,
       publishedTime:
         post.yoast_head_json?.article_published_time || post.date || undefined,
       modifiedTime:
@@ -230,7 +228,7 @@ export default async function BlogSlugPage({ params }: PageProps) {
                     </div>
                     <div>
                       <p className="text-sm font-bold text-black">Phone</p>
-                      <p className="text-sm text-gray-600">+1 (786) 496-1231</p>
+                      <a href="tel:+17864961231" className="hover:underline text-sm text-gray-600">+1 (786) 496-1231</a>
                     </div>
                   </div>
 
@@ -252,9 +250,9 @@ export default async function BlogSlugPage({ params }: PageProps) {
                     </div>
                     <div>
                       <p className="text-sm font-bold text-black">Email</p>
-                      <p className="text-sm text-gray-600">
+                      <a href="mailto:info@inkfounders.com" className="hover:underline text-sm text-gray-600">
                         info@inkfounders.com
-                      </p>
+                      </a>
                     </div>
                   </div>
 
@@ -282,9 +280,9 @@ export default async function BlogSlugPage({ params }: PageProps) {
                     </div>
                     <div>
                       <p className="text-sm font-bold text-black">Location</p>
-                      <p className="text-sm text-gray-600">
+                      <a href="https://maps.app.goo.gl/mibAgwMcMGF8A8ig7" className="hover:underline text-sm text-gray-600">
                         1221 Brickell Ave, Miami, FL 33131, United States
-                      </p>
+                      </a>
                     </div>
                   </div>
                 </div>

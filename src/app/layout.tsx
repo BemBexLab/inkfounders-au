@@ -4,11 +4,16 @@ import "./globals.css";
 import SiteChrome from "@/components/SiteChrome";
 import DynamicPageTitle from "@/components/DynamicPageTitle";
 import { workSans } from "./fonts";
+import { SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Ink Founders",
   description:
     "Ink Founders is an independent self-publishing platform dedicated to empowering authors with a full suite of digital services.",
+  alternates: {
+    canonical: "/",
+  },
   verification: {
     google: ["chIy7we8dy-XbVv1lNa36kZNuZgH_HCtWnDiGBB-uFA"],
   },

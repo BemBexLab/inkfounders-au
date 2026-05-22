@@ -639,7 +639,7 @@ const BlogOne: React.FC = () => {
                     </div>
                     <div>
                       <p className="text-sm font-bold text-black">Phone</p>
-                      <p className="text-sm text-gray-600">+1 (786) 496-1231</p>
+                      <a href='tel:+17864961231' className="hover:underline text-sm text-gray-600">+1 (786) 496-1231</a>
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -648,7 +648,7 @@ const BlogOne: React.FC = () => {
                     </div>
                     <div>
                       <p className="text-sm font-bold text-black">Email</p>
-                      <p className="text-sm text-gray-600">info@inkfounders.com</p>
+                      <a href='mailto:info@inkfounders.com' className="hover:underline text-sm text-gray-600">info@inkfounders.com</a>
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -657,7 +657,7 @@ const BlogOne: React.FC = () => {
                     </div>
                     <div>
                       <p className="text-sm font-bold text-black">Location</p>
-                      <p className="text-sm text-gray-600">1221 Brickell Ave, Miami, FL 33131, United States</p>
+                      <a href='https://maps.app.goo.gl/mibAgwMcMGF8A8ig7' className="hover:underline text-sm text-gray-600">1221 Brickell Ave, Miami, FL 33131, United States</a>
                     </div>
                   </div>
                 </div>

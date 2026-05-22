@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import HomeHero from "./Home/HomeHero";
 import PartnerLogos from "./Home/OurPartner";
 import Publishing from "./Home/Publishing";
@@ -11,6 +12,9 @@ import GetInTouch from "./Home/GetInTouch";
 import FAQs from "./Home/FAQs";
 import Lagacy from "./Home/Legacy";
 import OurWork from "./Home/OurWork";
+import { createCanonicalMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = createCanonicalMetadata("/");
 
 export default function Home() {
   return (

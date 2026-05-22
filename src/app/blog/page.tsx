@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import BlogPageClient, { type BlogPost } from "./BlogPageClient";
 import {
   decodeHtmlEntities,
@@ -7,6 +8,9 @@ import {
   getReadingTime,
   getTextFromHtml,
 } from "./wpPosts";
+import { createCanonicalMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = createCanonicalMetadata("/blog");
 
 function mapWpPostToBlogPost(post: Awaited<ReturnType<typeof getAllWpPosts>>[number]): BlogPost {
   const excerptHtml = post.excerpt?.rendered || post.content?.rendered || "";

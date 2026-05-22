@@ -186,9 +186,9 @@ const GetInTouch = ({ data }: GetInTouchProps) => {
                     />
                   </svg>
                 </div>
-                <span className={`${robotoMono.className} max-w-[320px] text-left text-[14px] text-[#333333]`}>
+                <a href="https://maps.app.goo.gl/mibAgwMcMGF8A8ig7" className={`${robotoMono.className} max-w-[320px] text-left text-[14px] text-[#333333] hover:underline`}>
                   1221 Brickell Ave, Miami, FL 33131, United States
-                </span>
+                </a>
               </div>
             </div>
           </div>

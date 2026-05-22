@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import FAQs from "../Home/FAQs";
 import GetInTouch from "../Home/GetInTouch";
 import PartnersSection from "../Home/OurPartner";
@@ -8,7 +9,9 @@ import VisionBecome from "./Components/VisionBecome";
 import WhatSet from "./Components/Whatset";
 import WhoWeHero from "./Components/whowearehero";
 import WhyChoosePanda from "./Components/WhyChoosePanda";
+import { createCanonicalMetadata } from "@/lib/seo";
 
+export const metadata: Metadata = createCanonicalMetadata("/whoweare");
 
 export default function Home() {
   return (

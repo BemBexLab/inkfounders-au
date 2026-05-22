@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import React from 'react'
 import { notFound } from "next/navigation";
 import Hero from '../components/Hero'
@@ -7,11 +8,20 @@ import ImageDesc from '../components/ImageDesc';
 import Testimonials from '../../Home/Testimonials';
 import GetInTouch from '../components/GetInTouch';
 import { audiobookData } from '../data';
+import { createCanonicalMetadata } from "@/lib/seo";
 
 interface PageProps {
   params: {
     slug: string;
   };
+}
+
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { slug } = await Promise.resolve(params);
+
+  return createCanonicalMetadata(`/audiobook-services/${slug}`);
 }
 
 const page = async ({ params }: PageProps) => {

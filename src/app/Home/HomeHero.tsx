@@ -351,7 +351,7 @@ const HomeHero = () => {
                 <span className="inline-flex justify-center whitespace-nowrap">
                   <span>Bring Your Story To&nbsp;</span>
                   <span className="relative inline-block pr-4 sm:pr-8 md:pr-10">
-                    Life
+                    Life{" "}
                     <span className="pointer-events-none absolute right-0 -top-4 h-10 w-10 sm:right-0 sm:-top-6 sm:h-16 sm:w-16 md:-right-2 md:-top-10 md:h-24 md:w-24">
                       <Image
                         src="/Home/make your Life Easy.png"
@@ -366,7 +366,7 @@ const HomeHero = () => {
                 </span>
                 <span className="mx-auto block max-w-[12ch] pr-0 sm:max-w-[15ch] sm:pr-10 md:mx-0 md:max-w-none md:pr-0">
                   <span className="inline-flex flex-wrap justify-center md:justify-start">
-                    <span className="whitespace-nowrap">With Ink Founders</span>
+                    <span className="whitespace-nowrap">With Ink Founders</span>{" "}
                     <span className="whitespace-nowrap">Publishing</span>
                   </span>
                 </span>

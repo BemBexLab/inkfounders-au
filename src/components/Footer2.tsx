@@ -6,7 +6,7 @@ import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const footerContactItems = [
   {
-    href: "/contactus",
+    href: "https://maps.app.goo.gl/mibAgwMcMGF8A8ig7",
     icon: (
       <svg
         width="14"
