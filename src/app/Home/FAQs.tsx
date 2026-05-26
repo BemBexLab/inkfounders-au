@@ -1,62 +1,9 @@
 'use client';
 
-import React, { useState, ReactNode } from "react";
+import React, { useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
 import { robotoMono } from "../fonts";
-
-type FAQ = {
-  question: string;
-  answer: ReactNode;
-};
-
-const faqs: FAQ[] = [
-  {
-    question: "What Services Are Included in Your Packages—And Can I Customize Them?",
-    answer: (
-      <>
-        <div className="font-mono text-[15px] text-[#454545] mb-3">
-          Ink founders provide a variety of services from editing, proofreading, book formatting, book designing, cover designing, ISBN registration, to marketing services. And if you are looking for ghostwriting there is no need to go anywhere, we offer you that too. 
-        </div>
-        <div className="font-mono text-[15px] text-[#454545]">
-          Oh yes, that is the best part of Ink Founders, that you can customize everything that works best for you, as we are aware that every author has different perspectives and they follow a different journey so Ink Founders also addresses this issue by providing personalized consultations to modify a package according to your interest and objectives. 
-        </div>
-      </>
-    ),
-  },
-  {
-    question: "How do you handle editing and proofreading? What are the qualifications of your editors?",
-    answer: (
-      <div className="font-mono text-[15px] text-[#454545]">
-        Our editing and proofreading are handled by qualified and experienced experts having strong background in literature and creative writing. Each story or script is analyzed so that every grammatical error can be addressed, any style can be improved, overall, they ensure that everything goes according to the author’s interest. 
-      </div>
-    ),
-  },
-  {
-    question: "What distribution channels do you offer for my book?",
-    answer: (
-      <div className="font-mono text-[15px] text-[#454545]">
-        We distribute your book through major online platforms like Amazon, Barnes & Noble, and Ingra Spark, making it reachable globally. 
-      </div>
-    ),
-  },
-  {
-    question: "Do you offer any marketing and publicity support?",
-    answer: (
-      <div className="font-mono text-[15px] text-[#454545]">
-        Absolutely, we encourage your book through many social media platforms, campaigns, press release and targeted advertising to ensure maximum visibility of your book. 
-      </div>
-    ),
-  },
-  {
-    question:
-      "What are your royalty rates and payment structures? Are there any upfront costs or hidden fees?",
-    answer: (
-      <div className="font-mono text-[15px] text-[#454545]">
-        No, we are fully clear and transformed, all rights and royalties belong to you, there is no any hidden fees. 
-      </div>
-    ),
-  },
-];
+import { faqItems } from "./faqData";
 
 const FAQs: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -73,7 +20,7 @@ const FAQs: React.FC = () => {
         </h2>
         {/* FAQ List */}
         <div className="mt-6 flex w-full flex-col gap-4">
-          {faqs.map((faq, idx) => (
+          {faqItems.map((faq, idx) => (
             <div
               key={`${faq.question}-${idx}`}
               className="rounded-lg border border-[#ece8d8] bg-[#F6F5F3] px-4 shadow-[0_10px_28px_rgba(65,60,35,0.08)] duration-200 sm:px-6"
@@ -104,7 +51,16 @@ const FAQs: React.FC = () => {
                   className={`pb-6 pt-0 text-[12px] leading-tight md:text-[15px] ${robotoMono.className}`}
                   id={`faq-content-${idx}`}
                 >
-                  {faq.answer}
+                  {faq.answerParagraphs.map((paragraph, paragraphIndex) => (
+                    <div
+                      key={`${faq.question}-${paragraphIndex}`}
+                      className={`font-mono text-[15px] text-[#454545] ${
+                        paragraphIndex < faq.answerParagraphs.length - 1 ? "mb-3" : ""
+                      }`}
+                    >
+                      {paragraph}
+                    </div>
+                  ))}
                 </div>
               )}
             </div>

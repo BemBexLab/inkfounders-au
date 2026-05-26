@@ -4,7 +4,7 @@ import "./globals.css";
 import SiteChrome from "@/components/SiteChrome";
 import DynamicPageTitle from "@/components/DynamicPageTitle";
 import { workSans } from "./fonts";
-import { SITE_URL } from "@/lib/seo";
+import { GLOBAL_SCHEMA, SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -38,7 +38,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-MWZNX2J8');`,
           }}
         />
-        
+        <Script
+          id="global-structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(GLOBAL_SCHEMA),
+          }}
+        />
       </head>
       <body
         className={`antialiased ${workSans.className}`}
