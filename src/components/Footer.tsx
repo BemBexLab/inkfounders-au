@@ -137,16 +137,16 @@ export default function Footer() {
                 <li className="flex items-center justify-center md:justify-center lg:justify-start gap-3">
                   <FaLocationDot className="w-5 h-5 text-black" />
                   <span className="text-sm text-black">
-                    1221 Brickell Ave, Miami, FL 33131, United States
+                    16A Fox Cl, Kariong NSW 2250, Australia
                   </span>
                 </li>
                 <li className="flex items-center justify-center md:justify-center lg:justify-start gap-3">
                   <IoMdCall className="w-5 h-5 text-black" />
                   <a
-                    href="tel:+17864961231"
+                    href="tel:0468285539"
                     className="text-sm text-gray-700 hover:underline focus:outline-none"
                   >
-                    +1 (786) 496-1231
+                    (0468) 285-539
                   </a>
                 </li>
                 <li className="flex items-center justify-center md:justify-center lg:justify-start gap-3">

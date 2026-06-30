@@ -11,34 +11,34 @@ export const GLOBAL_SCHEMA = {
       name: "Ink Founders",
       url: "https://www.inkfounders.com/",
       description:
-        "Ink Founders is a professional publishing company in Miami, Florida, offering book publishing, ghostwriting, editing, proofreading, book formatting, book cover design, ebook publishing, and book marketing services for authors and businesses.",
-      telephone: "+1-786-496-1231",
+        "Ink Founders is a professional publishing company in Kariong, New South Wales, offering book publishing, ghostwriting, editing, proofreading, book formatting, book cover design, ebook publishing, and book marketing services for authors and businesses.",
+      telephone: "0468285539",
       priceRange: "$$",
       slogan: "Professional book publishing and author support services.",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "1221 Brickell Ave",
-        addressLocality: "Miami",
-        addressRegion: "FL",
-        postalCode: "33131",
-        addressCountry: "US",
+        streetAddress: "16A Fox Cl",
+        addressLocality: "Kariong",
+        addressRegion: "NSW",
+        postalCode: "2250",
+        addressCountry: "AU",
       },
       areaServed: [
         {
           "@type": "City",
-          name: "Miami",
+          name: "Kariong",
         },
         {
           "@type": "State",
-          name: "Florida",
+          name: "New South Wales",
         },
         {
           "@type": "Country",
-          name: "United States",
+          name: "Australia",
         },
       ],
       hasMap:
-        "https://www.google.com/maps/search/?api=1&query=1221%20Brickell%20Ave%2C%20Miami%2C%20FL%2033131%2C%20United%20States",
+        "https://www.google.com/maps/search/?api=1&query=16A%20Fox%20Cl%2C%20Kariong%20NSW%202250%2C%20Australia",
       sameAs: [
         "https://www.facebook.com/InkFounders",
         "https://www.pinterest.com/inkFounders/",
@@ -72,7 +72,7 @@ export const GLOBAL_SCHEMA = {
             },
             areaServed: {
               "@type": "Country",
-              name: "United States",
+              name: "Australia",
             },
           },
         },

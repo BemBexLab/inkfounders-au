@@ -22,7 +22,7 @@ export default function Home() {
     <Portfolio />
     <Map
       googleMapsLink={location?.href}
-      locationQuery={location?.label || "1221 Brickell Ave, Miami, FL 33131, United States"}
+      locationQuery={location?.label || "16A Fox Cl, Kariong NSW 2250, Australia"}
     />
     </>
   );

@@ -139,10 +139,10 @@ const GetInTouch = ({ data }: GetInTouchProps) => {
                   </svg>
                 </div>
                   <a
-                    href="tel:+17864961231"
+                    href="tel:0468285539"
                     className={`text-[14px] ${robotoMono.className} text-[#333333] hover:underline focus:outline-none`}
                   >
-                    +1(786)524-4161
+                    (0468) 285-539
                   </a>
               </div>
 
@@ -186,8 +186,8 @@ const GetInTouch = ({ data }: GetInTouchProps) => {
                     />
                   </svg>
                 </div>
-                <a href="https://maps.app.goo.gl/mibAgwMcMGF8A8ig7" className={`${robotoMono.className} max-w-[320px] text-left text-[14px] text-[#333333] hover:underline`}>
-                  1221 Brickell Ave, Miami, FL 33131, United States
+                <a href="https://www.google.com/maps/search/?api=1&query=16A%20Fox%20Cl%2C%20Kariong%20NSW%202250%2C%20Australia" className={`${robotoMono.className} max-w-[320px] text-left text-[14px] text-[#333333] hover:underline`}>
+                  16A Fox Cl, Kariong NSW 2250, Australia
                 </a>
               </div>
             </div>

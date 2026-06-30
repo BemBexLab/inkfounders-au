@@ -118,7 +118,7 @@ export default function BookPublishingSection() {
               <span className="slide-bg"></span>
               <MdLocalPhone className="relative z-10 text-xl sm:text-[23px] lg:text-[18px] xl:text-xl" />
               <span className="relative z-10 whitespace-nowrap font-normal tracking-[0.08em]">
-                +1 (786) 496-1231
+                (0468) 285-539
               </span>
             </Link>
           </div>

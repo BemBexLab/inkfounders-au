@@ -6,7 +6,7 @@ import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const footerContactItems = [
   {
-    href: "https://maps.app.goo.gl/mibAgwMcMGF8A8ig7",
+    href: "https://www.google.com/maps/search/?api=1&query=16A%20Fox%20Cl%2C%20Kariong%20NSW%202250%2C%20Australia",
     icon: (
       <svg
         width="14"
@@ -21,10 +21,10 @@ const footerContactItems = [
         />
       </svg>
     ),
-    lines: ["1221 Brickell Ave,", "Miami, FL 33131, United States"],
+    lines: ["16A Fox Cl,", "Kariong NSW 2250, Australia"],
   },
   {
-    href: "tel:+17864961231",
+    href: "tel:0468285539",
     icon: (
       <svg
         width="16"
@@ -39,7 +39,7 @@ const footerContactItems = [
         />
       </svg>
     ),
-    lines: ["+1 (786) 496-1231"],
+    lines: ["(0468) 285-539"],
   },
   {
     href: "mailto:info@inkfounders.com",

@@ -67,8 +67,8 @@ const defaultGetInTouchContent: GetInTouchContent = {
     contacts: [
       {
         type: "phone",
-        label: "+1 (786) 496-1231",
-        href: "tel:+17864961231",
+        label: "(0468) 285-539",
+        href: "tel:0468285539",
       },
       {
         type: "email",
@@ -77,7 +77,7 @@ const defaultGetInTouchContent: GetInTouchContent = {
       },
       {
         type: "location",
-        label: "1221 Brickell Ave, Miami, FL 33131, United States",
+        label: "16A Fox Cl, Kariong NSW 2250, Australia",
       },
     ],
   },
