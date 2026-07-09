@@ -94,21 +94,21 @@ const trustBadges: TrustBadge[] = [
     title: "Google Business Partner",
     subtitle: "Agency",
     src: "/Home/google-partner 1.png",
-    link: "",
+    link: "#",
   },
   {
     id: "meta-business-partner",
     title: "Meta Business Partner",
     subtitle: "Agency",
     src: "/Home/Meta-Business-Partner 1.png",
-    link: "",
+    link: "#",
   },
   {
     id: "trustpilot-review",
     title: "Trustpilot",
     subtitle: "Review",
     src: "/Home/trustpilot-logo-1024x443.png.webp",
-    link: "https://www.trustpilot.com/review/inkfounders.com",
+    link: "#",
   },
 ];
 

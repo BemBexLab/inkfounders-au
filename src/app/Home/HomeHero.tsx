@@ -38,14 +38,14 @@ const trustBadges: TrustBadge[] = [
     title: "Trustpilot",
     subtitle: "Review",
     src: "/Home/trustpilot-logo-1024x443.png.webp",
-    link: "https://www.trustpilot.com/review/inkfounders.com",
+    link: "#",
   },
   {
     id: "top-digital-agency",
     title: "Top Digital",
     subtitle: "Agency",
     src: "/Home/Mask%20group.png",
-    link: "https://www.trustpilot.com/review/inkfounders.com",
+    link: "#",
   },
 ];
 
