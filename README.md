@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is the Ink Founders Next.js website.
 
 ## Getting Started
 
-First, run the development server:
+Run the local development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000` in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## SMTP Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+All site contact forms submit through `src/app/api/submit/route.ts`, including the forms rendered from:
 
-## Learn More
+- `src/app/contactus/page.tsx`
+- `src/app/Home/GetInTouch.tsx`
 
-To learn more about Next.js, take a look at the following resources:
+To configure SMTP:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Copy `.env.example` to `.env`.
+2. Set the real mailbox password in `SMTP_PASS`.
+3. Keep these SMTP values from your hosting panel:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```env
+SMTP_HOST=business905.web-hosting.com
+SMTP_PORT=465
+SMTP_SECURE=true
+SMTP_USER=support@nexifire.com.au
+SMTP_FROM=support@nexifire.com.au
+SMTP_TO=support@nexifire.com.au
+```
 
-## Deploy on Vercel
+Notes:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `SMTP_PASS` must be the password for `support@nexifire.com.au`.
+- Port `465` uses SSL/TLS, so `SMTP_SECURE=true` is correct.
+- The shared `GetInTouch` component now sends the current page path with each submission, so emails show where the lead came from.
+- If `DATABASE_URL` is configured, submissions are also saved with Prisma in the `Submission` table.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Build
+
+```bash
+npm run build
+```

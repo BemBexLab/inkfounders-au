@@ -301,7 +301,7 @@ const Footer: React.FC = () => {
                   <FaInstagram color="#555555" size={30} />
                 </Link>
                 <Link
-                  href="https://www.facebook.com/InkFounders"
+                  href="https://www.facebook.com/inkfoundersau"
                   aria-label="Ink Founders on Facebook"
                 >
                   <FaFacebook color="#555555" size={30} />

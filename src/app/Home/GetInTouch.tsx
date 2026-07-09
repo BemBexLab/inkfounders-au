@@ -3,6 +3,7 @@
 import type React from "react";
 import { useState } from "react";
 import { Check } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { IoMdCall } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
@@ -126,6 +127,7 @@ type GetInTouchProps = {
 
 export default function GetInTouch({ data }: GetInTouchProps) {
   const content = data ?? defaultGetInTouchContent;
+  const pathname = usePathname();
 
   const [formData, setFormData] = useState<FormData>({
     firstName: "",
@@ -173,6 +175,7 @@ export default function GetInTouch({ data }: GetInTouchProps) {
           email: formData.email,
           phone: formData.phone,
           message: formData.message,
+          source: pathname || "/",
         }),
       });
 

@@ -8,6 +8,7 @@ type SubmissionPayload = {
   email?: string;
   phone?: string;
   message?: string;
+  source?: string;
 };
 
 type SavedSubmission = {
@@ -19,12 +20,29 @@ function getRequiredText(value: unknown) {
   return typeof value === "string" ? value.trim() : "";
 }
 
+function escapeHtml(value: string) {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function normalizeSource(value: unknown) {
+  const source = typeof value === "string" ? value.trim() : "";
+
+  if (!source) {
+    return "Unknown page";
+  }
+
+  return source.startsWith("/") ? source : `/${source}`;
+}
+
 function createTransporter() {
   const host = process.env.SMTP_HOST;
   const port = Number(process.env.SMTP_PORT || 465);
-  const secure =
-    (process.env.SMTP_SECURE || process.env.SMTP_SECUR || "true").toLowerCase() ===
-    "true";
+  const secure = (process.env.SMTP_SECURE || "true").toLowerCase() === "true";
   const user = process.env.SMTP_USER;
   const pass = process.env.SMTP_PASS;
 
@@ -51,6 +69,7 @@ export async function POST(req: NextRequest) {
     const email = getRequiredText(body.email);
     const phone = getRequiredText(body.phone);
     const message = getRequiredText(body.message);
+    const source = normalizeSource(body.source);
 
     if (!firstName || !lastName || !email || !phone || !message) {
       return NextResponse.json(
@@ -85,19 +104,39 @@ export async function POST(req: NextRequest) {
 
     try {
       const transporter = createTransporter();
-      const emailTo = process.env.EMAIL_TO || process.env.SMTP_USER;
+      const emailTo = process.env.SMTP_TO || process.env.EMAIL_TO || process.env.SMTP_USER;
+      const fromAddress = process.env.SMTP_FROM || process.env.SMTP_USER;
+      const safeName = escapeHtml(`${firstName} ${lastName}`);
+      const safeEmail = escapeHtml(email);
+      const safePhone = escapeHtml(phone);
+      const safeMessage = escapeHtml(message).replace(/\n/g, "<br>");
+      const safeSource = escapeHtml(source);
 
-      if (transporter && emailTo) {
+      if (transporter && emailTo && fromAddress) {
         await transporter.sendMail({
-          from: `"Website Contact" <${process.env.SMTP_USER}>`,
+          from: `"Ink Founders Website" <${fromAddress}>`,
           to: emailTo,
-          subject: "New Contact Form Submission",
+          replyTo: email,
+          subject: `New Contact Form Submission (${source})`,
+          text: [
+            "New message from the Ink Founders website",
+            `Source: ${source}`,
+            `Name: ${firstName} ${lastName}`,
+            `Email: ${email}`,
+            `Phone: ${phone}`,
+            "Message:",
+            message,
+            "",
+            `Submission ID: ${submission?.id ?? "Not saved"}`,
+            `Submitted At: ${(submission?.createdAt ?? new Date()).toISOString()}`,
+          ].join("\n"),
           html: `
             <h2>New Message from Ink Founders Contact Form</h2>
-            <p><strong>Name:</strong> ${firstName} ${lastName}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Phone:</strong> ${phone}</p>
-            <p><strong>Message:</strong><br>${message.replace(/\n/g, "<br>")}</p>
+            <p><strong>Source:</strong> ${safeSource}</p>
+            <p><strong>Name:</strong> ${safeName}</p>
+            <p><strong>Email:</strong> ${safeEmail}</p>
+            <p><strong>Phone:</strong> ${safePhone}</p>
+            <p><strong>Message:</strong><br>${safeMessage}</p>
             <hr />
             <p><strong>Submission ID:</strong> ${submission?.id ?? "Not saved"}</p>
             <p><strong>Submitted At:</strong> ${(submission?.createdAt ?? new Date()).toISOString()}</p>
