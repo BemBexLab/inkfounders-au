@@ -295,7 +295,7 @@ const Footer: React.FC = () => {
               </ul>
               <div className="flex justify-start gap-x-4">
                 <Link
-                  href="https://www.instagram.com/ink_founder/"
+                  href="#"
                   aria-label="Ink Founders on Instagram"
                 >
                   <FaInstagram color="#555555" size={30} />
@@ -307,7 +307,7 @@ const Footer: React.FC = () => {
                   <FaFacebook color="#555555" size={30} />
                 </Link>
                 <Link
-                  href="https://www.linkedin.com/company/ink-founders/"
+                  href="#"
                   aria-label="Ink Founders on LinkedIn"
                 >
                   <FaLinkedin color="#555555" size={30} />
