@@ -53,24 +53,25 @@ export type GetInTouchContent = {
 
 const defaultGetInTouchContent: GetInTouchContent = {
   left: {
-    heading: "Let us know if anything needed.\nSearching of any guidance from an expert?",
-    subheading: "Have a conversation",
+    heading: "Let Us Know If You Need Guidance",
+    subheading: "Looking for an expert? Let's talk.",
     paragraphs: [
       <div>
         <p>
-          You have taken a step towards the journey of success in
-          self-publishing but still have a lot to ask? And searching for an
-          expert's guidance who can help you in bring your ideas, and voice to
-          reality, but haven't found anyone, then you are at the right place.{" "}
-          <b><a href="https://share.google/i7yXrn8AiGA5wvzYJ" className="">Ink Founders</a></b> is for you.
+          You've already taken the first step toward self-publishing success,
+          but you may still have questions. If you're looking for expert
+          guidance to bring your ideas and your voice to life, you're in the
+          right place. Ink Founders is here to help.
         </p>
         <p className="mt-3">
-          Ink Founders provide a free discussion opportunity where you can clear
-          your doubts, share your story ideas or concepts, and get the
-          exploration trip to examine our services clearly and can find out how
-          we can provide you with the best by turning your words into book form.
-          So, let's take a step and join us today.
+          We offer a free consultation where you can ask questions, share your
+          story ideas, and explore our self-publishing services. Searching for
+          self-publishing services near me? Ink Founders serves authors across
+          the Australia, including our self-publishing agency in Miami, Florida,
+          and is proud to be an affordable self-publishing company for authors
+          to suit every budget.
         </p>
+        <p>Take the next step. Connect with us today.</p>
       </div>,
     ],
     contacts: [
@@ -87,7 +88,7 @@ const defaultGetInTouchContent: GetInTouchContent = {
       {
         type: "location",
         label: "16A Fox Cl, Kariong NSW 2250, Australia",
-        href: "https://www.google.com/maps/search/?api=1&query=16A%20Fox%20Cl%2C%20Kariong%20NSW%202250%2C%20Australia"
+        href: "https://www.google.com/maps/search/?api=1&query=16A%20Fox%20Cl%2C%20Kariong%20NSW%202250%2C%20Australia",
       },
     ],
   },
@@ -143,7 +144,7 @@ export default function GetInTouch({ data }: GetInTouchProps) {
   const [error, setError] = useState<string | null>(null);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -222,7 +223,10 @@ export default function GetInTouch({ data }: GetInTouchProps) {
 
           <div className="mx-auto mt-8 grid max-w-[420px] grid-cols-1 gap-4 text-left md:max-w-none md:grid-cols-2 lg:mx-0">
             {content.left.contacts.map((contact) => (
-              <div key={`${contact.type}-${contact.label}`} className="flex min-w-0 items-center gap-3">
+              <div
+                key={`${contact.type}-${contact.label}`}
+                className="flex min-w-0 items-center gap-3"
+              >
                 <div className="shrink-0 rounded-xl bg-[#DADD39] p-2 text-white">
                   {renderContactIcon(contact.type)}
                 </div>
@@ -329,9 +333,7 @@ export default function GetInTouch({ data }: GetInTouchProps) {
             >
               <span className="slide-bg"></span>
               <span className="relative z-10">
-                {loading
-                  ? content.form.sendingText
-                  : content.form.submitText}
+                {loading ? content.form.sendingText : content.form.submitText}
               </span>
             </button>
 
