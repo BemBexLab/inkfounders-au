@@ -10,32 +10,56 @@ export default function OurMission() {
           <h2 className="mb-3 text-[25px] font-semibold text-black sm:text-[27px]">
             Our Mission
           </h2>
-          <div className={`mb-8 space-y-3 text-[13px] text-[#444444] sm:text-[14px] md:text-[15px] lg:mb-10 ${robotoMono.className}`}>
+          <div
+            className={`mb-8 space-y-3 text-[13px] text-[#444444] sm:text-[14px] md:text-[15px] lg:mb-10 ${robotoMono.className}`}
+          >
             <p>
-              At Ink Founders, our mission is to empower individuals and businesses around the world to share their stories through expert writing, publishing, and marketing services.
+              Our mission at Ink Founders is to help individuals and businesses
+              around the world share their stories through expert writing,
+              publishing, and marketing- the kind of full-service book
+              publishing company Australia authors can lean on from first draft
+              to final sale.
             </p>
             <p>
-              We’re dedicated to building lasting partnerships rooted in trust, transparency, and excellence—backed by a committed team and an unwavering focus on delivering high-quality results every step of the way.
+              We're focused on building lasting partnerships built on trust,
+              transparency, and genuine craftsmanship, backed by a team that
+              shows up the same way for every project, not just the big ones.
             </p>
           </div>
 
           {/* Stats Box */}
           <div className="mx-auto grid w-full max-w-lg grid-cols-1 gap-6 rounded-xl bg-[#FCFCE7] p-6 text-center shadow-sm min-[520px]:grid-cols-2 min-[520px]:gap-x-8 min-[520px]:gap-y-8 sm:p-8 lg:mx-0 lg:text-left">
             <div className="flex flex-col items-center min-[520px]:items-start">
-              <span className="text-[30px] md:text-[50px] font-bold text-[#18181B]">7+</span>
-              <span className="text-[15px] text-[#888] mt-2">Years of experience</span>
+              <span className="text-[30px] md:text-[50px] font-bold text-[#18181B]">
+                7+
+              </span>
+              <span className="text-[15px] text-[#888] mt-2">
+                Years of experience
+              </span>
             </div>
             <div className="flex flex-col items-center min-[520px]:items-start">
-              <span className="text-[30px] md:text-[50px] text-3xl font-bold text-[#18181B]">130+</span>
-              <span className="text-[15px] text-[#888] mt-2">Professional ghostwriters</span>
+              <span className="text-[30px] md:text-[50px] text-3xl font-bold text-[#18181B]">
+                130+
+              </span>
+              <span className="text-[15px] text-[#888] mt-2">
+                Professional ghostwriters
+              </span>
             </div>
             <div className="flex flex-col items-center min-[520px]:items-start">
-              <span className="text-[30px] md:text-[50px] text-3xl font-bold text-[#18181B]">2000+</span>
-              <span className="text-[15px] text-[#888] mt-2">Books Published</span>
+              <span className="text-[30px] md:text-[50px] text-3xl font-bold text-[#18181B]">
+                2000+
+              </span>
+              <span className="text-[15px] text-[#888] mt-2">
+                Books Published
+              </span>
             </div>
             <div className="flex flex-col items-center min-[520px]:items-start">
-              <span className="text-[30px] md:text-[50px] text-3xl font-bold text-[#18181B]">5000+</span>
-              <span className="text-[15px] text-[#888] mt-2">Happy Clients</span>
+              <span className="text-[30px] md:text-[50px] text-3xl font-bold text-[#18181B]">
+                5000+
+              </span>
+              <span className="text-[15px] text-[#888] mt-2">
+                Happy Clients
+              </span>
             </div>
           </div>
         </div>
