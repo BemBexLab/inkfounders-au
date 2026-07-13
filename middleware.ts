@@ -1,13 +1,57 @@
 import { NextRequest, NextResponse } from "next/server";
 
 const BLOCKED_COUNTRIES = new Set(["US"]);
+const AU_COUNTRY_CODE = "AU";
+const AU_TARGET_HOST = "www.inkfounders.com.au";
 
 function getCountryCode(request: NextRequest): string | null {
   return (
     request.headers.get("x-vercel-ip-country") ||
+    request.headers.get("cf-ipcountry") ||
+    request.headers.get("x-country-code") ||
     request.headers.get("X-Vercel-IP-Country") ||
     null
   );
+}
+
+function getRequestHost(request: NextRequest): string {
+  return (
+    request.headers.get("x-forwarded-host") ||
+    request.headers.get("host") ||
+    request.nextUrl.host
+  ).toLowerCase();
+}
+
+function shouldRedirectAuTraffic(
+  request: NextRequest,
+  countryCode: string | null | undefined,
+): boolean {
+  if (countryCode !== AU_COUNTRY_CODE) {
+    return false;
+  }
+
+  const host = getRequestHost(request);
+
+  if (
+    host.includes("localhost") ||
+    host.includes("127.0.0.1") ||
+    host.endsWith(".local") ||
+    host === AU_TARGET_HOST ||
+    host.endsWith(".com.au")
+  ) {
+    return false;
+  }
+
+  return host === "inkfounders.com" || host === "www.inkfounders.com";
+}
+
+function createAuRedirectResponse(request: NextRequest): NextResponse {
+  const redirectUrl = request.nextUrl.clone();
+
+  redirectUrl.protocol = "https:";
+  redirectUrl.host = AU_TARGET_HOST;
+
+  return NextResponse.redirect(redirectUrl, 307);
 }
 
 function createForbiddenResponse(request: NextRequest): NextResponse {
@@ -75,6 +119,10 @@ function createForbiddenResponse(request: NextRequest): NextResponse {
 
 export function middleware(request: NextRequest) {
   const countryCode = getCountryCode(request)?.toUpperCase();
+
+  if (shouldRedirectAuTraffic(request, countryCode)) {
+    return createAuRedirectResponse(request);
+  }
 
   if (countryCode && BLOCKED_COUNTRIES.has(countryCode)) {
     return createForbiddenResponse(request);
