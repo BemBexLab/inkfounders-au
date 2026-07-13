@@ -20,8 +20,28 @@ export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const { slug } = await Promise.resolve(params);
+  const audiobook = audiobookData.find((item) => item.slug === slug);
 
-  return createCanonicalMetadata(`/audiobook-services/${slug}`);
+  if (!audiobook) {
+    return {};
+  }
+
+  return {
+    title: audiobook.metaTitle,
+    description: audiobook.metaDesc,
+    ...createCanonicalMetadata(`/audiobook-services/${slug}`),
+    openGraph: {
+      title: audiobook.metaTitle,
+      description: audiobook.metaDesc,
+      url: `/audiobook-services/${slug}`,
+      type: "website",
+    },
+    twitter: {
+      title: audiobook.metaTitle,
+      description: audiobook.metaDesc,
+      card: "summary_large_image",
+    },
+  };
 }
 
 const page = async ({ params }: PageProps) => {
