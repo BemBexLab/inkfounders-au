@@ -1,10 +1,17 @@
-"use client";
-
+import type { Metadata } from "next";
 import { robotoMono } from "@/app/fonts";
+import { createCanonicalMetadata } from "@/lib/seo";
 import Image from "next/image";
 import Link from "next/link";
 import { IoMdCall } from "react-icons/io";
 import ServiceCard from "../components/ServiceCard";
+
+export const metadata: Metadata = {
+  ...createCanonicalMetadata("/publishing-services/ebook-writing"),
+  title: "Ebook Ghostwriting Services: Hire a Ghostwriter for Your Ebook",
+  description:
+    "Ink Founders offers professional ebook ghostwriting services for first-time authors, entrepreneurs, and coaches. Hire a ghostwriter for your ebook now.",
+};
 
 export default function EbookWritingPage() {
   const serviceCards = [

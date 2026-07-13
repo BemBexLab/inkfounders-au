@@ -1,10 +1,17 @@
-"use client";
-
+import type { Metadata } from "next";
 import { robotoMono } from "@/app/fonts";
+import { createCanonicalMetadata } from "@/lib/seo";
 import Image from "next/image";
 import Link from "next/link";
 import { IoMdCall } from "react-icons/io";
 import ServiceCard from "../components/ServiceCard";
+
+export const metadata: Metadata = {
+  ...createCanonicalMetadata("/publishing-services/ebook-cover-design"),
+  title: "eBook Cover Design Services: Custom Book Cover Design for Authors",
+  description:
+    "Ink Founders offers professional ebook cover design services and custom book cover design for authors, Amazon KDP-approved, genre-specific, with unlimited revisions.",
+};
 
 export default function CoverDesignPage() {
   const serviceCards = [

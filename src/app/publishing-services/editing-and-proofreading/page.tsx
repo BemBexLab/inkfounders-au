@@ -1,8 +1,18 @@
+import type { Metadata } from "next";
 import { robotoMono } from "@/app/fonts";
+import { createCanonicalMetadata } from "@/lib/seo";
 import Image from "next/image";
 import Link from "next/link";
 import { IoMdCall } from "react-icons/io";
 import ServiceCard from "../components/ServiceCard";
+
+export const metadata: Metadata = {
+  ...createCanonicalMetadata("/publishing-services/editing-and-proofreading"),
+  title:
+    "Book Editing and Proofreading Services: Manuscript Editing for Authors",
+  description:
+    "Ink Founders offers professional book editing and proofreading services, from developmental editing to final proofreading.",
+};
 
 export default function EditingProofreadingPage() {
   const serviceCards = [
