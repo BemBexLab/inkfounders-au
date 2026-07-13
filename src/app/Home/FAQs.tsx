@@ -3,9 +3,13 @@
 import React, { useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
 import { robotoMono } from "../fonts";
-import { faqItems } from "./faqData";
+import type { FAQItem } from "./faqData";
 
-const FAQs: React.FC = () => {
+type FAQsProps = {
+  items: FAQItem[];
+};
+
+const FAQs: React.FC<FAQsProps> = ({ items }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
@@ -20,7 +24,7 @@ const FAQs: React.FC = () => {
         </h2>
         {/* FAQ List */}
         <div className="mt-6 flex w-full flex-col gap-4">
-          {faqItems.map((faq, idx) => (
+          {items.map((faq, idx) => (
             <div
               key={`${faq.question}-${idx}`}
               className="rounded-lg border border-[#ece8d8] bg-[#F6F5F3] px-4 shadow-[0_10px_28px_rgba(65,60,35,0.08)] duration-200 sm:px-6"
