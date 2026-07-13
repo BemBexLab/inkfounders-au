@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const BLOCKED_COUNTRIES = new Set(["US"]);
 const AU_COUNTRY_CODE = "AU";
+const US_COUNTRY_CODE = "US";
+const US_TARGET_HOST = "www.inkfounders.com";
 const AU_TARGET_HOST = "www.inkfounders.com.au";
 
 function getCountryCode(request: NextRequest): string | null {
@@ -22,6 +23,14 @@ function getRequestHost(request: NextRequest): string {
   ).toLowerCase();
 }
 
+function isLocalHost(host: string): boolean {
+  return (
+    host.includes("localhost") ||
+    host.includes("127.0.0.1") ||
+    host.endsWith(".local")
+  );
+}
+
 function shouldRedirectAuTraffic(
   request: NextRequest,
   countryCode: string | null | undefined,
@@ -33,9 +42,7 @@ function shouldRedirectAuTraffic(
   const host = getRequestHost(request);
 
   if (
-    host.includes("localhost") ||
-    host.includes("127.0.0.1") ||
-    host.endsWith(".local") ||
+    isLocalHost(host) ||
     host === AU_TARGET_HOST ||
     host.endsWith(".com.au")
   ) {
@@ -45,87 +52,44 @@ function shouldRedirectAuTraffic(
   return host === "inkfounders.com" || host === "www.inkfounders.com";
 }
 
-function createAuRedirectResponse(request: NextRequest): NextResponse {
+function shouldRedirectUsTraffic(
+  request: NextRequest,
+  countryCode: string | null | undefined,
+): boolean {
+  if (countryCode !== US_COUNTRY_CODE) {
+    return false;
+  }
+
+  const host = getRequestHost(request);
+
+  if (isLocalHost(host) || host === US_TARGET_HOST) {
+    return false;
+  }
+
+  return host === "inkfounders.com.au" || host === "www.inkfounders.com.au";
+}
+
+function createRedirectResponse(
+  request: NextRequest,
+  targetHost: string,
+): NextResponse {
   const redirectUrl = request.nextUrl.clone();
 
   redirectUrl.protocol = "https:";
-  redirectUrl.host = AU_TARGET_HOST;
+  redirectUrl.host = targetHost;
 
   return NextResponse.redirect(redirectUrl, 307);
-}
-
-function createForbiddenResponse(request: NextRequest): NextResponse {
-  const isApiRequest =
-    request.nextUrl.pathname.startsWith("/api/") ||
-    request.headers.get("accept")?.includes("application/json");
-
-  if (isApiRequest) {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-  }
-
-  return new NextResponse(
-    `<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>403 Forbidden</title>
-    <style>
-      body {
-        margin: 0;
-        min-height: 100vh;
-        display: grid;
-        place-items: center;
-        padding: 24px;
-        background: #f5efe5;
-        color: #1f2937;
-        font-family: Arial, sans-serif;
-      }
-      main {
-        max-width: 560px;
-        text-align: center;
-        background: #ffffff;
-        border: 1px solid #e5e7eb;
-        border-radius: 20px;
-        padding: 40px 32px;
-        box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
-      }
-      h1 {
-        margin: 0 0 12px;
-        font-size: clamp(2.5rem, 8vw, 4rem);
-      }
-      p {
-        margin: 0;
-        line-height: 1.6;
-        font-size: 1rem;
-      }
-    </style>
-  </head>
-  <body>
-    <main>
-      <h1>403</h1>
-      <p>This website is not available in your region.</p>
-    </main>
-  </body>
-</html>`,
-    {
-      status: 403,
-      headers: {
-        "content-type": "text/html; charset=utf-8",
-      },
-    },
-  );
 }
 
 export function middleware(request: NextRequest) {
   const countryCode = getCountryCode(request)?.toUpperCase();
 
   if (shouldRedirectAuTraffic(request, countryCode)) {
-    return createAuRedirectResponse(request);
+    return createRedirectResponse(request, AU_TARGET_HOST);
   }
 
-  if (countryCode && BLOCKED_COUNTRIES.has(countryCode)) {
-    return createForbiddenResponse(request);
+  if (shouldRedirectUsTraffic(request, countryCode)) {
+    return createRedirectResponse(request, US_TARGET_HOST);
   }
 
   return NextResponse.next();
