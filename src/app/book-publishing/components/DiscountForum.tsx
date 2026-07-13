@@ -273,12 +273,12 @@ export default function DiscountForm() {
       <div className="discount-root">
         {/* Eclipse background image — add your src here */}
         <div className="eclipse-bg">
-          <img src="/landing-page/Ellipse 1.png" alt="Eclipse Image" />
+          <img src="/landing-page/Ellipse 1.webp" alt="Eclipse Image" />
         </div>
 
         <div className="stationery-bg">
           <img
-            src="/landing-page/natural-material-stationery-assortment 1.png"
+            src="/landing-page/natural-material-stationery-assortment 1.webp"
             alt="Stationary Image"
           />
         </div>

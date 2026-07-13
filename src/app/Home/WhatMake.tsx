@@ -12,7 +12,7 @@ const whatMakeItems = [
     title: 'Integrated, straightforward publishing services',
     description:
       'As your publishing partner, Ink Founders offers a full-service publishing model covering editing, formatting, publishing, and marketing, all under one roof. Our team supports you at every stage, with clear communication so you always know where your book stands.',
-    image: '/Home/image 5 (traced).png',
+    image: '/Home/image 5 (traced).webp',
     alt: 'Holistic & Transparent Services',
   },
   {
@@ -20,7 +20,7 @@ const whatMakeItems = [
     title: 'Worldwide network distribution ',
     description:
       "Your story isn't just a book; it's a dream we help bring to life. It deserves to be read around the world, and we mean that literally. Ink Founders doesn't only publish your book; we distribute it across more than 40 global platforms so it can reach readers everywhere.",
-    image: '/Home/image 6 (traced).png',
+    image: '/Home/image 6 (traced).webp',
     alt: 'Myriad Of Distribution Channels',
   },
   {
@@ -28,7 +28,7 @@ const whatMakeItems = [
     title: 'Marketing books and building brands, together',
     description:
       "Publishing your book is only the beginning. Building your author brand is what creates a lasting impact. That's why Ink Founders offers author branding services designed to build your public image and connect you with the right audience.",
-    image: '/Home/material-symbols_book-4.png',
+    image: '/Home/material-symbols_book-4.webp',
     alt: 'Book Marketing & Author Branding',
   },
 ];

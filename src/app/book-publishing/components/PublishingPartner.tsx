@@ -48,7 +48,7 @@ const PublishingPartner = () => {
 
         <div className="flex w-full max-w-[760px] items-stretch justify-center lg:max-w-none lg:flex-1">
           <img
-            src="/landing-page/Rectangle 25.png"
+            src="/landing-page/Rectangle 25.webp"
             className="aspect-[16/11] h-auto w-full rounded-xl object-cover sm:aspect-[16/9] lg:aspect-auto lg:h-full lg:min-h-[560px] lg:rounded-none"
             alt=""
           />

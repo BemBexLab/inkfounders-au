@@ -7,9 +7,9 @@ const fieldClass =
   "w-full rounded-[9px] bg-[#dfdecc] px-8 py-4 text-[16px] text-[#3f3f3f] outline-none placeholder:text-[#70777a] focus:ring-2 focus:ring-[#DADD39] sm:py-[18px]";
 
 const popupImages = [
-  "/landing-page/Group 26.png",
-  "/landing-page/Group 26 (1).png",
-  "/landing-page/Stephen 1.png",
+  "/landing-page/Group 26.webp",
+  "/landing-page/Group 26 (1).webp",
+  "/landing-page/Stephen 1.webp",
 ];
 
 type QuoteFormState = {
@@ -162,7 +162,7 @@ export default function QuotePopup() {
     return null;
   }
 
-  const isStephenPopup = activeImage === "/landing-page/Stephen 1.png";
+  const isStephenPopup = activeImage === "/landing-page/Stephen 1.webp";
 
   const formFields = (
     <>

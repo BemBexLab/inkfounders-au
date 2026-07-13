@@ -6,7 +6,7 @@ export default function BringYourBookSection() {
   return (
     <section className="relative flex min-h-[400px] w-full items-center justify-center overflow-hidden">
       <img
-        src="/landing-page/image.png"
+        src="/landing-page/image.webp"
         alt="Books background"
         className="absolute inset-0 h-full w-full object-cover object-center"
       />
