@@ -1,56 +1,12 @@
 "use client";
 
 import { robotoMono } from "@/app/fonts";
+import Image from "next/image";
 import Link from "next/link";
 import { IoMdCall } from "react-icons/io";
-import Image from "next/image";
-
-// ✅ EXACT SAME CheckItem as your main service page
-const CheckItem = ({ children }: { children: React.ReactNode }) => (
-  <li className="flex items-start gap-2">
-    <span className="text-[#DADD39] mt-0.5 text-base">✔</span>
-    <span className="text-gray-700 text-[13px] leading-relaxed">{children}</span>
-  </li>
-);
-
-// ✅ EXACT SAME ServiceCard — used for all service blocks
-const ServiceCard = ({
-  title,
-  subtitle,
-  description,
-  checklist,
-  compactDescription = false,
-}: {
-  title: string;
-  subtitle?: string;
-  description: string;
-  checklist: string[];
-  compactDescription?: boolean;
-}) => (
-  <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-100 hover:shadow-md transition-shadow h-full flex flex-col">
-    <h3 className="text-base font-semibold text-black mb-1">{title}</h3>
-    {subtitle && <h4 className="text-sm font-medium text-gray-800 mb-2">{subtitle}</h4>}
-    {description && (
-      <p
-        className={`${robotoMono.className} text-gray-700 text-[13px] leading-relaxed mt-2 mb-3 ${
-          compactDescription ? "" : "flex-grow"
-        }`}
-      >
-        {description}
-      </p>
-    )}
-    {checklist.length > 0 && (
-      <ul className="mt-2 space-y-1.5">
-        {checklist.map((item, idx) => (
-          <CheckItem key={idx}>{item}</CheckItem>
-        ))}
-      </ul>
-    )}
-  </div>
-);
+import ServiceCard from "../components/ServiceCard";
 
 export default function CoverDesignPage() {
-  // Only the core service cards — "Why Choose Us" is separate
   const serviceCards = [
     {
       title: "Custom Cover Design",
@@ -75,7 +31,8 @@ export default function CoverDesignPage() {
     },
     {
       title: "Branding & Series Design",
-      description: "Working on more than one book? Our book series cover design service keeps every cover in a series visually connected while still standing on its own.",
+      description:
+        "Working on more than one book? Our book series cover design service keeps every cover in a series visually connected while still standing on its own.",
       checklist: [
         "Series cover cohesion",
         "Author branding integration",
@@ -96,17 +53,22 @@ export default function CoverDesignPage() {
 
   return (
     <main className="bg-[#F4F3E1]">
-      {/* Hero Section */}
       <section className="relative px-4 py-12 sm:px-6 sm:py-14 md:px-10 lg:py-16 2xl:px-20">
-        <div className="max-w-[1450px] mx-auto">
+        <div className="mx-auto max-w-[1450px]">
           <div className="grid grid-cols-1 items-center justify-items-center gap-6 lg:grid-cols-2 lg:gap-8">
             <div className="contents lg:flex lg:w-full lg:flex-col lg:items-start lg:justify-center lg:px-1 lg:pl-12 xl:pl-20">
               <div className="contents lg:block lg:w-full lg:max-w-xl">
                 <h1 className="order-1 mb-0 w-full max-w-2xl text-center text-3xl font-semibold leading-tight text-black sm:text-4xl md:text-[48px] lg:mb-6 lg:text-left">
                   eBook Cover Design Services
                 </h1>
-                <p className={`${robotoMono.className} order-3 w-full max-w-2xl text-center text-[13px] leading-relaxed text-gray-700 sm:text-[14px] md:text-[15px] lg:max-w-none lg:text-left lg:leading-loose`}>
-                  At Ink Founders, we know a book cover is the first impression your readers get. Our ebook cover design services create visually striking, genre-appropriate covers that catch readers' attention and help your book perform on Amazon KDP, Apple Books, and other major platforms.
+                <p
+                  className={`${robotoMono.className} order-3 w-full max-w-2xl text-center text-[13px] leading-relaxed text-gray-700 sm:text-[14px] md:text-[15px] lg:max-w-none lg:text-left lg:leading-loose`}
+                >
+                  At Ink Founders, we know a book cover is the first impression
+                  your readers get. Our ebook cover design services create
+                  visually striking, genre-appropriate covers that catch
+                  readers' attention and help your book perform on Amazon KDP,
+                  Apple Books, and other major platforms.
                 </p>
               </div>
             </div>
@@ -127,26 +89,18 @@ export default function CoverDesignPage() {
         </div>
       </section>
 
-      {/* Service Cards — 4 cards */}
-      <section className="px-4 md:px-10 2xl:px-20 py-5">
-        <div className="max-w-[1450px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <section className="px-4 py-5 md:px-10 2xl:px-20">
+        <div className="mx-auto max-w-[1450px]">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {serviceCards.map((card, index) => (
-              <ServiceCard
-                key={index}
-                title={card.title}
-                description={card.description}
-                checklist={card.checklist}
-                compactDescription={card.compactDescription}
-              />
+              <ServiceCard key={index} {...card} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us — NOT a card, styled EXACTLY as requested */}
       <section className="px-4 py-7 sm:px-6 sm:py-9 md:px-10 lg:py-12 2xl:px-20">
-        <div className="max-w-[1450px] mx-auto">
+        <div className="mx-auto max-w-[1450px]">
           <div className="flex flex-col items-center gap-4 lg:flex-row lg:gap-8">
             <div className="order-2 flex w-full justify-center lg:order-none lg:w-1/2">
               <div className="relative flex aspect-square w-[min(66vw,240px)] items-center justify-center overflow-hidden rounded-lg sm:w-[260px] md:w-[340px] lg:w-full lg:max-w-md">
@@ -174,8 +128,10 @@ export default function CoverDesignPage() {
                   "Quick turnaround without cutting corners on quality",
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2">
-                    <span className="mt-0.5 text-sm text-[#DADD39] lg:text-lg">✓</span>
-                    <span className="text-[12px] leading-relaxed text-gray-800 sm:text-[13px] md:text-[14px] lg:text-base">{item}</span>
+                    <span className="mt-0.5 text-lg text-[#DADD39]">&#10003;</span>
+                    <span className="text-[12px] leading-relaxed text-gray-800 sm:text-[13px] md:text-[14px] lg:text-base">
+                      {item}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -198,12 +154,19 @@ export default function CoverDesignPage() {
         </div>
       </section>
 
-      {/* Final CTA Paragraph */}
-      <section className="px-4 md:px-10 2xl:px-20 pb-8">
-        <div className="max-w-[1450px] mx-auto text-center">
-          <p className={`${robotoMono.className} text-gray-700 text-[15px] leading-relaxed max-w-3xl mx-auto`}>
-            <b>Make Your Book Stand Out</b><br />
-            A professionally designed cover significantly increases your book’s chance of success. Let <b><a href="https://share.google/i7yXrn8AiGA5wvzYJ" className="">Ink Founders</a></b> create a cover that captures attention and drives readers to your book.
+      <section className="px-4 pb-8 md:px-10 2xl:px-20">
+        <div className="mx-auto max-w-[1450px] text-center">
+          <p
+            className={`${robotoMono.className} mx-auto max-w-3xl text-[15px] leading-relaxed text-gray-700`}
+          >
+            <b>Make Your Book Stand Out</b>
+            <br />A professionally designed cover significantly increases your
+            book's chance of success. Let{" "}
+            <b>
+              <a href="https://share.google/i7yXrn8AiGA5wvzYJ">Ink Founders</a>
+            </b>{" "}
+            create a cover that captures attention and drives readers to your
+            book.
           </p>
         </div>
       </section>

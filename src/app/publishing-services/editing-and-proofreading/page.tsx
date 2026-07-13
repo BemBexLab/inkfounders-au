@@ -1,47 +1,8 @@
 import { robotoMono } from "@/app/fonts";
+import Image from "next/image";
 import Link from "next/link";
 import { IoMdCall } from "react-icons/io";
-import Image from "next/image";
-
-// ✅ EXACT SAME CheckItem as your main service page
-const CheckItem = ({ children }: { children: React.ReactNode }) => (
-  <li className="flex items-start gap-2">
-    <span className="text-[#DADD39] mt-0.5 text-base">✔</span>
-    <span className="text-gray-700 text-[13px] leading-relaxed">{children}</span>
-  </li>
-);
-
-// ✅ EXACT SAME ServiceCard — used for all service blocks
-const ServiceCard = ({
-  title,
-  subtitle,
-  description,
-  checklist,
-  subDesc,
-}: {
-  title: string;
-  subtitle?: string;
-  description: string;
-  checklist: string[];
-  subDesc?: string;
-}) => (
-  <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-100 hover:shadow-md transition-shadow h-full flex flex-col">
-    <h3 className="text-base font-semibold text-black mb-1">{title}</h3>
-    {subtitle && <h4 className="text-sm font-medium text-gray-800 mb-2">{subtitle}</h4>}
-    {description && (
-      <p className={`${robotoMono.className} text-gray-700 text-[13px] leading-relaxed mt-2 mb-3`}>
-        {description}
-      </p>
-    )}
-    {checklist.length > 0 && (
-      <ul className="mt-2 space-y-1.5">
-        {checklist.map((item, idx) => (
-          <CheckItem key={idx}>{item}</CheckItem>
-        ))}
-      </ul>
-    )}
-  </div>
-);
+import ServiceCard from "../components/ServiceCard";
 
 export default function EditingProofreadingPage() {
   const serviceCards = [
@@ -74,19 +35,20 @@ export default function EditingProofreadingPage() {
         "Final grammar & formatting review",
         "Publishing-ready manuscript",
       ],
-      subDesc: "Together, these three stages make up a full manuscript editing service before publishing, not just a single read-through, but a proper process.",
+      subDesc:
+        "Together, these three stages make up a full manuscript editing service before publishing, not just a single read-through, but a proper process.",
     },
     {
       title: "Types of Manuscripts We Edit",
-      description:
-        "Ink Founders works with a wide range of content, including:",
+      description: "Ink Founders works with a wide range of content, including:",
       checklist: [
         "Fiction & Non-Fiction eBooks",
         "Business & Self-Help Books",
         "Educational Content",
         "Biographies & Memoirs",
       ],
-      subDesc: "Whether you need a line editing service for a novel or a professional book editor for a non-fiction manuscript, we match the editor to the genre.",
+      subDesc:
+        "Whether you need a line editing service for a novel or a professional book editor for a non-fiction manuscript, we match the editor to the genre.",
     },
     {
       title: "Our Editing Process",
@@ -98,7 +60,8 @@ export default function EditingProofreadingPage() {
         "Client review & feedback",
         "Final polished delivery",
       ],
-      subDesc: "Our manuscript evaluation service for new authors starts every project; we read your work first and tell you honestly which level of editing it actually needs, rather than selling you more than you require.",
+      subDesc:
+        "Our manuscript evaluation service for new authors starts every project; we read your work first and tell you honestly which level of editing it actually needs, rather than selling you more than you require.",
     },
     {
       title: "Who This Service Is For",
@@ -114,17 +77,22 @@ export default function EditingProofreadingPage() {
 
   return (
     <main className="bg-[#F4F3E1]">
-      {/* Hero Section */}
       <section className="relative px-4 py-12 sm:px-6 sm:py-14 md:px-10 lg:py-16 2xl:px-20">
-        <div className="max-w-[1450px] mx-auto">
+        <div className="mx-auto max-w-[1450px]">
           <div className="grid grid-cols-1 items-center justify-items-center gap-6 lg:grid-cols-2 lg:gap-8">
             <div className="contents lg:flex lg:w-full lg:flex-col lg:items-start lg:justify-center lg:px-1 lg:pl-12 xl:pl-20">
               <div className="contents lg:block lg:w-full lg:max-w-xl">
                 <h1 className="order-1 mb-0 w-full max-w-2xl text-center text-3xl font-semibold leading-tight text-black sm:text-4xl md:text-[48px] lg:mb-6 lg:text-left">
                   Editing & Proofreading Services
                 </h1>
-                <p className={`${robotoMono.className} order-3 w-full max-w-2xl text-center text-[13px] leading-relaxed text-gray-700 sm:text-[14px] md:text-[15px] lg:max-w-none lg:text-left lg:leading-loose`}>
-                  At Ink Founders, our book editing and proofreading services are built to get your manuscript polished, error-free, and genuinely ready for publishing. We refine your writing without rewriting you, so your book meets international publishing standards while still sounding like the person who wrote it.
+                <p
+                  className={`${robotoMono.className} order-3 w-full max-w-2xl text-center text-[13px] leading-relaxed text-gray-700 sm:text-[14px] md:text-[15px] lg:max-w-none lg:text-left lg:leading-loose`}
+                >
+                  At Ink Founders, our book editing and proofreading services
+                  are built to get your manuscript polished, error-free, and
+                  genuinely ready for publishing. We refine your writing without
+                  rewriting you, so your book meets international publishing
+                  standards while still sounding like the person who wrote it.
                 </p>
               </div>
             </div>
@@ -145,25 +113,18 @@ export default function EditingProofreadingPage() {
         </div>
       </section>
 
-      {/* Service Cards Only — 6 cards */}
-      <section className="px-4 md:px-10 2xl:px-20 py-5">
-        <div className="max-w-[1450px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <section className="px-4 py-5 md:px-10 2xl:px-20">
+        <div className="mx-auto max-w-[1450px]">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {serviceCards.map((card, index) => (
-              <ServiceCard
-                key={index}
-                title={card.title}
-                description={card.description}
-                checklist={card.checklist}
-              />
+              <ServiceCard key={index} {...card} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us — NOT a card */}
       <section className="px-4 py-7 sm:px-6 sm:py-9 md:px-10 lg:py-12 2xl:px-20">
-        <div className="max-w-[1450px] mx-auto">
+        <div className="mx-auto max-w-[1450px]">
           <div className="flex flex-col items-center gap-4 lg:flex-row lg:gap-8">
             <div className="order-2 flex w-full justify-center lg:order-none lg:w-1/2">
               <div className="relative flex aspect-square w-[min(66vw,240px)] items-center justify-center overflow-hidden rounded-lg sm:w-[260px] md:w-[340px] lg:w-full lg:max-w-md">
@@ -190,8 +151,10 @@ export default function EditingProofreadingPage() {
                   "An affordable book editing service in the Australia, with a book editing package that includes unlimited revisions until you're satisfied",
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2">
-                    <span className="text-[#DADD39] mt-0.5 text-lg">✓</span>
-                    <span className="text-[12px] leading-relaxed text-gray-800 sm:text-[13px] md:text-[14px] lg:text-base">{item}</span>
+                    <span className="mt-0.5 text-lg text-[#DADD39]">&#10003;</span>
+                    <span className="text-[12px] leading-relaxed text-gray-800 sm:text-[13px] md:text-[14px] lg:text-base">
+                      {item}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -214,14 +177,20 @@ export default function EditingProofreadingPage() {
         </div>
       </section>
 
-      {/* Final CTA Paragraph */}
-      <section className="px-4 md:px-10 2xl:px-20 py-8">
-        <div className="max-w-[1450px] mx-auto text-center">
-          <p className={`${robotoMono.className} text-gray-700 text-[15px] leading-tight max-w-3xl mx-auto`}>
+      <section className="px-4 py-8 md:px-10 2xl:px-20">
+        <div className="mx-auto max-w-[1450px] text-center">
+          <p
+            className={`${robotoMono.className} mx-auto max-w-3xl text-[15px] leading-tight text-gray-700`}
+          >
             <b>Prepare Your Manuscript for Publishing</b>
           </p>
           <p className="mt-3 text-gray-700">
-            A professionally edited book builds credibility, trust, and reader satisfaction. Let <b><a href="https://share.google/i7yXrn8AiGA5wvzYJ" className="">Ink Founders</a></b> refine your manuscript to publishing perfection.
+            A professionally edited book builds credibility, trust, and reader
+            satisfaction. Let{" "}
+            <b>
+              <a href="https://share.google/i7yXrn8AiGA5wvzYJ">Ink Founders</a>
+            </b>{" "}
+            refine your manuscript to publishing perfection.
           </p>
         </div>
       </section>

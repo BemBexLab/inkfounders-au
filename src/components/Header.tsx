@@ -1,5 +1,6 @@
 "use client";
 
+import CustomScrollbar from "@/components/CustomScrollbar";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
@@ -261,9 +262,11 @@ export default function Header() {
       </div>
 
       {menuOpen && (
-        <div
+        <CustomScrollbar
           id="mobile-menu"
-          className="fixed inset-0 z-[60] flex min-h-screen flex-col items-start gap-3 overflow-y-auto bg-white px-6 py-8 xl:hidden"
+          orientation="vertical"
+          containerClassName="fixed inset-0 z-[60] xl:hidden"
+          className="flex min-h-screen flex-col items-start gap-3 bg-white px-6 py-8"
         >
           <button
             className="absolute right-6 top-6 text-3xl text-[#DADD39]"
@@ -380,7 +383,7 @@ export default function Header() {
           >
             Book a call
           </Link>
-        </div>
+        </CustomScrollbar>
       )}
     </header>
   );

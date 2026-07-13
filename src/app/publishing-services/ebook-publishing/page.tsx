@@ -1,43 +1,10 @@
 "use client";
 
 import { robotoMono } from "@/app/fonts";
+import Image from "next/image";
 import Link from "next/link";
 import { IoMdCall } from "react-icons/io";
-import Image from "next/image";
-
-const CheckItem = ({ children }: { children: React.ReactNode }) => (
-  <li className="flex items-start gap-2">
-    <span className="text-[#DADD39] mt-0.5 text-base">✔</span>
-    <span className="text-gray-700 text-[13px] leading-relaxed">{children}</span>
-  </li>
-);
-
-const ServiceCard = ({
-  title,
-  subtitle,
-  description,
-  checklist,
-  subDesc,
-}: {
-  title: string;
-  subtitle?: string;
-  description: string;
-  checklist: string[];
-  subDesc?: string;
-}) => (
-  <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-100 hover:shadow-md transition-shadow h-full flex flex-col">
-    <h3 className="text-base font-semibold text-black mb-1">{title}</h3>
-    {subtitle && <h4 className="text-sm font-medium text-gray-800 mb-2">{subtitle}</h4>}
-    <p className={`${robotoMono.className} text-gray-700 text-[13px] leading-relaxed mb-3 flex-grow`}>
-      {description}
-    </p>
-    <ul className="space-y-1.5">
-      {checklist.map((item, idx) => (
-        <CheckItem key={idx}>{item}</CheckItem>
-      ))}
-    </ul>
-  </div>
-);
+import ServiceCard from "../components/ServiceCard";
 
 export default function ServiceDetailPage() {
   const services = [
@@ -68,15 +35,24 @@ export default function ServiceDetailPage() {
       subtitle: "eBook Cover Design",
       description:
         "We design covers that are genuinely market-ready, built to Amazon KDP and other major platform standards, and tailored to your genre so the cover pulls readers in rather than blending into the background.",
-      checklist: ["Custom Design", "High-Resolution Output", "Amazon KDP-Approved"],
+      checklist: [
+        "Custom Design",
+        "High-Resolution Output",
+        "Amazon KDP-Approved",
+      ],
     },
     {
       title: "Design & Formatting",
       subtitle: "eBook Formatting & Layout",
       description:
         "As an ebook formatting and publishing service, we get your book reading properly across every device and platform- no broken layouts, no formatting surprises after launch. Our ebook publishing service comes with formatting included, so you're not left figuring out EPUB specs on your own.",
-      checklist: ["Kindle (KDP) Formatting", "EPUB & PDF Formatting", "Paperback & Hardcover Layouts"],
-      subDesc: "We also handle the full conversion, from manuscript to ebook format, ready for upload, as part of the package, whether you're publishing on a single platform or want to self-publish your ebook across multiple platforms at once.",
+      checklist: [
+        "Kindle (KDP) Formatting",
+        "EPUB & PDF Formatting",
+        "Paperback & Hardcover Layouts",
+      ],
+      subDesc:
+        "We also handle the full conversion, from manuscript to ebook format, ready for upload, as part of the package, whether you're publishing on a single platform or want to self-publish your ebook across multiple platforms at once.",
     },
     {
       title: "Marketing & Book Promotion",
@@ -94,30 +70,45 @@ export default function ServiceDetailPage() {
       subtitle: "ISBN & Copyright Assistance",
       description:
         "We guide you through ISBN registration and copyright, so your book is fully protected and fully yours. Our ebook publishing service with ISBN means you're not left chasing paperwork on your own.",
-      checklist: ["ISBN Guidance", "Copyright Support", "Author Rights Protection"],
+      checklist: [
+        "ISBN Guidance",
+        "Copyright Support",
+        "Author Rights Protection",
+      ],
     },
     {
       title: "Consultation & Ongoing Support",
       subtitle: "Publishing Consultation",
       description:
         "Not sure where to start? Our team offers one-on-one publishing consultations to help you figure out the right platform strategy and roadmap for your book, whether that's Kindle, Apple Books, or a print-and-ebook combination.",
-      checklist: ["One-on-One Guidance", "Platform Strategy", "Publishing Roadmap"],
+      checklist: [
+        "One-on-One Guidance",
+        "Platform Strategy",
+        "Publishing Roadmap",
+      ],
     },
   ];
 
   return (
     <main className="bg-[#F4F3E1]">
-      {/* Hero Section */}
       <section className="relative px-4 py-12 sm:px-6 sm:py-14 md:px-10 lg:py-16 2xl:px-20">
-        <div className="max-w-[1450px] mx-auto">
+        <div className="mx-auto max-w-[1450px]">
           <div className="grid grid-cols-1 items-center justify-items-center gap-6 lg:grid-cols-2 lg:gap-8">
             <div className="contents lg:flex lg:w-full lg:flex-col lg:items-start lg:justify-center lg:px-1 lg:pl-12 xl:pl-20">
               <div className="contents lg:block lg:w-full lg:max-w-xl">
                 <h1 className="order-1 mb-0 w-full max-w-2xl text-center text-3xl font-semibold leading-tight text-black sm:text-4xl md:text-[48px] lg:mb-6 lg:text-left">
                   Professional eBook Publishing Services by Ink Founders
                 </h1>
-                <p className={`${robotoMono.className} order-3 w-full max-w-2xl text-center text-[13px] leading-relaxed text-gray-700 sm:text-[14px] md:text-[15px] lg:max-w-none lg:text-left lg:leading-loose`}>
-                  At Ink Founders, we're an ebook publishing service for authors that handles the whole process end to end: writing, editing, design, formatting, and getting your book out into the world. Whether you're a first-time author or already have a few books behind you, our team walks with you through every stage, including how to publish an ebook on Amazon, Kindle, and Apple Books.
+                <p
+                  className={`${robotoMono.className} order-3 w-full max-w-2xl text-center text-[13px] leading-relaxed text-gray-700 sm:text-[14px] md:text-[15px] lg:max-w-none lg:text-left lg:leading-loose`}
+                >
+                  At Ink Founders, we're an ebook publishing service for
+                  authors that handles the whole process end to end: writing,
+                  editing, design, formatting, and getting your book out into
+                  the world. Whether you're a first-time author or already have
+                  a few books behind you, our team walks with you through every
+                  stage, including how to publish an ebook on Amazon, Kindle,
+                  and Apple Books.
                 </p>
               </div>
             </div>
@@ -138,11 +129,9 @@ export default function ServiceDetailPage() {
         </div>
       </section>
 
-      {/* Services Cards — NOW PERFECTLY ALIGNED */}
-      <section className="px-4 md:px-10 2xl:px-20 py-5">
-        <div className="max-w-[1450px] mx-auto">
-          {/* No extra padding here — grid sits flush within max-width container */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <section className="px-4 py-5 md:px-10 2xl:px-20">
+        <div className="mx-auto max-w-[1450px]">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {services.map((service, index) => (
               <ServiceCard key={index} {...service} />
             ))}
@@ -150,9 +139,8 @@ export default function ServiceDetailPage() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
       <section className="px-4 py-7 sm:px-6 sm:py-9 md:px-10 lg:py-12 2xl:px-20">
-        <div className="max-w-[1450px] mx-auto">
+        <div className="mx-auto max-w-[1450px]">
           <div className="flex flex-col items-center gap-4 lg:flex-row lg:gap-8">
             <div className="order-2 flex w-full justify-center lg:order-none lg:w-1/2">
               <div className="relative flex aspect-square w-[min(66vw,240px)] items-center justify-center overflow-hidden rounded-lg sm:w-[260px] md:w-[340px] lg:w-full lg:max-w-md">
@@ -179,8 +167,10 @@ export default function ServiceDetailPage() {
                   "Ebook publishing services with global distribution, so your book isn't limited to one market or platform",
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2">
-                    <span className="text-[#DADD39] mt-0.5 text-lg">✓</span>
-                    <span className="text-[12px] leading-relaxed text-gray-800 sm:text-[13px] md:text-[14px] lg:text-base">{item}</span>
+                    <span className="mt-0.5 text-lg text-[#DADD39]">&#10003;</span>
+                    <span className="text-[12px] leading-relaxed text-gray-800 sm:text-[13px] md:text-[14px] lg:text-base">
+                      {item}
+                    </span>
                   </li>
                 ))}
               </ul>

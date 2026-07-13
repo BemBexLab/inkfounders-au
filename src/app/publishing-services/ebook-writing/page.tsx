@@ -1,49 +1,10 @@
 "use client";
 
 import { robotoMono } from "@/app/fonts";
+import Image from "next/image";
 import Link from "next/link";
 import { IoMdCall } from "react-icons/io";
-import Image from "next/image";
-
-// ✅ EXACT SAME CheckItem as your main service page
-const CheckItem = ({ children }: { children: React.ReactNode }) => (
-  <li className="flex items-start gap-2">
-    <span className="text-[#DADD39] mt-0.5 text-base">✔</span>
-    <span className="text-gray-700 text-[13px] leading-relaxed">{children}</span>
-  </li>
-);
-
-// ✅ EXACT SAME ServiceCard — used for all service blocks
-const ServiceCard = ({
-  title,
-  subtitle,
-  description,
-  checklist,
-  subDesc,
-}: {
-  title: string;
-  subtitle?: string;
-  description: string;
-  checklist: string[];
-  subDesc?: string;
-}) => (
-  <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-100 hover:shadow-md transition-shadow h-full flex flex-col">
-    <h3 className="text-base font-semibold text-black mb-1">{title}</h3>
-    {subtitle && <h4 className="text-sm font-medium text-gray-800 mb-2">{subtitle}</h4>}
-    {description && (
-      <p className={`${robotoMono.className} text-gray-700 text-[13px] leading-relaxed mt-2 mb-3 flex-grow`}>
-        {description}
-      </p>
-    )}
-    {checklist.length > 0 && (
-      <ul className="mt-2 space-y-1.5">
-        {checklist.map((item, idx) => (
-          <CheckItem key={idx}>{item}</CheckItem>
-        ))}
-      </ul>
-    )}
-  </div>
-);
+import ServiceCard from "../components/ServiceCard";
 
 export default function EbookWritingPage() {
   const serviceCards = [
@@ -55,8 +16,7 @@ export default function EbookWritingPage() {
     },
     {
       title: "Original, High-Quality Writing",
-      description:
-        "Every ebook is written from scratch, ensuring:",
+      description: "Every ebook is written from scratch, ensuring:",
       checklist: [
         "100% original content",
         "No plagiarism",
@@ -66,7 +26,7 @@ export default function EbookWritingPage() {
     {
       title: "Voice Matching (Ghostwriting)",
       description:
-        "For ghostwriting projects, we carefully adapt to your tone, style, and personality, so the finished book genuinely feels like you wrote it — with a ghostwriting service that offers unlimited revisions until it truly sounds like you.",
+        "For ghostwriting projects, we carefully adapt to your tone, style, and personality, so the finished book genuinely feels like you wrote it - with a ghostwriting service that offers unlimited revisions until it truly sounds like you.",
       checklist: [],
     },
     {
@@ -81,7 +41,8 @@ export default function EbookWritingPage() {
         "Fiction & Creative Writing",
         "Biographies & Memoirs",
       ],
-      subDesc: "Whether you need a ghostwriter for a self-help book, a professional ghostwriter for a memoir, or someone to hire a ghostwriter for a non-fiction book, our team has the experience to match.",
+      subDesc:
+        "Whether you need a ghostwriter for a self-help book, a professional ghostwriter for a memoir, or someone to hire a ghostwriter for a non-fiction book, our team has the experience to match.",
     },
     {
       title: "Our Writing Process",
@@ -107,17 +68,24 @@ export default function EbookWritingPage() {
 
   return (
     <main className="bg-[#F4F3E1]">
-      {/* Hero Section */}
       <section className="relative px-4 py-12 sm:px-6 sm:py-14 md:px-10 lg:py-16 2xl:px-20">
-        <div className="max-w-[1450px] mx-auto">
+        <div className="mx-auto max-w-[1450px]">
           <div className="grid grid-cols-1 items-center justify-items-center gap-6 lg:grid-cols-2 lg:gap-8">
             <div className="contents lg:flex lg:w-full lg:flex-col lg:items-start lg:justify-center lg:px-1 lg:pl-12 xl:pl-20">
               <div className="contents lg:block lg:w-full lg:max-w-xl">
                 <h1 className="order-1 mb-0 w-full max-w-2xl text-center text-3xl font-semibold leading-tight text-black sm:text-4xl md:text-[48px] lg:mb-6 lg:text-left">
                   eBook Writing & Ghostwriting Services
                 </h1>
-                <p className={`${robotoMono.className} order-3 w-full max-w-2xl text-center text-[13px] leading-relaxed text-gray-700 sm:text-[14px] md:text-[15px] lg:max-w-none lg:text-left lg:leading-loose`}>
-                  At Ink Founders, our ebook ghostwriting services are built to bring your ideas into a unique, engaging, high-quality book. Whether you have a rough concept or a detailed outline, our experienced writers craft a publish-ready book with clarity, creativity, and precision. If you're ready to hire a ghostwriter for your ebook, our team can take it from a first conversation to a finished manuscript.
+                <p
+                  className={`${robotoMono.className} order-3 w-full max-w-2xl text-center text-[13px] leading-relaxed text-gray-700 sm:text-[14px] md:text-[15px] lg:max-w-none lg:text-left lg:leading-loose`}
+                >
+                  At Ink Founders, our ebook ghostwriting services are built to
+                  bring your ideas into a unique, engaging, high-quality book.
+                  Whether you have a rough concept or a detailed outline, our
+                  experienced writers craft a publish-ready book with clarity,
+                  creativity, and precision. If you're ready to hire a
+                  ghostwriter for your ebook, our team can take it from a first
+                  conversation to a finished manuscript.
                 </p>
               </div>
             </div>
@@ -138,26 +106,18 @@ export default function EbookWritingPage() {
         </div>
       </section>
 
-      {/* Service Cards Only — 6 cards */}
-      <section className="px-4 md:px-10 2xl:px-20 py-5">
-        <div className="max-w-[1450px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <section className="px-4 py-5 md:px-10 2xl:px-20">
+        <div className="mx-auto max-w-[1450px]">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {serviceCards.map((card, index) => (
-              <ServiceCard
-                key={index}
-                title={card.title}
-                description={card.description}
-                checklist={card.checklist}
-                subDesc={card.subDesc}
-              />
+              <ServiceCard key={index} {...card} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us — NOT a card, styled exactly as requested */}
       <section className="px-4 py-7 sm:px-6 sm:py-9 md:px-10 lg:py-12 2xl:px-20">
-        <div className="max-w-[1450px] mx-auto">
+        <div className="mx-auto max-w-[1450px]">
           <div className="flex flex-col items-center gap-4 lg:flex-row lg:gap-8">
             <div className="order-2 flex w-full justify-center lg:order-none lg:w-1/2">
               <div className="relative flex aspect-square w-[min(66vw,240px)] items-center justify-center overflow-hidden rounded-lg sm:w-[260px] md:w-[340px] lg:w-full lg:max-w-md">
@@ -184,8 +144,10 @@ export default function EbookWritingPage() {
                   "Global publishing expertise, with ghostwriting services available across the Australia",
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2">
-                    <span className="text-[#DADD39] mt-0.5 text-lg">✓</span>
-                    <span className="text-[12px] leading-relaxed text-gray-800 sm:text-[13px] md:text-[14px] lg:text-base">{item}</span>
+                    <span className="mt-0.5 text-lg text-[#DADD39]">&#10003;</span>
+                    <span className="text-[12px] leading-relaxed text-gray-800 sm:text-[13px] md:text-[14px] lg:text-base">
+                      {item}
+                    </span>
                   </li>
                 ))}
               </ul>

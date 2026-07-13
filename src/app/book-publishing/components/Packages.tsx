@@ -4,6 +4,7 @@ import { robotoMono } from "@/app/fonts";
 import Link from "next/link";
 import React from "react";
 import { FaCheckCircle } from "react-icons/fa";
+import CustomScrollbar from "@/components/CustomScrollbar";
 
 const packages = [
   {
@@ -133,10 +134,12 @@ const PricingPackages = () => {
                   Included:
                 </p>
 
-                <div
-                  className={`mt-5 max-h-[360px] space-y-3 overflow-y-auto pr-2 min-[760px]:mt-4 min-[760px]:max-h-[330px] min-[760px]:space-y-2 min-[900px]:max-h-[350px] min-[900px]:space-y-3 sm:pr-3 ${
-                    item.featured ? "pricing-scroll" : "pricing-scroll-dark"
-                  }`}
+                <CustomScrollbar
+                  orientation="vertical"
+                  containerClassName="mt-5 max-h-[360px] min-[760px]:mt-4 min-[760px]:max-h-[330px] min-[900px]:max-h-[350px]"
+                  className={`h-full space-y-3 pr-2 min-[760px]:space-y-2 min-[900px]:space-y-3 sm:pr-3`}
+                  thumbClassName={item.featured ? "bg-[#dce829]" : "bg-[#f7f6e9]"}
+                  trackClassName="bg-transparent"
                 >
                   {item.included.map((feature) => (
                     <div
@@ -153,7 +156,7 @@ const PricingPackages = () => {
                       </p>
                     </div>
                   ))}
-                </div>
+                </CustomScrollbar>
               </div>
 
               <div className="mt-10 flex justify-center min-[760px]:mt-8 lg:mt-12">
@@ -176,26 +179,6 @@ const PricingPackages = () => {
           ))}
         </div>
       </div>
-
-      <style jsx>{`
-        .pricing-scroll::-webkit-scrollbar,
-        .pricing-scroll-dark::-webkit-scrollbar {
-          width: 2px;
-        }
-
-        .pricing-scroll::-webkit-scrollbar-track,
-        .pricing-scroll-dark::-webkit-scrollbar-track {
-          background: transparent;
-        }
-
-        .pricing-scroll::-webkit-scrollbar-thumb {
-          background: #dce829;
-        }
-
-        .pricing-scroll-dark::-webkit-scrollbar-thumb {
-          background: #f7f6e9;
-        }
-      `}</style>
     </section>
   );
 };

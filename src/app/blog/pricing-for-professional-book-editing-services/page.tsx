@@ -1,4 +1,5 @@
 "use client";
+import CustomScrollbar from "@/components/CustomScrollbar";
 import React, { useState } from "react";
 import {
   ArrowLeft,
@@ -169,7 +170,7 @@ const Blog2 = () => {
                 </p>
 
                 {/* Cost Breakdown Table */}
-                <div className="overflow-x-auto mb-10">
+                <CustomScrollbar orientation="horizontal" containerClassName="mb-10">
                   <table className="w-full text-left border-collapse">
                     <thead>
                       <tr className="bg-gray-100">
@@ -202,7 +203,7 @@ const Blog2 = () => {
                       </tr>
                     </tbody>
                   </table>
-                </div>
+                </CustomScrollbar>
                 <p className="text-center text-gray-500 italic mb-12">
                   Now let's break each one down clearly.
                 </p>
@@ -497,7 +498,7 @@ const Blog2 = () => {
                     </span>
                     Average Editing Cost by Book Type
                   </h3>
-                  <div className="overflow-x-auto mb-6">
+                  <CustomScrollbar orientation="horizontal" containerClassName="mb-6">
                     <table className="w-full text-left border-collapse">
                       <thead>
                         <tr className="bg-gray-100">
@@ -528,7 +529,7 @@ const Blog2 = () => {
                         </tr>
                       </tbody>
                     </table>
-                  </div>
+                  </CustomScrollbar>
                 </div>
 
                 {/* Section 7: Can You Edit Your Book Yourself? */}

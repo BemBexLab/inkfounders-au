@@ -2,6 +2,7 @@
 
 import { robotoMono } from "@/app/fonts";
 import AOSProvider from "@/components/AOSProvider";
+import CustomScrollbar from "@/components/CustomScrollbar";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 
@@ -101,31 +102,22 @@ const WhatYouGet = () => {
 
   return (
     <AOSProvider>
-      <style jsx global>{`
-        .what-you-get-slider {
-          scrollbar-width: none;
-          -webkit-overflow-scrolling: touch;
-        }
-
-        .what-you-get-slider::-webkit-scrollbar {
-          display: none;
-        }
-      `}</style>
-
       <section className="flex w-full items-center justify-center bg-[#F6F5F3] px-4 py-8 sm:px-6 md:px-8 md:py-10 lg:px-0">
         <div className="flex w-full max-w-[1300px] flex-col items-center">
           <h2 className="mb-8 max-w-4xl text-center text-[24px] font-semibold leading-[1.05] text-black md:text-[30px] lg:mb-8">
            What You Get With Ink Founders
           </h2>
 
-          <div
+          <CustomScrollbar
             ref={carouselRef}
+            orientation="horizontal"
             data-aos="fade-down-right"
             onPointerDown={pauseCarousel}
             onPointerUp={resumeCarousel}
             onPointerCancel={resumeCarousel}
             onPointerLeave={resumeCarousel}
-            className="what-you-get-slider flex w-full max-w-full items-stretch gap-4 overflow-x-auto px-1 pb-4 sm:gap-5 md:px-2 lg:grid lg:grid-cols-3 lg:items-start lg:gap-x-4 lg:gap-y-10 lg:overflow-visible lg:px-0 lg:pb-0"
+            containerClassName="w-full"
+            className="flex w-full max-w-full items-stretch gap-4 px-1 sm:gap-5 md:px-2 lg:grid lg:grid-cols-3 lg:items-start lg:gap-x-4 lg:gap-y-10 lg:overflow-visible lg:px-0 lg:pb-0"
           >
             {carouselCards.map((card, index) => (
               <div
@@ -151,7 +143,7 @@ const WhatYouGet = () => {
                 </p>
               </div>
             ))}
-          </div>
+          </CustomScrollbar>
         </div>
       </section>
     </AOSProvider>
