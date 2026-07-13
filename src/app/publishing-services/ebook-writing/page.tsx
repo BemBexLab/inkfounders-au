@@ -84,7 +84,7 @@ export default function EbookWritingPage() {
                   eBook Writing & Ghostwriting Services
                 </h1>
                 <p
-                  className={`${robotoMono.className} order-3 w-full max-w-2xl text-center text-[13px] leading-relaxed text-gray-700 sm:text-[14px] md:text-[15px] lg:max-w-none lg:text-left lg:leading-loose`}
+                  className={`${robotoMono.className} order-3 w-full max-w-2xl text-center text-[13px] leading-[1.5] text-gray-700 sm:text-[14px] md:text-[15px] lg:max-w-none lg:text-left lg:leading-[1.65]`}
                 >
                   At Ink Founders, our ebook ghostwriting services are built to
                   bring your ideas into a unique, engaging, high-quality book.
@@ -152,7 +152,7 @@ export default function EbookWritingPage() {
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2">
                     <span className="mt-0.5 text-lg text-[#DADD39]">&#10003;</span>
-                    <span className="text-[12px] leading-relaxed text-gray-800 sm:text-[13px] md:text-[14px] lg:text-base">
+                    <span className="text-[12px] leading-[1.45] text-gray-800 sm:text-[13px] md:text-[14px] lg:text-base">
                       {item}
                     </span>
                   </li>

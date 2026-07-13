@@ -69,7 +69,7 @@ export default function CoverDesignPage() {
                   eBook Cover Design Services
                 </h1>
                 <p
-                  className={`${robotoMono.className} order-3 w-full max-w-2xl text-center text-[13px] leading-relaxed text-gray-700 sm:text-[14px] md:text-[15px] lg:max-w-none lg:text-left lg:leading-loose`}
+                  className={`${robotoMono.className} order-3 w-full max-w-2xl text-center text-[13px] leading-[1.5] text-gray-700 sm:text-[14px] md:text-[15px] lg:max-w-none lg:text-left lg:leading-[1.65]`}
                 >
                   At Ink Founders, we know a book cover is the first impression
                   your readers get. Our ebook cover design services create
@@ -136,7 +136,7 @@ export default function CoverDesignPage() {
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2">
                     <span className="mt-0.5 text-lg text-[#DADD39]">&#10003;</span>
-                    <span className="text-[12px] leading-relaxed text-gray-800 sm:text-[13px] md:text-[14px] lg:text-base">
+                    <span className="text-[12px] leading-[1.45] text-gray-800 sm:text-[13px] md:text-[14px] lg:text-base">
                       {item}
                     </span>
                   </li>
@@ -164,7 +164,7 @@ export default function CoverDesignPage() {
       <section className="px-4 pb-8 md:px-10 2xl:px-20">
         <div className="mx-auto max-w-[1450px] text-center">
           <p
-            className={`${robotoMono.className} mx-auto max-w-3xl text-[15px] leading-relaxed text-gray-700`}
+            className={`${robotoMono.className} mx-auto max-w-3xl text-[15px] leading-[1.5] text-gray-700`}
           >
             <b>Make Your Book Stand Out</b>
             <br />A professionally designed cover significantly increases your

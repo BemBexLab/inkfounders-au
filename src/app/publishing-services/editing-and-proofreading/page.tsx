@@ -96,7 +96,7 @@ export default function EditingProofreadingPage() {
                   Editing & Proofreading Services
                 </h1>
                 <p
-                  className={`${robotoMono.className} order-3 w-full max-w-2xl text-center text-[13px] leading-relaxed text-gray-700 sm:text-[14px] md:text-[15px] lg:max-w-none lg:text-left lg:leading-loose`}
+                  className={`${robotoMono.className} order-3 w-full max-w-2xl text-center text-[13px] leading-[1.5] text-gray-700 sm:text-[14px] md:text-[15px] lg:max-w-none lg:text-left lg:leading-[1.65]`}
                 >
                   At Ink Founders, our book editing and proofreading services
                   are built to get your manuscript polished, error-free, and
@@ -162,7 +162,7 @@ export default function EditingProofreadingPage() {
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2">
                     <span className="mt-0.5 text-lg text-[#DADD39]">&#10003;</span>
-                    <span className="text-[12px] leading-relaxed text-gray-800 sm:text-[13px] md:text-[14px] lg:text-base">
+                    <span className="text-[12px] leading-[1.45] text-gray-800 sm:text-[13px] md:text-[14px] lg:text-base">
                       {item}
                     </span>
                   </li>
@@ -194,7 +194,7 @@ export default function EditingProofreadingPage() {
           >
             <b>Prepare Your Manuscript for Publishing</b>
           </p>
-          <p className="mt-3 text-gray-700">
+          <p className="mt-3 leading-[1.45] text-gray-700">
             A professionally edited book builds credibility, trust, and reader
             satisfaction. Let{" "}
             <b>

@@ -20,7 +20,7 @@ function CheckItem({ children }: { children: ReactNode }) {
       <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center text-[#DADD39]">
         <FiCheck size={16} />
       </span>
-      <span className="text-[14px] leading-7 text-[#334155]">{children}</span>
+      <span className="text-[14px] leading-6 text-[#334155]">{children}</span>
     </li>
   );
 }
@@ -54,7 +54,7 @@ export default function ServiceCard({
       >
           {description ? (
             <p
-              className={`${robotoMono.className} text-[14px] leading-8 text-[#334155]`}
+              className={`${robotoMono.className} text-[14px] leading-6 text-[#334155]`}
             >
               {description}
             </p>
@@ -70,7 +70,7 @@ export default function ServiceCard({
 
           {subDesc ? (
             <p
-              className={`${robotoMono.className} mt-5 text-[13px] leading-7 text-[#475569]`}
+              className={`${robotoMono.className} mt-5 text-[13px] leading-6 text-[#475569]`}
             >
               {subDesc}
             </p>
