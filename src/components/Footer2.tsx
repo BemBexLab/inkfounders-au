@@ -24,7 +24,7 @@ const footerContactItems = [
     lines: ["16A Fox Cl,", "Kariong NSW 2250, Australia"],
   },
   {
-    href: "tel:0468285539",
+    href: "tel:+61468285539",
     icon: (
       <svg
         width="16"
@@ -57,7 +57,7 @@ const footerContactItems = [
         />
       </svg>
     ),
-    lines: ["info@inkfounders.com"],
+    lines: ["info@inkfounders.com.au"],
   },
 ];
 
