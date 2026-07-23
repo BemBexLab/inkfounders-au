@@ -75,7 +75,7 @@ const quickLinks = [
 
 const servicesLinks = [
   { id: "book-publishing", label: "Book Publishing", href: "/publishing-services" },
-  { id: "ebook-formatting", label: "Ebook Formatting / Editing", href: "/publishing-services" },
+  { id: "ebook-formatting", label: "Ebook Formatting / Editing", href: "/publishing-services/ebook-writing" },
   { id: "ghost-writing", label: "Ghost Writing", href: "/publishing-services/ebook-writing" },
   { id: "childrens-book", label: "Childrens Book", href: "#" },
   { id: "book-marketing", label: "Book Marketing", href: "#" },
