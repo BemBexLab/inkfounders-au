@@ -405,7 +405,7 @@ const HomeHero = () => {
               </div>
 
               <div className="py-5 text-black">
-                <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:justify-start">
+                {/* <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:justify-start">
                   {trustBadges.map((badge) => {
                     const isExternal = badge.link?.startsWith("http");
 
@@ -434,7 +434,7 @@ const HomeHero = () => {
                       </a>
                     );
                   })}
-                </div>
+                </div> */}
 
                 {/* <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-[#d8d4be] pt-4 text-left">
                   <span className="text-[16px] font-semibold text-[#1f1f1f] sm:text-[18px]">

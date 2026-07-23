@@ -42,7 +42,7 @@ const footerContactItems = [
     lines: ["(0468) 285-539"],
   },
   {
-    href: "mailto:info@inkfounders.com",
+    href: "mailto:info@inkfounders.com.au",
     icon: (
       <svg
         width="16"
