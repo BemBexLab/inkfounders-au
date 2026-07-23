@@ -33,20 +33,27 @@ const bookImages = [
 ];
 
 const trustBadges: TrustBadge[] = [
+  // {
+  //   id: "trustpilot-review",
+  //   title: "Trustpilot",
+  //   subtitle: "Review",
+  //   src: "/Home/trustpilot-logo-1024x443.webp",
+  //   link: "#",
+  // },
+  // {
+  //   id: "top-digital-agency",
+  //   title: "Top Digital",
+  //   subtitle: "Agency",
+  //   src: "/Home/Mask%20group.webp",
+  //   link: "#",
+  // },
   {
-    id: "trustpilot-review",
-    title: "Trustpilot",
+    id: "review-io",
+    title: "Review.io",
     subtitle: "Review",
-    src: "/Home/trustpilot-logo-1024x443.webp",
-    link: "#",
-  },
-  {
-    id: "top-digital-agency",
-    title: "Top Digital",
-    subtitle: "Agency",
-    src: "/Home/Mask%20group.webp",
-    link: "#",
-  },
+    src: "/Home/reviewsio-logo.svg",
+    link: "https://www.reviews.io/company-reviews/store/www.inkfounders.com",
+  }
 ];
 
 const HomeHero = () => {
@@ -405,7 +412,7 @@ const HomeHero = () => {
               </div>
 
               <div className="py-5 text-black">
-                {/* <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:justify-start">
+                <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:justify-start">
                   {trustBadges.map((badge) => {
                     const isExternal = badge.link?.startsWith("http");
 
@@ -434,7 +441,7 @@ const HomeHero = () => {
                       </a>
                     );
                   })}
-                </div> */}
+                </div>
 
                 {/* <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-[#d8d4be] pt-4 text-left">
                   <span className="text-[16px] font-semibold text-[#1f1f1f] sm:text-[18px]">
