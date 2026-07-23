@@ -75,9 +75,11 @@ const quickLinks = [
 
 const servicesLinks = [
   { id: "book-publishing", label: "Book Publishing", href: "/publishing-services" },
-  { id: "ebook-formatting", label: "Ebook Formatting", href: "/publishing-services" },
-  { id: "childrens-book", label: "Childrens Book", href: "/publishing-services" },
-  { id: "book-marketing", label: "Book Marketing", href: "/publishing-services" },
+  { id: "ebook-formatting", label: "Ebook Formatting / Editing", href: "/publishing-services" },
+  { id: "ghost-writing", label: "Ghost Writing", href: "/publishing-services/ebook-writing" },
+  { id: "childrens-book", label: "Childrens Book", href: "#" },
+  { id: "book-marketing", label: "Book Marketing", href: "#" },
+  { id: "audiobook-publishing", label: "Audiobook Publishing", href: "/audiobook-services/audiobook-publishing" },
 ];
 
 type TrustBadge = {
