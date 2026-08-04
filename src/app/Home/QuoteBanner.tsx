@@ -10,17 +10,28 @@ export default function QuoteBanner() {
           Let Your Words Inspire the World
         </p>
         <h2 className="mb-3 max-w-[22rem] text-center text-[21px] font-semibold leading-[1] text-[#222] sm:max-w-[34rem] sm:text-[24px] md:max-w-[44rem] md:text-[28px] lg:mb-3 lg:max-w-none lg:text-[30px] lg:leading-[1]">
-          Let Ink Founders take the hassle out of publishing
-          <br className="hidden lg:block" /> by simplifying the process for you.
+          Publishing Support Across Australia
         </h2>
-        <p
-          className={`mx-auto mb-5 max-w-[28rem] text-center text-[12px] leading-[1.35] text-gray-700 sm:text-[13px] md:max-w-[42rem] md:text-[15px] lg:mb-4 ${robotoMono.className}`}
+        <div
+          className={`mx-auto mb-5 max-w-[28rem] text-center text-[12px] leading-[1.35] text-gray-700 sm:text-[13px] md:max-w-[62rem] md:text-[15px] lg:mb-4 ${robotoMono.className}`}
         >
-          Let Ink Founders take the hassle out of publishing by simplifying the process for you. Partner with us, focus on your story, and let our team handle the rest.
-        </p>
+          We work with authors nationwide, including: <br />{" "}
+          <p>
+            <b>
+              Sydney · Melbourne · Brisbane · Perth · Adelaide · Canberra · Gold
+              Coast
+            </b>
+          </p>{" "}
+          Serving authors across New South Wales, Victoria, Queensland, and
+          Western Australia with remote manuscript review and publishing support
+          available no matter where you're based in Australia.
+        </div>
         <div className="flex w-full flex-row items-center justify-center gap-3 sm:w-auto sm:gap-4">
           {/* Get a Quote */}
-          <Link href="/contactus" className="w-full max-w-[180px] sm:w-auto sm:max-w-none">
+          <Link
+            href="/contactus"
+            className="w-full max-w-[180px] sm:w-auto sm:max-w-none"
+          >
             <button
               type="button"
               className="
@@ -45,8 +56,7 @@ export default function QuoteBanner() {
               <span className="relative z-10">Get a Quote</span>
             </button>
           </Link>
-	
-	
+
           {/* Live Chat */}
           {/* <Link href="/contactus">
 	  <button
@@ -66,7 +76,6 @@ export default function QuoteBanner() {
 	  </button>
 	</Link> */}
         </div>
-
       </div>
     </section>
   );

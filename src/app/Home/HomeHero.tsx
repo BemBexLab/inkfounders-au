@@ -53,7 +53,7 @@ const trustBadges: TrustBadge[] = [
     subtitle: "Review",
     src: "/Home/reviewsio-logo.svg",
     link: "https://www.reviews.io/company-reviews/store/www.inkfounders.com",
-  }
+  },
 ];
 
 const HomeHero = () => {
@@ -218,8 +218,8 @@ const HomeHero = () => {
 
       <div className="relative z-10 mx-auto w-full px-4 sm:px-6 md:px-10 lg:hidden">
         <div className="mx-auto flex w-full max-w-3xl flex-col items-start gap-5 pb-10">
-          <h1 className="w-full text-left text-[clamp(2rem,5.5vw,3.4rem)] font-semibold leading-[1.05] text-black">
-            Bring Your Story to the World With Ink Founders
+          <h1 className="w-full text-center text-[clamp(2rem,5.5vw,3.4rem)] font-semibold leading-[1.05] text-black">
+            E-Book Publishing Australia - Revert Your Manuscript Into a Published Classy Book
           </h1>
 
           <div className="relative flex w-full items-center justify-center py-2 sm:py-4">
@@ -269,11 +269,17 @@ const HomeHero = () => {
             </div>
           </div>
 
-          <p
+          <div
             className={`max-w-[64ch] text-left text-[0.95rem] leading-6 text-gray-700 sm:text-[1rem] ${robotoMono.className}`}
           >
-            Ink Founders is a self-publishing company authors trust for a complete suite of digital publishing services. From your first idea to your finished, published book, we support you at every stage of your self-publishing journey. Let's bring your story to life; reach out to us today.
-          </p>
+            <p>You've written your book. Now let's get it published professionally, affordably, and the right way.</p>
+
+            <p>We are one of the leading <b>Australian book publishing companies</b>, helping first time authors, independent authors, storytellers, and established writers across the country publish a book in paperback, hardcover, eBook, and print on demand formats.</p>
+
+            <p>If you're looking for self-publishing in Australia, hybrid publishing, or a full-service professional book publishing package, our publishing house handles manuscript assessment, editing, design, ISBN registration, printing, distribution, and marketing so you can focus on being the author.</p>
+
+            <p>From your first draft to a finished book listed on Amazon KDP, IngramSpark, Apple Books, Kobo, Google Play Books, Barnes & Noble Press, and Draft2Digital, our Australian publishing services are built to make publishing your book in Australia simple, transparent, and professional.</p>
+          </div>
 
           <div className="flex w-full flex-row justify-center gap-2 sm:gap-3">
             <a href="tel:0468285539" className="min-w-0 flex-1 sm:flex-none">
@@ -284,7 +290,7 @@ const HomeHero = () => {
                 <span className="slide-bg rounded-md"></span>
                 <span className="relative z-10 flex items-center gap-2">
                   <IoMdCall size={18} className="h-4 w-4 md:h-5 md:w-5" />
-                  Request a Call
+                  Talk to a Publishing Expert
                 </span>
               </button>
             </a>
@@ -300,7 +306,7 @@ const HomeHero = () => {
                   size={18}
                   className="h-4 w-4 md:h-5 md:w-5"
                 />
-                Get Free Consultation
+                Publish My Book
               </span>
             </button>
           </div>
@@ -352,9 +358,9 @@ const HomeHero = () => {
             <div className="relative w-full max-w-xl">
               <h1 className="mb-5 text-center text-[clamp(1.5rem,5vw,3rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-black sm:mb-6 md:text-left">
                 <span className="inline-flex justify-center whitespace-nowrap">
-                  <span>Bring Your Story to the&nbsp;</span>
+                  <span>E-Book Publishing&nbsp;</span>
                   <span className="relative inline-block pr-4 sm:pr-8 md:pr-10">
-                    World{" "}
+                    Australia{" "}
                     <span className="pointer-events-none absolute right-0 -top-4 h-10 w-10 sm:right-0 sm:-top-6 sm:h-16 sm:w-16 md:-right-2 md:-top-10 md:h-24 md:w-24">
                       <Image
                         src="/Home/make your Life Easy.webp"
@@ -369,18 +375,44 @@ const HomeHero = () => {
                 </span>
                 <span className="mx-auto block max-w-[12ch] pr-0 sm:max-w-[15ch] sm:pr-10 md:mx-0 md:max-w-none md:pr-0">
                   <span className="inline-flex flex-wrap justify-center md:justify-start">
-                    <span className="whitespace-nowrap">With Ink Founders</span>{" "}
+                    <span className="whitespace-nowrap">
+                      Revert Your Manuscript Into
+                      <br /> a Published Classy
+                    </span>{" "}
                     {/* <span className="whitespace-nowrap">Publishing</span> */}
                   </span>
                 </span>
               </h1>
 
-              <p
-                className={`mb-8 max-w-[62ch] text-center text-[clamp(0.92rem,3.2vw,0.95rem)] leading-tight text-gray-700 md:text-left lg:text-left ${robotoMono.className}`}
+              <div
+                className={`mb-8 max-w-[62ch] pr-5 h-[190px] space-y-3 overflow-y-auto text-center text-[clamp(0.92rem,3.2vw,0.95rem)] leading-tight text-gray-700 md:text-left lg:text-left ${robotoMono.className}`}
               >
-                Ink Founders is a self-publishing company authors trust for a complete suite of digital publishing services. From your first idea to your finished, published book, we support you at every stage of your self-publishing journey. Let's bring your story to life; reach out to us today.
-              </p>
-
+                <p>
+                  You've written your book. Now let's get it published
+                  professionally, affordably, and the right way.
+                </p>
+                <p>
+                  We are one of the leading{" "}
+                  <b>Australian book publishing companies</b>, helping first
+                  time authors, independent authors, storytellers, and
+                  established writers across the country publish a book in
+                  paperback, hardcover, eBook, and print on demand formats.
+                </p>
+                <p>
+                  If you're looking for self-publishing in Australia, hybrid
+                  publishing, or a full-service professional book publishing
+                  package, our publishing house handles manuscript assessment,
+                  editing, design, ISBN registration, printing, distribution,
+                  and marketing so you can focus on being the author.
+                </p>
+                <p>
+                  From your first draft to a finished book listed on Amazon KDP,
+                  IngramSpark, Apple Books, Kobo, Google Play Books, Barnes &
+                  Noble Press, and Draft2Digital, our Australian publishing
+                  services are built to make publishing your book in Australia
+                  simple, transparent, and professional.
+                </p>
+              </div>
               <div className="flex w-full flex-col gap-3 sm:flex-row sm:justify-center md:justify-start">
                 <a href="tel:0468285539">
                   <button
@@ -390,7 +422,7 @@ const HomeHero = () => {
                     <span className="slide-bg rounded-md"></span>
                     <span className="relative z-10 flex items-center gap-2">
                       <IoMdCall size={18} className="h-4 w-4 md:h-5 md:w-5" />
-                      Request a Call
+                      Talk to a Publishing Expert
                     </span>
                   </button>
                 </a>
@@ -406,7 +438,7 @@ const HomeHero = () => {
                       size={18}
                       className="h-4 w-4 md:h-5 md:w-5"
                     />
-                    Get Free Consultation
+                    Publish My Book
                   </span>
                 </button>
               </div>

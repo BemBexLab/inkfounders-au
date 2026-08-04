@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { robotoMono } from "../fonts";
 import AOSProvider from "@/components/AOSProvider";
@@ -5,45 +6,45 @@ import AOSProvider from "@/components/AOSProvider";
 const steps = [
   {
     id: "01",
-    title: "Start with an introduction",
+    title: "Submit Your Manuscript",
     description:
-      "We begin with a conversation to get to know each other: who you are as an author, what your story is about, where you want it to go, and what you expect from us. This is your chance to ask questions, share your ideas, and let us help map out your publishing path.",
+      "Share your manuscript for a free initial review.",
   },
   {
     id: "02",
-    title: "We learn what best describes your vision",
+    title: "Manuscript Assessment",
     description:
-      "Once we understand your story's genre, audience, and message, whether fiction, non-fiction, Christian, self-help, historical, or poetry, we start building a plan around your goals.",
+      "Our editors evaluate structure, style, and readiness for publishing.",
   },
   {
     id: "03",
-    title: "Our experts take over, page by page",
+    title: "Editing & Proofreading",
     description:
-      "Your manuscript goes to our editorial team, who refine and structure it to professional standards, ensuring it reads and looks its best in every format.",
+      "Developmental editing, copy editing, and proofreading refine your work.",
   },
   {
     id: "04",
-    title: "We give your story its shape through formatting",
+    title: "Design & Formatting",
     description:
-      "Now we bring your story to life with professional book formatting services for self-publishing authors, covering both ebook and print-on-demand editions, along with a cover design that captures readers' attention and reflects the spirit of your work.",
+      "Cover design, interior layout, and typesetting prepare your book for print and digital formats.",
   },
   {
     id: "05",
-    title: "Quality is always the priority",
+    title: "ISBN & Copyright Registration",
     description:
-      "Before launch, your book goes through a final review by our quality assurance team to make sure every step, from editing to publishing, meets our standards.",
+      "We handle the administrative and legal requirements.",
   },
   {
     id: "06",
-    title: "Time to publish your story",
+    title: "Printing & Publishing",
     description:
-      "Once everything is finalised, we publish your book on the leading global platforms. We also guide you through ISBN registration and sales set-up, so your book is easy for readers to find and buy.",
+      "Your book is published as paperback, hardcover, and/or eBook.",
   },
   {
     id: "07",
-    title: "You're officially an author",
+    title: "Distribution & Marketing",
     description:
-      "It's time to celebrate; you're a published author. We stay by your side after launch with strategies to help grow your author brand.",
+      "Your book is made available through major retailers, with marketing support to help it reach readers."
   },
 ];
 
@@ -98,12 +99,21 @@ const HowItWork = () => {
             Let's find a way
           </p>
           <h2 className="mb-8 max-w-5xl text-center text-[23px] font-semibold leading-[1] text-black sm:text-[27px] md:mb-8 md:text-[31px] lg:mb-8 lg:text-[35px]">
-            A clear pathway to turn your dream into reality with Ink Founders
+            How Our Publishing Process Works
           </h2>
 
           <div className="grid w-full max-w-3xl grid-cols-1 gap-0 lg:max-w-none lg:grid-cols-2 lg:gap-12 xl:gap-16">
             <StepColumn steps={leftColumnSteps} />
             <StepColumn steps={rightColumnSteps} />
+          </div>
+
+          <div className="mt-5 flex w-full justify-center">
+            <Link
+              href="/contactus"
+              className="inline-flex items-center justify-center rounded-full bg-black px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#222] focus:outline-none focus:ring-2 focus:ring-[#DADD39] focus:ring-offset-2"
+            >
+              Start Your Publishing Journey
+            </Link>
           </div>
         </div>
       </section>

@@ -12,19 +12,61 @@ export default function Publishing() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start justify-between px-7">
           {/* Left: Headline */}
           <div className="mb-3 w-full md:mb-0 md:w-2/5">
-            <h2 className="text-[23px] font-semibold leading-[1.08] text-black md:text-3xl lg:leading-snug">
-              We Help Your Imaginative Thoughts Become A Book Effortlessly.
+            <h2 className="text-[23px] mb-2 font-semibold leading-[1.08] text-black md:text-3xl lg:leading-snug">
+              Why Authors Trust Us
             </h2>
+            <p className="text-md font-regular max-w-6/7 leading-[1.08] text-black lg:leading-snug">
+              Publishing a book is a big decision, and you deserve a book
+              publishing company that's transparent about how the process works,
+              not vague promises.
+            </p>
           </div>
           {/* Right: Description */}
           <div
-            className={`w-full space-y-2 text-[12px] leading-[1.25] text-gray-700 md:w-3/5 md:text-[16px] lg:space-y-4 lg:leading-tight ${robotoMono.className}`}
+            className={`w-full space-y-2 pr-5 text-[12px] leading-[1.25] text-gray-700 md:w-3/5 md:text-[16px] lg:space-y-4 lg:leading-tight ${robotoMono.className}`}
           >
-            <p>At Ink Founders, we understand how demanding the self-publishing journey can feel for a first-time author. It's natural to feel eager and impatient to see your ideas in print, but publishing a book shouldn't be overwhelming; it should be exciting. That's our goal: to make publishing fulfilling rather than stressful. Ink Founders has built a network of more than 100 qualified experts dedicated to turning an author's enthusiasm into a finished book. It's part of why so many consider us the best self-publishing company for first-time authors.</p>
+            <p>
+              <b>Real experience</b> - Our editors, book designers,
+              illustrators, and publishing consultants have worked directly with
+              manuscripts from new authors, independent authors, fiction
+              authors, non-fiction authors, and children's authors across genres
+              including novels, memoirs, poetry books, cookbooks, business
+              books, educational books, fantasy books, and romance books.
+            </p>
 
-            <p className="mt-1 lg:mt-2">Our mission is simple: to make self-publishing stress-free, accessible, supportive, and successful. Whether you're just starting to think about your book or already have a spark of inspiration, our team is with you at every step, proofreading, editing, formatting, ghostwriting, or guiding you through the Amazon publishing process as your Amazon self-publishing company partner. As a full-service book publishing company australia authors rely on, we don't just help you publish your book; we help you reach the right readers and make a lasting impact. With Ink Founders, your ideas can become a powerful, authentic, professionally published book. Let's turn your story into a masterpiece the world can read.</p>
+            <p className="mt-1 lg:mt-2">
+              <b>Industry expertise</b> - Our publishing team understands ISBN
+              registration, copyright, CIP data, barcodes, and the technical
+              requirements of every major retailer and platform, so your
+              manuscript is genuinely publishing-ready not just uploaded and
+              hoped for.
+            </p>
 
-            <p className="mt-1 lg:mt-2">Let your words inspire the world.</p>
+            <p className="mt-1 lg:mt-2">
+              <b>Clear, honest pricing</b> - No hidden fees. You'll know exactly
+              what's included in every publishing package from manuscript
+              assessment to book printing before you commit to anything. See our
+              [Publishing Cost] guide for real numbers.
+            </p>
+
+            <p className="mt-1 lg:mt-2">
+              <b>You keep your rights</b> - Whether you choose self-publishing
+              or hybrid publishing, your manuscript, royalties, and publishing
+              contract terms remain yours and are explained in plain English.
+            </p>
+
+            <p className="mt-1 lg:mt-2">
+              <b>Australian-based support</b> - Work with a publishing company
+              that understands the Australian publishing industry, local book
+              printing, ISBN Australia registration, and local distribution not
+              an overseas call centre.
+            </p>
+
+            <p className="mt-1 lg:mt-2">
+              <b>A defined publishing timeline</b> - You'll always know what
+              stage your book is at, from first submission to launch. See our
+              [Publishing Timeline] for what to expect.
+            </p>
           </div>
         </div>
       </section>
