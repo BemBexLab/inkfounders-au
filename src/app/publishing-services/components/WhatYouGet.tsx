@@ -4,7 +4,6 @@ import { robotoMono } from "@/app/fonts";
 import AOSProvider from "@/components/AOSProvider";
 import CustomScrollbar from "@/components/CustomScrollbar";
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
 
 const cards = [
   {
@@ -51,55 +50,7 @@ const cards = [
   },
 ];
 
-const carouselCards = [...cards, ...cards];
-
 const WhatYouGet = () => {
-  const carouselRef = useRef<HTMLDivElement>(null);
-  const pauseCarouselRef = useRef(false);
-  const animationFrameRef = useRef<number | null>(null);
-
-  useEffect(() => {
-    const carousel = carouselRef.current;
-    if (!carousel) return;
-
-    const isResponsiveCarousel = () => window.innerWidth < 1024;
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-
-    if (prefersReducedMotion) return;
-
-    const scrollContinuously = () => {
-      if (!isResponsiveCarousel() || pauseCarouselRef.current) return;
-
-      const singleSetWidth = carousel.scrollWidth / 2;
-      const shouldReset = carousel.scrollLeft >= singleSetWidth;
-
-      carousel.scrollLeft = shouldReset ? 0 : carousel.scrollLeft + 1.1;
-    };
-
-    const animate = () => {
-      scrollContinuously();
-      animationFrameRef.current = window.requestAnimationFrame(animate);
-    };
-
-    animationFrameRef.current = window.requestAnimationFrame(animate);
-
-    return () => {
-      if (animationFrameRef.current !== null) {
-        window.cancelAnimationFrame(animationFrameRef.current);
-      }
-    };
-  }, []);
-
-  const pauseCarousel = () => {
-    pauseCarouselRef.current = true;
-  };
-
-  const resumeCarousel = () => {
-    pauseCarouselRef.current = false;
-  };
-
   return (
     <AOSProvider>
       <section className="flex w-full items-center justify-center bg-[#F6F5F3] px-4 py-8 sm:px-6 md:px-8 md:py-10 lg:px-0">
@@ -109,22 +60,15 @@ const WhatYouGet = () => {
           </h2>
 
           <CustomScrollbar
-            ref={carouselRef}
             orientation="horizontal"
             data-aos="fade-down-right"
-            onPointerDown={pauseCarousel}
-            onPointerUp={resumeCarousel}
-            onPointerCancel={resumeCarousel}
-            onPointerLeave={resumeCarousel}
             containerClassName="w-full"
             className="flex w-full max-w-full items-stretch gap-4 px-1 sm:gap-5 md:px-2 lg:grid lg:grid-cols-3 lg:items-start lg:gap-x-4 lg:gap-y-10 lg:overflow-visible lg:px-0 lg:pb-0"
           >
-            {carouselCards.map((card, index) => (
+            {cards.map((card) => (
               <div
-                key={`${card.title}-${index}`}
-                className={`flex w-[82vw] max-w-[360px] shrink-0 flex-col items-start px-2 text-left sm:w-[58vw] sm:px-4 md:w-[42vw] lg:w-full lg:max-w-none lg:shrink lg:px-8 ${
-                  index >= cards.length ? "lg:hidden" : ""
-                }`}
+                key={card.title}
+                className="flex w-[82vw] max-w-[360px] shrink-0 flex-col items-start px-2 text-left sm:w-[58vw] sm:px-4 md:w-[42vw] lg:w-full lg:max-w-none lg:shrink lg:px-8"
               >
                 <Image
                   src={card.image}
@@ -136,11 +80,18 @@ const WhatYouGet = () => {
                 <h3 className="mb-2 text-[17px] font-semibold leading-tight text-black sm:text-[18px] md:text-[19px] lg:text-[20px]">
                   {card.title}
                 </h3>
-                <p
-                  className={`${robotoMono.className} text-[13px] leading-[1.35] text-[#444444] sm:text-[14px] md:text-[15px] lg:leading-loose`}
+                <div
+                  className="scrollbar-none h-[22vh] w-full overflow-y-auto overscroll-contain [&::-webkit-scrollbar]:hidden"
+                  tabIndex={0}
+                  role="region"
+                  aria-label={`${card.title} description`}
                 >
-                  {card.description}
-                </p>
+                  <p
+                    className={`${robotoMono.className} pr-3 text-[13px] leading-[1.35] text-[#444444] sm:text-[14px] md:text-[15px] lg:leading-loose`}
+                  >
+                    {card.description}
+                  </p>
+                </div>
               </div>
             ))}
           </CustomScrollbar>

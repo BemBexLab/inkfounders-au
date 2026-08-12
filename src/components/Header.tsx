@@ -1,11 +1,12 @@
 "use client";
 
-import CustomScrollbar from "@/components/CustomScrollbar";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import {
+  FaBars,
   FaBook,
   FaChevronDown,
   FaCog,
@@ -106,8 +107,8 @@ const isActivePath = (pathname: string, href: string) =>
 export default function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
   const [showHeader, setShowHeader] = useState(true);
+  const lastScrollY = useRef(0);
   const [openMobileSection, setOpenMobileSection] = useState<string | null>(
     null,
   );
@@ -118,18 +119,18 @@ export default function Header() {
 
       if (menuOpen || currentScrollY < 12) {
         setShowHeader(true);
-      } else if (currentScrollY > lastScrollY) {
+      } else if (currentScrollY > lastScrollY.current) {
         setShowHeader(false);
       } else {
         setShowHeader(true);
       }
 
-      setLastScrollY(currentScrollY);
+      lastScrollY.current = currentScrollY;
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY, menuOpen]);
+  }, [menuOpen]);
 
   useEffect(() => {
     setMenuOpen(false);
@@ -139,21 +140,38 @@ export default function Header() {
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
 
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+      }
+    };
+
+    const handleResize = () => {
+      if (window.innerWidth >= 1280) {
+        setMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("resize", handleResize);
+
     return () => {
       document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("resize", handleResize);
     };
   }, [menuOpen]);
 
   return (
     <header
-      className={`sticky left-0 top-0 z-50 w-full bg-[#F4F3E1] px-4 py-4 transition-all duration-300 md:px-8 lg:px-10 xl:py-5 2xl:px-10 ${
+      className={`sticky left-0 top-0 z-50 w-full border-b border-black/5 bg-[#F4F3E1]/95 px-4 py-3 shadow-[0_4px_20px_rgba(0,0,0,0.04)] backdrop-blur-md transition-all duration-300 sm:px-6 md:px-8 xl:px-6 xl:py-4 2xl:px-10 ${
         showHeader
           ? "translate-y-0 opacity-100"
           : "-translate-y-full opacity-0"
       }`}
     >
-      <div className="flex items-center justify-between">
-        <Link href="/">
+      <div className="mx-auto flex max-w-[1600px] items-center justify-between gap-4">
+        <Link href="/" aria-label="Ink Founders home" className="shrink-0">
           <div className="flex items-center gap-2">
             <video
               width="130"
@@ -162,7 +180,7 @@ export default function Header() {
               loop
               muted
               playsInline
-              className="h-auto w-[110px] sm:w-[120px] xl:w-[130px]"
+              className="h-auto w-[105px] sm:w-[118px] 2xl:w-[130px]"
             >
               <source
                 src="/logovideo/inkfounder_logo_animate.mp4"
@@ -173,8 +191,8 @@ export default function Header() {
           </div>
         </Link>
 
-        <div className="hidden xl:block">
-          <nav className="relative z-50 flex items-center gap-10 rounded-full px-4 py-3 2xl:gap-15 2xl:px-10">
+        <div className="hidden min-w-0 flex-1 xl:block">
+          <nav className="relative z-50 flex items-center justify-center gap-5 rounded-full px-2 py-3 2xl:gap-9 2xl:px-6">
             {navItems.map((item) => {
               const isActive = isActivePath(pathname, item.href);
 
@@ -183,9 +201,9 @@ export default function Header() {
                   <div key={item.href} className="group relative">
                     {item.desktopOnlyMenu ? (
                       <span
-                        className={`cursor-default whitespace-nowrap text-[13px] transition hover:text-[#DADD39] 2xl:text-[16px] ${
+                        className={`cursor-default whitespace-nowrap text-xs transition hover:text-[#a8ad12] 2xl:text-[15px] ${
                           isActive
-                            ? "font-semibold text-[#DADD39] underline underline-offset-[10px]"
+                            ? "font-semibold text-[#858a00] underline underline-offset-[10px]"
                             : "text-black"
                         }`}
                       >
@@ -194,9 +212,9 @@ export default function Header() {
                     ) : (
                       <Link
                         href={item.href}
-                        className={`whitespace-nowrap text-[13px] transition hover:text-[#DADD39] 2xl:text-[16px] ${
+                        className={`whitespace-nowrap text-xs transition hover:text-[#a8ad12] 2xl:text-[15px] ${
                           isActive
-                            ? "font-semibold text-[#DADD39] underline underline-offset-[10px]"
+                            ? "font-semibold text-[#858a00] underline underline-offset-[10px]"
                             : "text-black"
                         }`}
                       >
@@ -204,13 +222,13 @@ export default function Header() {
                       </Link>
                     )}
 
-                    <div className="invisible absolute left-0 top-full mt-2 w-56 translate-y-1 rounded-md border border-gray-100 bg-white opacity-0 shadow-lg transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                    <div className="invisible absolute left-0 top-full mt-2 w-60 translate-y-1 overflow-hidden rounded-xl border border-black/5 bg-white opacity-0 shadow-[0_16px_40px_rgba(0,0,0,0.14)] transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
                       <div className="py-2">
                         {item.children.map((child) => (
                           <Link
                             key={child.href}
                             href={child.href}
-                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                            className="block px-4 py-2.5 text-sm text-gray-700 transition hover:bg-[#F4F3E1] hover:text-black focus:bg-[#F4F3E1] focus:outline-none"
                           >
                             {child.label}
                           </Link>
@@ -225,9 +243,9 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`whitespace-nowrap text-[13px] transition hover:text-[#DADD39] 2xl:text-[16px] ${
+                  className={`whitespace-nowrap text-xs transition hover:text-[#a8ad12] 2xl:text-[15px] ${
                     isActive
-                      ? "font-semibold text-[#DADD39] underline underline-offset-[10px]"
+                      ? "font-semibold text-[#858a00] underline underline-offset-[10px]"
                       : "text-black"
                   }`}
                 >
@@ -238,153 +256,206 @@ export default function Header() {
           </nav>
         </div>
 
-        <Link href="/contactus" className="hidden xl:flex">
-          <button
-            type="button"
-            className="btn-slide-bg flex items-center gap-2 rounded-[10px] border border-[#DADD39] bg-[#DADD39] px-3 py-2 text-[13px] text-black transition-all duration-300 hover:border-black 2xl:px-6 2xl:text-base"
-          >
-            <span className="slide-bg"></span>
-            <span className="relative z-10">Request a Quote</span>
-          </button>
+        <Link
+          href="/contactus"
+          className="btn-slide-bg hidden shrink-0 items-center gap-2 rounded-[10px] border border-[#DADD39] bg-[#DADD39] px-3 py-2.5 text-xs font-medium text-black transition-all duration-300 hover:border-black xl:flex 2xl:px-6 2xl:text-base"
+        >
+          <span className="slide-bg"></span>
+          <span className="relative z-10 whitespace-nowrap">Request a Quote</span>
         </Link>
 
-        <div className="block xl:hidden">
+        <div className="xl:hidden">
           <button
+            type="button"
             onClick={() => setMenuOpen((prev) => !prev)}
-            className="px-4 py-2 text-3xl text-[#DADD39]"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white/70 text-xl text-black transition hover:border-[#DADD39] hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a8ad12]"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
           >
-            {menuOpen ? <FaTimes /> : <span>&#9776;</span>}
+            {menuOpen ? <FaTimes /> : <FaBars />}
           </button>
         </div>
       </div>
 
-      {menuOpen && (
-        <CustomScrollbar
-          id="mobile-menu"
-          orientation="vertical"
-          containerClassName="fixed inset-0 z-[60] xl:hidden"
-          className="flex min-h-screen flex-col items-start gap-3 bg-white px-6 py-8"
-        >
-          <button
-            className="absolute right-6 top-6 text-3xl text-[#DADD39]"
-            onClick={() => setMenuOpen(false)}
-            aria-label="Close menu"
+      {menuOpen &&
+        typeof document !== "undefined" &&
+        createPortal(
+          <div
+            className="fixed inset-0 z-[100] flex justify-end bg-black/35 backdrop-blur-[2px] xl:hidden"
+            role="presentation"
+            onMouseDown={(event) => {
+              if (event.target === event.currentTarget) setMenuOpen(false);
+            }}
           >
-            <FaTimes />
-          </button>
+            <div
+              id="mobile-menu"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Main navigation"
+              className="flex h-[100dvh] w-full max-w-[430px] flex-col overflow-y-auto bg-[#fffef8] shadow-[-16px_0_50px_rgba(0,0,0,0.16)]"
+            >
+              <div className="sticky top-0 z-10 flex items-center justify-between border-b border-black/5 bg-[#F4F3E1]/95 px-5 py-4 backdrop-blur-md sm:px-7">
+                <Link
+                  href="/"
+                  aria-label="Ink Founders home"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  <video
+                    width="118"
+                    height="46"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="h-auto w-[110px]"
+                  >
+                    <source
+                      src="/logovideo/inkfounder_logo_animate.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
+                </Link>
 
-          <ul className="mt-10 flex w-full flex-col gap-2">
-            {navItems.map((item) => {
-              const isActive = isActivePath(pathname, item.href);
-              const hasChildren = Boolean(item.children?.length);
-              const isExpanded = openMobileSection === item.href;
+                <button
+                  type="button"
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white text-xl text-black transition hover:border-[#DADD39] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a8ad12]"
+                  onClick={() => setMenuOpen(false)}
+                  aria-label="Close menu"
+                >
+                  <FaTimes />
+                </button>
+              </div>
 
-              return (
-                <li key={item.href} className="w-full border-b border-[#ece9df] pb-2">
-                  <div className="flex items-center justify-between gap-3">
-                    {item.desktopOnlyMenu ? (
-                      <button
-                        type="button"
-                        onClick={() =>
-                          setOpenMobileSection((prev) =>
-                            prev === item.href ? null : item.href,
-                          )
-                        }
-                        className={`flex flex-1 items-center gap-4 rounded-md px-1 py-3 text-left text-lg transition ${
-                          isActive ? "font-semibold text-[#DADD39]" : "text-gray-700"
-                        }`}
-                        aria-expanded={isExpanded}
+              <nav className="flex-1 px-5 pb-6 pt-4 sm:px-7">
+                <ul className="flex w-full flex-col">
+                  {navItems.map((item) => {
+                    const isActive = isActivePath(pathname, item.href);
+                    const hasChildren = Boolean(item.children?.length);
+                    const isExpanded = openMobileSection === item.href;
+
+                    return (
+                      <li
+                        key={item.href}
+                        className="w-full border-b border-[#e6e2d4] py-1"
                       >
-                        <span className={isActive ? "text-[#DADD39]" : "text-gray-400"}>
-                          {item.icon}
-                        </span>
-                        <span className="tracking-wide">{item.label}</span>
-                      </button>
-                    ) : (
-                      <Link
-                        href={item.href}
-                        onClick={() => setMenuOpen(false)}
-                        className={`flex flex-1 items-center gap-4 rounded-md px-1 py-3 text-lg transition ${
-                          isActive ? "font-semibold text-[#DADD39]" : "text-gray-700"
-                        }`}
-                      >
-                        <span className={isActive ? "text-[#DADD39]" : "text-gray-400"}>
-                          {item.icon}
-                        </span>
-                        <span className="tracking-wide">{item.label}</span>
-                      </Link>
-                    )}
+                        <div className="flex items-center justify-between gap-3">
+                          {item.desktopOnlyMenu ? (
+                            <button
+                              type="button"
+                              onClick={() =>
+                                setOpenMobileSection((prev) =>
+                                  prev === item.href ? null : item.href,
+                                )
+                              }
+                              className={`flex min-h-14 flex-1 items-center gap-3 rounded-lg px-2 py-3 text-left text-[17px] transition hover:bg-black/[0.03] ${
+                                isActive
+                                  ? "font-semibold text-[#858a00]"
+                                  : "text-gray-700"
+                              }`}
+                              aria-expanded={isExpanded}
+                            >
+                              <span
+                                className={
+                                  isActive ? "text-[#858a00]" : "text-gray-400"
+                                }
+                              >
+                                {item.icon}
+                              </span>
+                              <span>{item.label}</span>
+                            </button>
+                          ) : (
+                            <Link
+                              href={item.href}
+                              onClick={() => setMenuOpen(false)}
+                              className={`flex min-h-14 flex-1 items-center gap-3 rounded-lg px-2 py-3 text-[17px] transition hover:bg-black/[0.03] ${
+                                isActive
+                                  ? "font-semibold text-[#858a00]"
+                                  : "text-gray-700"
+                              }`}
+                            >
+                              <span
+                                className={
+                                  isActive ? "text-[#858a00]" : "text-gray-400"
+                                }
+                              >
+                                {item.icon}
+                              </span>
+                              <span>{item.label}</span>
+                            </Link>
+                          )}
 
-                    {hasChildren && (
-                      <button
-                        type="button"
-                        onClick={() =>
-                          setOpenMobileSection((prev) =>
-                            prev === item.href ? null : item.href,
-                          )
-                        }
-                        className="rounded-md p-3 text-gray-500"
-                        aria-label={`Toggle ${item.label} submenu`}
-                        aria-expanded={isExpanded}
-                      >
-                        <FaChevronDown
-                          className={`transition-transform duration-200 ${
-                            isExpanded ? "rotate-180" : ""
-                          }`}
-                        />
-                      </button>
-                    )}
-                  </div>
+                          {hasChildren && (
+                            <button
+                              type="button"
+                              onClick={() =>
+                                setOpenMobileSection((prev) =>
+                                  prev === item.href ? null : item.href,
+                                )
+                              }
+                              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-gray-500 transition hover:bg-[#F4F3E1] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a8ad12]"
+                              aria-label={`Toggle ${item.label} submenu`}
+                              aria-expanded={isExpanded}
+                            >
+                              <FaChevronDown
+                                className={`transition-transform duration-200 ${
+                                  isExpanded ? "rotate-180" : ""
+                                }`}
+                              />
+                            </button>
+                          )}
+                        </div>
 
-                  {hasChildren && isExpanded && (
-                    <div className="ml-11 mt-1 flex flex-col pb-2">
-                      {item.children?.map((child) => (
-                        <Link
-                          key={child.href}
-                          href={child.href}
-                          onClick={() => setMenuOpen(false)}
-                          className={`rounded-md px-2 py-2 text-sm transition ${
-                            isActivePath(pathname, child.href)
-                              ? "font-semibold text-[#DADD39]"
-                              : "text-gray-600"
-                          }`}
-                        >
-                          {child.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </li>
-              );
-            })}
-          </ul>
+                        {hasChildren && isExpanded && (
+                          <div className="ml-11 flex flex-col gap-0.5 pb-3">
+                            {item.children?.map((child) => (
+                              <Link
+                                key={child.href}
+                                href={child.href}
+                                onClick={() => setMenuOpen(false)}
+                                className={`rounded-lg border-l-2 px-3 py-2.5 text-[15px] transition hover:bg-[#F4F3E1] ${
+                                  isActivePath(pathname, child.href)
+                                    ? "border-[#DADD39] bg-[#F4F3E1] font-semibold text-[#858a00]"
+                                    : "border-transparent text-gray-600"
+                                }`}
+                              >
+                                {child.label}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </li>
+                    );
+                  })}
+                </ul>
+              </nav>
 
-          <a
-            href="tel:0468285539"
-            className="group flex items-center gap-5 px-2 pt-5"
-          >
-            <div className="flex h-8 w-8 items-center justify-center rounded-full border-primary bg-primary transition group-hover:bg-primary/80 2xl:h-14 2xl:w-14">
-              <div className="flex items-center justify-center rounded-full bg-[#DADD39] px-3 py-3 text-white">
-                <IoCall size={30} />
+              <div className="border-t border-black/5 bg-[#F4F3E1] px-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-5 sm:px-7">
+                <a
+                  href="tel:0468285539"
+                  className="group mb-4 flex items-center gap-3 rounded-xl text-black"
+                >
+                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#DADD39] text-black transition group-hover:bg-[#cbd02b]">
+                    <IoCall size={20} />
+                  </span>
+                  <span>
+                    <span className="block text-xs text-gray-500">Call us</span>
+                    <span className="font-semibold group-hover:underline">(0468) 285-539</span>
+                  </span>
+                </a>
+
+                <Link
+                  href="/contactus"
+                  onClick={() => setMenuOpen(false)}
+                  className="block w-full rounded-xl border border-[#DADD39] bg-[#DADD39] px-6 py-3.5 text-center font-semibold text-black transition hover:border-black hover:bg-transparent focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a8ad12]"
+                >
+                  Request a Quote
+                </Link>
               </div>
             </div>
-            <span className="text-base font-semibold text-black group-hover:underline">
-              (0468) 285-539
-            </span>
-          </a>
-
-          <Link
-            href="/contactus"
-            onClick={() => setMenuOpen(false)}
-            className="mt-6 block rounded-full border border-[#DADD39] bg-[#DADD39] px-6 py-3 text-center font-semibold text-black transition hover:border-black hover:bg-transparent"
-          >
-            Book a call
-          </Link>
-        </CustomScrollbar>
-      )}
+          </div>,
+          document.body,
+        )}
     </header>
   );
 }

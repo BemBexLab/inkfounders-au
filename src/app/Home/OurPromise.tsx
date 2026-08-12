@@ -1,7 +1,6 @@
-'use client';
+"use client";
 
 import Image from "next/image";
-import React, { useEffect, useRef, useState } from "react";
 import AOSProvider from "@/components/AOSProvider";
 import { robotoMono } from "../fonts";
 import CustomScrollbar from "@/components/CustomScrollbar";
@@ -57,66 +56,7 @@ const promiseItems = [
   },
 ];
 
-const carouselPromiseItems = [...promiseItems, ...promiseItems];
-
 const OurPromise = () => {
-  const [expandedItems, setExpandedItems] = useState<Record<string, boolean>>({});
-  const carouselRef = useRef<HTMLDivElement>(null);
-  const pauseCarouselRef = useRef(false);
-  const animationFrameRef = useRef<number | null>(null);
-
-  useEffect(() => {
-    const carousel = carouselRef.current;
-    if (!carousel) return;
-
-    const isResponsiveCarousel = () => window.innerWidth < 1024;
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-
-    if (prefersReducedMotion) return;
-
-    const scrollContinuously = () => {
-      if (!isResponsiveCarousel() || pauseCarouselRef.current) return;
-
-      const singleSetWidth = carousel.scrollWidth / 2;
-      const shouldReset = carousel.scrollLeft >= singleSetWidth;
-
-      carousel.scrollLeft = shouldReset ? 0 : carousel.scrollLeft + 1.1;
-    };
-
-    const animate = () => {
-      scrollContinuously();
-      animationFrameRef.current = window.requestAnimationFrame(animate);
-    };
-
-    animationFrameRef.current = window.requestAnimationFrame(animate);
-
-    return () => {
-      if (animationFrameRef.current !== null) {
-        window.cancelAnimationFrame(animationFrameRef.current);
-      }
-    };
-  }, []);
-
-  const pauseCarousel = () => {
-    pauseCarouselRef.current = true;
-  };
-
-  const resumeCarousel = () => {
-    pauseCarouselRef.current = false;
-  };
-
-  const getDisplayText = (description: string, isExpanded: boolean) => {
-    const words = description.trim().split(/\s+/);
-
-    if (isExpanded || words.length <= 43) {
-      return description;
-    }
-
-    return `${words.slice(0, 43).join(" ")}...`;
-  };
-
   return (
     <AOSProvider>
       <section className="flex w-full items-center justify-center bg-[#F6F5F3] px-4 py-8 sm:px-6 md:px-8 md:py-10 lg:px-0">
@@ -132,22 +72,15 @@ const OurPromise = () => {
           </h2>
 
           <CustomScrollbar
-            ref={carouselRef}
             orientation="horizontal"
-            onPointerDown={pauseCarousel}
-            onPointerUp={resumeCarousel}
-            onPointerCancel={resumeCarousel}
-            onPointerLeave={resumeCarousel}
             containerClassName="w-full"
             className="flex w-full max-w-full items-stretch gap-4 px-1 sm:gap-5 md:px-2 lg:grid lg:grid-cols-3 lg:items-start lg:gap-4 lg:overflow-visible lg:px-0 lg:pb-0"
           >
-            {carouselPromiseItems.map((item, index) => (
+            {promiseItems.map((item) => (
               <div
-                key={`${item.id}-${index}`}
+                key={item.id}
                 data-aos="fade-down-right"
-                className={`flex w-[82vw] max-w-[360px] shrink-0 flex-col items-start px-2 text-left sm:w-[58vw] sm:px-4 md:w-[42vw] lg:w-full lg:max-w-none lg:shrink lg:px-8 ${
-                  index >= promiseItems.length ? "lg:hidden" : ""
-                }`}
+                className="flex w-[82vw] max-w-[360px] shrink-0 flex-col items-start px-2 text-left sm:w-[58vw] sm:px-4 md:w-[42vw] lg:w-full lg:max-w-none lg:shrink lg:px-8"
               >
                 <Image
                   src={item.image}
@@ -161,25 +94,18 @@ const OurPromise = () => {
                 <h3 className="mb-3 text-[17px] font-semibold leading-[1.08] text-black sm:text-[18px] md:text-[19px] lg:text-[20px] lg:leading-[1]">
                   {item.title}
                 </h3>
-                <p
-                  className={`text-[13px] leading-[1.32] text-gray-700 sm:text-[14px] md:text-[15px] lg:leading-[1.2] ${robotoMono.className}`}
+                <div
+                  className="scrollbar-none h-[22vh] w-full overflow-y-auto overscroll-contain [&::-webkit-scrollbar]:hidden"
+                  tabIndex={0}
+                  role="region"
+                  aria-label={`${item.title} description`}
                 >
-                  {getDisplayText(item.description, expandedItems[item.title] ?? false)}
-                </p>
-                {item.description.trim().split(/\s+/).length > 43 && (
-                  <button
-                    type="button"
-                    onClick={() =>
-                      setExpandedItems((prev) => ({
-                        ...prev,
-                        [item.title]: !prev[item.title],
-                      }))
-                    }
-                    className="mt-3 text-sm font-semibold text-black underline underline-offset-4"
+                  <p
+                    className={`pr-3 text-[13px] leading-[1.32] text-gray-700 sm:text-[14px] md:text-[15px] lg:leading-[1.2] ${robotoMono.className}`}
                   >
-                    {expandedItems[item.title] ? "Read Less" : "Read More"}
-                  </button>
-                )}
+                    {item.description}
+                  </p>
+                </div>
               </div>
             ))}
           </CustomScrollbar>

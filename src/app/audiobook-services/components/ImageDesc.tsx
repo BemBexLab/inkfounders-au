@@ -19,6 +19,20 @@ interface ImageDescProps {
   data?: Section[];
 }
 
+function renderParagraphs(paragraphs: Section["paragraphs"]) {
+  if (!Array.isArray(paragraphs)) {
+    return <div>{paragraphs}</div>;
+  }
+
+  return paragraphs.map((paragraph, index) => {
+    if (typeof paragraph === "string" || typeof paragraph === "number") {
+      return <p key={index}>{paragraph}</p>;
+    }
+
+    return <React.Fragment key={index}>{paragraph}</React.Fragment>;
+  });
+}
+
 function DesktopSection({ section }: { section: Section }) {
   const imageRef = useRef<HTMLDivElement | null>(null);
   const [textHeight, setTextHeight] = useState<number | null>(null);
@@ -72,13 +86,7 @@ function DesktopSection({ section }: { section: Section }) {
           <div
             className={`${robotoMono.className} space-y-3 text-[15px] leading-relaxed text-[#333333]`}
           >
-            {Array.isArray(section.paragraphs) ? (
-              section.paragraphs.map((paragraph, index) => (
-                <p key={index}>{paragraph}</p>
-              ))
-            ) : (
-              <div>{section.paragraphs}</div>
-            )}
+            {renderParagraphs(section.paragraphs)}
           </div>
         </CustomScrollbar>
       </div>
@@ -126,13 +134,7 @@ const ImageDesc = ({ data }: ImageDescProps) => {
               <div
                 className={`${robotoMono.className} mx-auto max-w-2xl space-y-4 text-center text-sm text-[#333333] sm:text-base`}
               >
-                {Array.isArray(section.paragraphs) ? (
-                  section.paragraphs.map((paragraph, paragraphIndex) => (
-                    <p key={paragraphIndex}>{paragraph}</p>
-                  ))
-                ) : (
-                  <div>{section.paragraphs}</div>
-                )}
+                {renderParagraphs(section.paragraphs)}
               </div>
             </div>
           ))}

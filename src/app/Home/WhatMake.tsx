@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React, { type ReactNode, useEffect, useRef } from "react";
+import type { ReactNode } from "react";
 import { MdBrush, MdCampaign, MdCategory, MdChildCare, MdDesignServices, MdEditNote, MdLocalShipping } from "react-icons/md";
 import AOSProvider from "@/components/AOSProvider";
 import { robotoMono } from "../fonts";
@@ -171,55 +171,7 @@ const whatMakeItems: WhatMakeItem[] = [
   },
 ];
 
-const carouselItems = [...whatMakeItems, ...whatMakeItems];
-
 const WhatMake = () => {
-  const carouselRef = useRef<HTMLDivElement>(null);
-  const pauseCarouselRef = useRef(false);
-  const animationFrameRef = useRef<number | null>(null);
-
-  useEffect(() => {
-    const carousel = carouselRef.current;
-    if (!carousel) return;
-
-    const isResponsiveCarousel = () => window.innerWidth < 1024;
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-
-    if (prefersReducedMotion) return;
-
-    const scrollContinuously = () => {
-      if (!isResponsiveCarousel() || pauseCarouselRef.current) return;
-
-      const singleSetWidth = carousel.scrollWidth / 2;
-      const shouldReset = carousel.scrollLeft >= singleSetWidth;
-
-      carousel.scrollLeft = shouldReset ? 0 : carousel.scrollLeft + 1.1;
-    };
-
-    const animate = () => {
-      scrollContinuously();
-      animationFrameRef.current = window.requestAnimationFrame(animate);
-    };
-
-    animationFrameRef.current = window.requestAnimationFrame(animate);
-
-    return () => {
-      if (animationFrameRef.current !== null) {
-        window.cancelAnimationFrame(animationFrameRef.current);
-      }
-    };
-  }, []);
-
-  const pauseCarousel = () => {
-    pauseCarouselRef.current = true;
-  };
-
-  const resumeCarousel = () => {
-    pauseCarouselRef.current = false;
-  };
-
   return (
     <AOSProvider>
       <section className="flex w-full items-center justify-center bg-[#F6F5F3] px-4 pt-4 sm:px-6 md:px-8 lg:px-0 lg:pt-2">
@@ -235,22 +187,15 @@ const WhatMake = () => {
           </h2>
 
           <CustomScrollbar
-            ref={carouselRef}
             orientation="horizontal"
             data-aos="fade-down-right"
-            onPointerDown={pauseCarousel}
-            onPointerUp={resumeCarousel}
-            onPointerCancel={resumeCarousel}
-            onPointerLeave={resumeCarousel}
             containerClassName="w-full"
             className="flex w-full max-w-full items-stretch gap-4 px-1 sm:gap-5 md:px-2 lg:grid lg:grid-cols-3 lg:items-start lg:gap-4 lg:overflow-visible lg:px-0 lg:pb-0"
           >
-            {carouselItems.map((item, index) => (
+            {whatMakeItems.map((item) => (
               <div
-                key={`${item.id}-${index}`}
-                className={`flex w-[82vw] max-w-[360px] shrink-0 flex-col items-center px-2 text-center sm:w-[58vw] sm:px-4 md:w-[42vw] lg:w-full lg:max-w-none lg:shrink ${
-                  index >= whatMakeItems.length ? "lg:hidden" : ""
-                }`}
+                key={item.id}
+                className="flex w-[82vw] max-w-[360px] shrink-0 flex-col items-center px-2 text-center sm:w-[58vw] sm:px-4 md:w-[42vw] lg:w-full lg:max-w-none lg:shrink"
               >
                 {item.image ? (
                   <Image
@@ -269,19 +214,18 @@ const WhatMake = () => {
                   {item.title}
                 </h3>
                 <div className="relative w-full max-w-[24rem] h-[34vh] lg:h-[20vh]">
-                  <CustomScrollbar
-                    orientation="vertical"
-                    containerClassName="h-full overflow-hidden"
-                    className="h-full pr-0"
-                    thumbClassName="bg-[#c7c934]"
-                    trackClassName="bg-[rgba(222,223,163,0.28)]"
+                  <div
+                    className="scrollbar-none h-full overflow-y-auto overscroll-contain [&::-webkit-scrollbar]:hidden"
+                    tabIndex={0}
+                    role="region"
+                    aria-label={`${item.title} description`}
                   >
                     <div
                       className={`${robotoMono.className} pr-3 text-[13px] leading-[1.2] text-gray-700 sm:text-[14px] md:text-[15px] md:leading-[1.2] lg:text-[16px]`}
                     >
                       {item.description}
                     </div>
-                  </CustomScrollbar>
+                  </div>
                 </div>
               </div>
             ))}

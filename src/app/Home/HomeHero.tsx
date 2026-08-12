@@ -385,7 +385,7 @@ const HomeHero = () => {
               </h1>
 
               <div
-                className={`mb-8 max-w-[62ch] pr-5 h-[190px] space-y-3 overflow-y-auto text-center text-[clamp(0.92rem,3.2vw,0.95rem)] leading-tight text-gray-700 md:text-left lg:text-left ${robotoMono.className}`}
+                className={`mb-8 max-w-[70ch] h-[190px] space-y-3 overflow-y-auto text-center text-[clamp(0.92rem,3.2vw,0.95rem)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden leading-tight text-gray-700 md:text-left lg:text-left ${robotoMono.className}`}
               >
                 <p>
                   You've written your book. Now let's get it published
