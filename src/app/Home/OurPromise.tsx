@@ -95,7 +95,7 @@ const OurPromise = () => {
                   {item.title}
                 </h3>
                 <div
-                  className="scrollbar-none h-[22vh] w-full overflow-y-auto overscroll-contain [&::-webkit-scrollbar]:hidden"
+                  className="scrollbar-none h-[22vh] w-full overflow-y-auto [&::-webkit-scrollbar]:hidden"
                   tabIndex={0}
                   role="region"
                   aria-label={`${item.title} description`}

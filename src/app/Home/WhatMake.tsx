@@ -215,7 +215,7 @@ const WhatMake = () => {
                 </h3>
                 <div className="relative w-full max-w-[24rem] h-[34vh] lg:h-[20vh]">
                   <div
-                    className="scrollbar-none h-full overflow-y-auto overscroll-contain [&::-webkit-scrollbar]:hidden"
+                    className="scrollbar-none h-full overflow-y-auto [&::-webkit-scrollbar]:hidden"
                     tabIndex={0}
                     role="region"
                     aria-label={`${item.title} description`}
