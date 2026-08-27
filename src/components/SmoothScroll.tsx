@@ -10,8 +10,10 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 export default function SmoothScroll({
   children,
+  withHeader = false,
 }: {
   children: React.ReactNode;
+  withHeader?: boolean;
 }) {
   const pathname = usePathname();
 
@@ -34,7 +36,12 @@ export default function SmoothScroll({
 
   return (
     <div id="smooth-wrapper">
-      <div id="smooth-content">{children}</div>
+      <div
+        id="smooth-content"
+        className={withHeader ? "smooth-content-with-header" : undefined}
+      >
+        {children}
+      </div>
     </div>
   );
 }

@@ -24,7 +24,7 @@ export default function SiteChrome({
   return (
     <>
       <Header />
-      <SmoothScroll>
+      <SmoothScroll withHeader>
         {children}
         <Footer />
       </SmoothScroll>
