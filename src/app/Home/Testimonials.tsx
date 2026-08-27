@@ -14,7 +14,7 @@ type Testimonial = {
 };
 
 const TRUSTPILOT_URL =
-  "https://www.trustpilot.com/review/inkfounders.com/";
+  "https://www.reviews.io/company-reviews/store/www.inkfounders.com";
 
 const TESTIMONIALS: Testimonial[] = [
   {
