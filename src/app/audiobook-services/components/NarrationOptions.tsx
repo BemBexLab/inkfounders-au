@@ -2,7 +2,7 @@
 
 import { robotoMono } from "@/app/fonts";
 import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 import { IoMdCall } from "react-icons/io";
 import { nl2br } from "@/utils/textUtils";
 
@@ -29,30 +29,8 @@ interface NarrationOptionsProps {
 }
 
 const NarrationOptions = ({ data }: NarrationOptionsProps) => {
-  const [expandedItems, setExpandedItems] = useState<Record<string, boolean>>({});
-
   const renderRichText = (value: string | React.ReactNode) =>
     typeof value === "string" ? nl2br(value) : value;
-
-  const getWordCount = (value: string | React.ReactNode) =>
-    typeof value === "string" ? value.trim().split(/\s+/).length : 0;
-
-  const getDisplayText = (
-    value: string | React.ReactNode,
-    isExpanded: boolean
-  ) => {
-    if (typeof value !== "string") {
-      return value;
-    }
-
-    const words = value.trim().split(/\s+/);
-
-    if (isExpanded || words.length <= 17) {
-      return value;
-    }
-
-    return `${words.slice(0, 17).join(" ")}...`;
-  };
 
   const narrationData: NarrationData = data || {
     header: "Flexible Audiobook Narration Options",
@@ -91,170 +69,60 @@ const NarrationOptions = ({ data }: NarrationOptionsProps) => {
 
   return (
     <section>
-      {/* DESKTOP VERSION */}
-      <div className="hidden bg-[#f5f5f5] px-5 pb-14 pt-8 lg:block">
-        <div className="max-w-7xl mx-auto text-center">
-          {/* Header */}
-          <h1 className="text-[32px] font-semibold text-[#333333] mb-3">
+      <div className="bg-[#f5f5f5] px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-8">
+        <div className="mx-auto max-w-7xl text-center">
+          <h1 className="mb-4 text-3xl font-semibold tracking-[0.02em] text-[#253548] sm:text-4xl">
             {narrationData.header}
           </h1>
-          <p className={`${robotoMono.className} text-[14px] text-[#666666] mb-6`}>
+          <p className={`${robotoMono.className} mx-auto mb-10 max-w-5xl text-sm leading-7 text-[#455568] sm:text-[15px]`}>
             {narrationData.intro}
           </p>
 
-          {/* Options Grid - Original 3 Column Layout with Images on Top */}
-          <div className="flex justify-center gap-20 mb-10">
-            {narrationData.options.map((opt, idx) => (
-              <div
+          <div className="mb-12 grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3">
+            {narrationData.options.map((opt) => (
+              <article
                 key={opt.id ?? opt.title}
-                className="flex flex-col items-center max-w-[280px]"
+                className="flex h-[382px] flex-col items-center overflow-hidden rounded-[24px] border border-[#e6e6e6] bg-white px-7 py-9 text-center shadow-[0_14px_28px_rgba(0,0,0,0.07)] sm:px-8"
               >
-                <div className="w-13 h-13 flex justify-center mb-5">
-                  <img src={opt.imgSrc} alt={opt.title} />
+                <div className="mb-6 flex h-20 w-20 shrink-0 items-center justify-center rounded-full border border-[#eeeaa8] bg-[#fffef0]">
+                  <img
+                    src={opt.imgSrc}
+                    alt=""
+                    aria-hidden="true"
+                    className="h-11 w-11 object-contain"
+                  />
                 </div>
-                <h2 className="text-[18px] font-semibold text-[#444444] mb-3">
+                <h2 className="mb-3 shrink-0 text-[17px] font-semibold leading-[1.4] text-[#253548]">
                   {opt.title}
                 </h2>
-                <p className={`${robotoMono.className} text-[14px] text-[#444444] leading-relaxed`}>
-                  {renderRichText(
-                    getDisplayText(opt.description, expandedItems[opt.title] ?? false)
-                  )}
-                </p>
-                {typeof opt.description === "string" && getWordCount(opt.description) > 17 && (
-                  <button
-                    type="button"
-                    onClick={() =>
-                      setExpandedItems((prev) => ({
-                        ...prev,
-                        [opt.title]: !prev[opt.title],
-                      }))
-                    }
-                    className="mt-3 text-sm font-semibold text-black underline underline-offset-4"
-                  >
-                    {expandedItems[opt.title] ? "Read less" : "Read more"}
-                  </button>
-                )}
-              </div>
+                <div className="min-h-0 w-full flex-1 overflow-y-auto pr-3 [scrollbar-color:#d8d59b_#f2f2f2] [scrollbar-width:thin] [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-[#f2f2f2] [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-[#d8d59b]">
+                  <p className={`${robotoMono.className} text-[14px] leading-[1.95] text-[#253548]`}>
+                    {renderRichText(opt.description)}
+                  </p>
+                </div>
+              </article>
             ))}
           </div>
 
-          {/* Quote */}
-          <p className={`${robotoMono.className} text-[14px] text-[#444444] mb-7 whitespace-pre-line`}>
-            {renderRichText(narrationData.quote)}
-          </p>
+          <div className="mx-auto mb-8 max-w-5xl rounded-[24px] border border-[#e8e8e8] bg-white px-6 py-6 shadow-[0_14px_28px_rgba(0,0,0,0.06)] sm:px-8">
+            <p className={`${robotoMono.className} whitespace-pre-line text-sm leading-7 text-[#253548] sm:text-[15px]`}>
+              {renderRichText(narrationData.quote)}
+            </p>
+          </div>
 
-          {/* CTA Button */}
-          <Link href={narrationData.button.link}>
-            <button
-              type="button"
-              className="
-                btn-slide-bg inline-flex items-center
-                gap-2 
-                border-[1px] border-[#DADD39] bg-[#DADD39] text-black font-normal 
-                px-5 py-2 text-base rounded-md shadow 
-                transition-all duration-300 hover:border-black
-              "
-            >
-              <span className="slide-bg"></span>
-              <span className="relative z-10 flex items-center gap-2">
-                <IoMdCall size={20} />
-                {narrationData.button.text}
-              </span>
-            </button>
+          <Link
+            href={narrationData.button.link}
+            className="btn-slide-bg inline-flex items-center gap-2 rounded-md border border-[#DADD39] bg-[#DADD39] px-5 py-2.5 text-base font-normal text-black shadow transition-all duration-300 hover:border-black"
+          >
+            <span className="slide-bg"></span>
+            <span className="relative z-10 flex items-center gap-2">
+              <IoMdCall size={20} />
+              {narrationData.button.text}
+            </span>
           </Link>
         </div>
       </div>
 
-      {/* RESPONSIVE VERSION: h -> Image -> p */}
-      <div className="block bg-[#f5f5f5] px-4 py-10 sm:px-6 md:px-8 lg:hidden">
-        {/* Header */}
-        <div className="mx-auto mb-10 max-w-3xl text-center">
-          <h1 className="mb-3 px-2 text-2xl font-semibold leading-tight text-[#333333] sm:text-3xl">
-            {narrationData.header}
-          </h1>
-          <p className={`${robotoMono.className} px-2 text-sm text-[#666666] sm:text-base`}>
-            {narrationData.intro}
-          </p>
-        </div>
-
-        <div className="mx-auto mb-10 grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-2">
-          {narrationData.options.map((opt, idx) => (
-            <div
-              key={opt.id ?? opt.title}
-              className={`mx-auto flex h-full w-full max-w-md flex-col items-center rounded-lg bg-white p-6 text-center shadow-sm ${
-                idx === narrationData.options.length - 1
-                  ? "sm:col-span-2 sm:max-w-md"
-                  : ""
-              }`}
-            >
-              <h2 className="mb-5 text-lg font-semibold text-[#444444] sm:text-xl">
-                {opt.title}
-              </h2>
-
-              <div className="mb-5 flex h-20 w-20 items-center justify-center">
-                <img
-                  src={opt.imgSrc}
-                  alt={opt.title}
-                  className="h-full w-full object-contain"
-                />
-              </div>
-
-              <div>
-                <p className={`${robotoMono.className} text-sm text-[#444444] sm:text-base`}>
-                  {renderRichText(
-                    getDisplayText(opt.description, expandedItems[opt.title] ?? false)
-                  )}
-                </p>
-                {typeof opt.description === "string" && getWordCount(opt.description) > 17 && (
-                  <div className="mt-3 text-center">
-                    <button
-                      type="button"
-                      onClick={() =>
-                        setExpandedItems((prev) => ({
-                          ...prev,
-                          [opt.title]: !prev[opt.title],
-                        }))
-                      }
-                      className="text-sm font-semibold text-black underline underline-offset-4"
-                    >
-                      {expandedItems[opt.title] ? "Read less" : "Read more"}
-                    </button>
-                  </div>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Quote */}
-        <div className="mx-auto max-w-3xl px-2 text-center">
-          <p className={`${robotoMono.className} whitespace-pre-line text-sm italic text-[#444444] sm:text-base`}>
-            {renderRichText(narrationData.quote)}
-          </p>
-        </div>
-
-        {/* CTA Button */}
-        <div className="mt-8 text-center">
-          <Link href={narrationData.button.link}>
-            <button
-              type="button"
-              className="
-                btn-slide-bg inline-flex items-center
-                gap-2 
-                border-[1px] border-[#DADD39] bg-[#DADD39] text-black font-normal 
-                px-4 py-2 sm:px-5 sm:py-2.5 text-sm sm:text-base rounded-md shadow 
-                transition-all duration-300 hover:border-black
-              "
-            >
-              <span className="slide-bg"></span>
-              <span className="relative z-10 flex items-center gap-2">
-                <IoMdCall size={18} className="sm:w-5 sm:h-5" />
-                {narrationData.button.text}
-              </span>
-            </button>
-          </Link>
-        </div>
-      </div>
     </section>
   );
 };
