@@ -2,7 +2,6 @@
 
 import { robotoMono } from "@/app/fonts";
 import { FaCheckCircle } from "react-icons/fa";
-import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import AOSProvider from "@/components/AOSProvider";
 import CustomScrollbar from "@/components/CustomScrollbar";
@@ -80,55 +79,7 @@ const PACKAGES = [
   },
 ];
 
-const carouselPackages = [...PACKAGES, ...PACKAGES];
-
 const PricingAndPackage = () => {
-  const carouselRef = useRef<HTMLDivElement>(null);
-  const pauseCarouselRef = useRef(false);
-  const animationFrameRef = useRef<number | null>(null);
-
-  useEffect(() => {
-    const carousel = carouselRef.current;
-    if (!carousel) return;
-
-    const isResponsiveCarousel = () => window.innerWidth < 1024;
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-
-    if (prefersReducedMotion) return;
-
-    const scrollContinuously = () => {
-      if (!isResponsiveCarousel() || pauseCarouselRef.current) return;
-
-      const singleSetWidth = carousel.scrollWidth / 2;
-      const shouldReset = carousel.scrollLeft >= singleSetWidth;
-
-      carousel.scrollLeft = shouldReset ? 0 : carousel.scrollLeft + 1.1;
-    };
-
-    const animate = () => {
-      scrollContinuously();
-      animationFrameRef.current = window.requestAnimationFrame(animate);
-    };
-
-    animationFrameRef.current = window.requestAnimationFrame(animate);
-
-    return () => {
-      if (animationFrameRef.current !== null) {
-        window.cancelAnimationFrame(animationFrameRef.current);
-      }
-    };
-  }, []);
-
-  const pauseCarousel = () => {
-    pauseCarouselRef.current = true;
-  };
-
-  const resumeCarousel = () => {
-    pauseCarouselRef.current = false;
-  };
-
   return (
    <AOSProvider>
 	     <section className="flex w-full items-center justify-center px-4 py-8 sm:px-6 md:px-8 md:py-10 lg:px-0">
@@ -150,22 +101,15 @@ const PricingAndPackage = () => {
         </p>
         {/* Pricing Cards */}
 	        <CustomScrollbar
-            ref={carouselRef}
             orientation="horizontal"
             data-aos="fade-down-right"
-            onPointerDown={pauseCarousel}
-            onPointerUp={resumeCarousel}
-            onPointerCancel={resumeCarousel}
-            onPointerLeave={resumeCarousel}
             containerClassName="w-full"
             className="flex w-full max-w-full items-stretch gap-4 px-1 sm:gap-5 md:px-2 lg:grid lg:grid-cols-3 lg:items-start lg:gap-8 lg:overflow-visible lg:px-0 lg:pb-0"
           >
-	          {carouselPackages.map((pkg, idx) => (
+	          {PACKAGES.map((pkg) => (
 	            <div
-	              key={`${pkg.id}-${idx}`}
-	              className={`flex w-[82vw] max-w-[360px] shrink-0 flex-col rounded-2xl border border-gray-100 px-4 py-6 shadow-lg sm:w-[58vw] sm:px-5 md:w-[42vw] lg:min-h-[670px] lg:w-full lg:max-w-none lg:shrink lg:px-6 lg:py-8 ${
-                  idx >= PACKAGES.length ? "lg:hidden" : ""
-                }`}
+	              key={pkg.id}
+	              className="flex w-[82vw] max-w-[360px] shrink-0 flex-col rounded-2xl border border-gray-100 px-4 py-6 shadow-lg sm:w-[58vw] sm:px-5 md:w-[42vw] lg:min-h-[670px] lg:w-full lg:max-w-none lg:shrink lg:px-6 lg:py-8"
 	            >
               {/* Plan label */}
               {/* <div className="bg-[#F4F3E1] text-black  text-[10px] md:text-[15px] font-medium px-3 py-1 rounded mb-6 w-max">
