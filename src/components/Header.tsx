@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import {
   FaBars,
@@ -107,30 +107,9 @@ const isActivePath = (pathname: string, href: string) =>
 export default function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [showHeader, setShowHeader] = useState(true);
-  const lastScrollY = useRef(0);
   const [openMobileSection, setOpenMobileSection] = useState<string | null>(
     null,
   );
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      if (menuOpen || currentScrollY < 12) {
-        setShowHeader(true);
-      } else if (currentScrollY > lastScrollY.current) {
-        setShowHeader(false);
-      } else {
-        setShowHeader(true);
-      }
-
-      lastScrollY.current = currentScrollY;
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [menuOpen]);
 
   useEffect(() => {
     setMenuOpen(false);
@@ -164,11 +143,7 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky left-0 top-0 z-50 w-full border-b border-black/5 bg-[#F4F3E1]/95 px-4 py-3 shadow-[0_4px_20px_rgba(0,0,0,0.04)] backdrop-blur-md transition-all duration-300 sm:px-6 md:px-8 xl:px-6 xl:py-4 2xl:px-10 ${
-        showHeader
-          ? "translate-y-0 opacity-100"
-          : "-translate-y-full opacity-0"
-      }`}
+      className="fixed left-0 top-0 z-50 w-full border-b border-black/5 bg-[#F4F3E1]/95 px-4 py-3 shadow-[0_4px_20px_rgba(0,0,0,0.04)] backdrop-blur-md sm:px-6 md:px-8 xl:px-6 xl:py-4 2xl:px-10"
     >
       <div className="mx-auto flex max-w-[1600px] items-center justify-between gap-4">
         <Link href="/" aria-label="Ink Founders home" className="shrink-0">
