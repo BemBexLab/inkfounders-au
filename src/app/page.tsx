@@ -27,9 +27,9 @@ import { createCanonicalMetadata } from "@/lib/seo";
 export const metadata: Metadata = {
   ...createCanonicalMetadata("/"),
   title:
-    "Self Book Publishing Company Australia | Get 50% off",
+    "Self-Publishing Company Australia: Book Publishing Services for Authors",
   description:
-    "Publishing your book with 10+ years of trusted book publishing and marketing experience in Australia. Start self publishing today.",
+    "Ink Founders is a self-publishing company authors trust for full-service book publishing, editing, design, and marketing. Book a Free Consultation",
 };
 
 export default function Home() {
