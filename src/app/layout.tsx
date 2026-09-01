@@ -3,13 +3,36 @@ import Script from "next/script";
 import "./globals.css";
 import SiteChrome from "@/components/SiteChrome";
 import { workSans } from "./fonts";
-import { GLOBAL_SCHEMA, SITE_URL } from "@/lib/seo";
+import { GLOBAL_SCHEMA, SITE_LOGO_PATH, SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Ink Founders",
   description:
     "Ink Founders is an independent self-publishing platform dedicated to empowering authors with a full suite of digital services.",
+  openGraph: {
+    type: "website",
+    siteName: "Ink Founders",
+    title: "Ink Founders",
+    description:
+      "Ink Founders is an independent self-publishing platform dedicated to empowering authors with a full suite of digital services.",
+    url: SITE_URL,
+    images: [
+      {
+        url: SITE_LOGO_PATH,
+        width: 192,
+        height: 87,
+        alt: "Ink Founders logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ink Founders",
+    description:
+      "Ink Founders is an independent self-publishing platform dedicated to empowering authors with a full suite of digital services.",
+    images: [SITE_LOGO_PATH],
+  },
   alternates: {
     canonical: "/",
   },

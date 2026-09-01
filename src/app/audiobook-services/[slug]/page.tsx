@@ -8,7 +8,7 @@ import ImageDesc from '../components/ImageDesc';
 import Testimonials from '../../Home/Testimonials';
 import GetInTouch from '../components/GetInTouch';
 import { audiobookData } from '../data';
-import { createCanonicalMetadata } from "@/lib/seo";
+import { createCanonicalMetadata, SITE_LOGO_PATH } from "@/lib/seo";
 
 interface PageProps {
   params: {
@@ -35,11 +35,20 @@ export async function generateMetadata({
       description: audiobook.metaDesc,
       url: `/audiobook-services/${slug}`,
       type: "website",
+      images: [
+        {
+          url: SITE_LOGO_PATH,
+          width: 192,
+          height: 87,
+          alt: "Ink Founders logo",
+        },
+      ],
     },
     twitter: {
       title: audiobook.metaTitle,
       description: audiobook.metaDesc,
       card: "summary_large_image",
+      images: [SITE_LOGO_PATH],
     },
   };
 }
