@@ -27,9 +27,9 @@ import { createCanonicalMetadata } from "@/lib/seo";
 export const metadata: Metadata = {
   ...createCanonicalMetadata("/"),
   title:
-    "Self-Publishing Company Australia: Book Publishing Services for Authors",
+    "Self-Publishing Australia: Book Publishing Company & Services | Ink Founders",
   description:
-    "Ink Founders is a self-publishing company authors trust for full-service book publishing, editing, design, and marketing. Book a Free Consultation",
+    "Looking for professional self-publishing in Australia? Ink Founders provides book editing, cover design, formatting, ISBN registration, publishing, distribution, and book marketing services.",
 };
 
 export default function Home() {
@@ -50,33 +50,87 @@ export default function Home() {
       <FAQs
         items={[
           {
-            question: "How much does it cost to publish a book in Australia?",
+            question: "What is Ink Founders?",
             answerParagraphs: [
-              "Costs vary depending on your book's length, whether it needs full editing, cover design, and which distribution platforms you choose. We provide a transparent quote after reviewing your manuscript see our full [Publishing Cost Guide].",
+              <>Ink Founders is one of the leading <b>Australian book publishing companies</b> that authors trust to bring their books to the world. We offer a complete suite of publishing services, including editing, proofreading, formatting, cover design, ISBN registration, and marketing, so authors can go from idea to published book without the stress of doing it alone.</>,
             ],
           },
           {
-            question: "How long does the publishing process take?",
+            question: "What makes Ink Founders one of the best self-publishing companies for first-time authors?",
             answerParagraphs: [
-              "Most books take a few months from manuscript assessment to publication, depending on the extent of editing and design required. See our [Publishing Timeline] for a stage-by-stage breakdown.",
+              "We create our process specifically with first-time authors in mind. From your very first conversation with our team to the day your book is published, we guide you through every step, explain what to expect, and never rewrite your voice. Our 100+ qualified experts and clear, step-by-step process are why so many new authors choose us for their first book.",
             ],
           },
           {
-            question: "Do I need an ISBN to self-publish in Australia? ",
+            question: "Do you offer full-service book publishing, or just certain parts of the process?",
             answerParagraphs: [
-              "Yes, if you want your book listed for sale through retailers. We handle ISBN registration as part of our publishing packages.",
+              <>As a full-service company for <b>book publishing Australia</b> authors rely on, we cover the entire journey: editing, proofreading, formatting, cover design, ISBN and barcode registration, publishing, and marketing. You can use one service or the complete package, depending on where you are in your writing journey.</>,
             ],
           },
           {
-            question: "Will I own the rights to my book? ",
+            question: "What genres do you work with?",
             answerParagraphs: [
-              "Yes. With self-publishing and hybrid publishing, you retain ownership of your manuscript and royalties.",
+              "We work with a wide range of genres, including fiction, non-fiction, Christian, self-help, historical, memoir, and poetry. Wherever your story fits, our team can help shape it into a professionally published book.",
             ],
           },
           {
-            question: "Can I publish a children's book with you?",
+            question: "Will I keep the rights to my book?",
             answerParagraphs: [
-              "Yes we offer dedicated support for children's book authors, including illustration coordination and age appropriate formatting.",
+              "Yes. When you publish with Ink Founders, you retain 100% ownership, rights and rewards, including all rights and rewards. We help you publish and market your book, but it remains entirely yours.",
+            ],
+          },
+          {
+            question: "Will your editors change my writing style or voice?",
+            answerParagraphs: [
+              "No. Our editors refine and clarify your manuscript, sharpening grammar, structure, and flow, but they don't rewrite your story or change your voice. Your book will still sound like you, just polished.",
+            ],
+          },
+          {
+            question: "Do you help with book cover design?",
+            answerParagraphs: [
+              "Yes. We offer custom book cover design services for self-published authors, creating covers that reflect your book's genre, tone, and message so it stands out to readers at a glance.",
+            ],
+          },
+          {
+            question: "How does Ink Founders help my book reach readers after publishing?",
+            answerParagraphs: [
+              "Beyond publishing, we distribute your book to more than 40 global platforms and offer book marketing and promotion services for self-published authors, including social media campaigns and brand-building strategies, so your book reaches the right audience.",
+            ],
+          },
+          {
+            question: "Do you help with ISBN and barcode registration?",
+            answerParagraphs: [
+              "Yes. We help you secure your ISBN and barcode so your book is easy to find, search, and purchase anywhere in the world.",
+            ],
+          },
+          {
+            question: "What is the difference between hybrid publishing and self-publishing?",
+            answerParagraphs: [
+              "While traditional hybrid publishing companies often split upfront costs and ongoing royalties, Ink Founders operates under an author-first self-publishing model where you retain 100% of your earnings and rights.",
+            ],
+          },
+          {
+            question: "Where is Ink Founders based, and who do you work with?",
+            answerParagraphs: [
+              "We work with authors across Australia, including our self-publishing agency serving Miami, Florida, as well as authors nationwide and internationally.",
+            ],
+          },
+          {
+            question: "How do I get started?",
+            answerParagraphs: [
+              "Start with a free consultation. We'll talk through your story, your goals, and what stage you're at, whether you have a finished manuscript or just an idea, and map out a publishing path from there.",
+            ],
+          },
+          {
+            question: "What is the average publishing cost in Australia?",
+            answerParagraphs: [
+              "The publishing cost in Australia varies depending on the level of editing, design complexity, and distribution required. Ink Founders offers transparent, customisable packages designed to suit independent authors without hidden fees.",
+            ],
+          },
+          {
+            question: "What is the typical publishing timeline for a book?",
+            answerParagraphs: [
+              "Our standard publishing timeline usually spans between 6 to 12 weeks from finalised manuscript assessment through editing, layout design, ISBN setup, and final distribution.",
             ],
           },
         ]}

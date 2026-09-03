@@ -8,16 +8,16 @@ import ServiceCard from "../components/ServiceCard";
 
 export const metadata: Metadata = {
   ...createCanonicalMetadata("/publishing-services/ebook-publishing"),
-  title: "Ebook Publishing Service for Authors: Ink Founders",
+  title: "Book Publishing Service for Authors: Ink Founders",
   description:
-    "Ink Founders is an ebook publishing service for authors, with formatting included. Start today.",
+    "Book publishing services for Australian authors, including ghostwriting, editing, cover design, formatting, ISBN registration, and marketing.",
 };
 
 export default function ServiceDetailPage() {
   const services = [
     {
       title: "Writing & Content Development",
-      subtitle: "eBook Writing & Ghostwriting",
+      subtitle: "Book Writing & Ghostwriting",
       description:
         "We write fiction and non-fiction ebooks built around your idea, your niche, and the readers you want to reach. Our ghostwriters keep your voice, style, and message intact, so what lands on the page still sounds like you, not a copy of someone else's book.",
       checklist: [
@@ -89,7 +89,7 @@ export default function ServiceDetailPage() {
       description:
         "Not sure where to start? Our team offers one-on-one publishing consultations to help you figure out the right platform strategy and roadmap for your book, whether that's Kindle, Apple Books, or a print-and-ebook combination.",
       checklist: [
-        "One-on-One Guidance",
+        "One on One Guidance",
         "Platform Strategy",
         "Publishing Roadmap",
       ],
@@ -104,18 +104,12 @@ export default function ServiceDetailPage() {
             <div className="contents lg:flex lg:w-full lg:flex-col lg:items-start lg:justify-center lg:px-1 lg:pl-12 xl:pl-20">
               <div className="contents lg:block lg:w-full lg:max-w-xl">
                 <h1 className="order-1 mb-0 w-full max-w-2xl text-center text-3xl font-semibold leading-tight text-black sm:text-4xl md:text-[48px] lg:mb-6 lg:text-left">
-                  Professional eBook Publishing Services by Ink Founders
+                  Professional Book Publishing Services by Ink Founders
                 </h1>
                 <p
                   className={`${robotoMono.className} order-3 w-full max-w-2xl text-center text-[13px] leading-[1.5] text-gray-700 sm:text-[14px] md:text-[15px] lg:max-w-none lg:text-left lg:leading-[1.65]`}
                 >
-                  At Ink Founders, we're an ebook publishing service for
-                  authors that handles the whole process end to end: writing,
-                  editing, design, formatting, and getting your book out into
-                  the world. Whether you're a first-time author or already have
-                  a few books behind you, our team walks with you through every
-                  stage, including how to publish an ebook on Amazon, Kindle,
-                  and Apple Books.
+                  At Ink Founders, we offer a complete book publishing service for authors that handles the entire journey end to end: manuscript development, editing, cover design, interior formatting, and global distribution. Whether you are a first-time writer or an established creator, our team guides you through every step of the process, including how to publish a book on Amazon in Australia, Kindle KDP, IngramSpark, and Apple Books.
                 </p>
               </div>
             </div>

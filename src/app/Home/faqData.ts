@@ -1,6 +1,8 @@
+import type { ReactNode } from "react";
+
 export type FAQItem = {
   question: string;
-  answerParagraphs: string[];
+  answerParagraphs: ReactNode[];
 };
 
 export const faqItems: FAQItem[] = [

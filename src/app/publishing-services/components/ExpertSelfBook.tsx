@@ -10,14 +10,14 @@ export default function ExportSelfBook() {
     {/* Content */}
 	    <div className="contents lg:block lg:w-full lg:max-w-none xl:pr-14">
 	      <h2 className="order-1 mb-2 w-full max-w-3xl text-center text-[24px] font-semibold leading-[1.05] text-black sm:text-[26px] md:text-[27px] lg:order-none lg:mb-3 lg:max-w-none lg:text-left lg:text-[26px] xl:text-[27px]">
-        Use Expert Self-Book Publishing Services to Preserve Your Legacy
+        Use Expert Self-Publishing Australia Services to Preserve Your Legacy
       </h2>
 	      <div className={`order-3 w-full max-w-3xl space-y-3 text-center text-[13px] leading-[1.35] text-gray-700 sm:text-[14px] md:text-[15px] lg:order-none lg:max-w-none lg:space-y-2 lg:text-left lg:text-[14px] lg:leading-relaxed xl:space-y-3 xl:text-[15px] xl:leading-loose ${robotoMono.className}`}>
         <p>
-          Your book is more than a story; it carries your voice, your experiences, and your creativity. At Ink Founders, we believe every author deserves careful, accurate, and detail-oriented publishing services tailored to their goals.
+          Your book is more than a story; it carries your voice, your experiences, and your creativity. At Ink Founders, we believe every author deserves careful, accurate, and detail-oriented publishing services according to their goals.
         </p>
         <p>
-          Our team of qualified experts offers custom book publishing packages designed to bring your vision to life, whether you're writing fiction, non-fiction, a memoir, or a children's book. From flawless editing and formatting to eye-catching cover design and effective marketing strategies, we provide comprehensive support at every step.
+          Our team of qualified experts offers custom book publishing packages designed to bring your vision to life, whether you are writing fiction, non-fiction, a memoir, or a children's book. From flawless editing and formatting to eye-catching cover design and effective marketing strategies, we provide comprehensive support at every step.
         </p>
         <p>
           With our guidance, your book gets the care and exposure it deserves, so you can share your message and build a lasting legacy through your published work. Our services span multiple publishing paths, and our rates stay competitive without cutting corners. Our customer support team is available around the clock, whenever you need us.

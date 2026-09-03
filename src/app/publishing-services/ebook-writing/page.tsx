@@ -8,38 +8,38 @@ import ServiceCard from "../components/ServiceCard";
 
 export const metadata: Metadata = {
   ...createCanonicalMetadata("/publishing-services/ebook-writing"),
-  title: "Ebook Ghostwriting Services: Hire a Ghostwriter for Your Ebook",
+  title: "Book Ghostwriting Services: Hire a Ghostwriter for Your book",
   description:
-    "Ink Founders offers professional ebook ghostwriting services for first-time authors, entrepreneurs, and coaches. Hire a ghostwriter for your ebook now.",
+    "Ink Founders offers professional book ghostwriting services Australia authors and leaders trust. Hire a ghostwriter for your book today.",
 };
 
 export default function EbookWritingPage() {
   const serviceCards = [
     {
-      title: "Idea Development & Research",
+      title: "Idea Development & In-Depth Research",
       description:
-        "Our team helps refine and sharpen your concept, structure your content, and carry out in-depth research to make sure your book is accurate and relevant to your target audience.",
+        "Our team helps refine and sharpen your concept, structure your content into a compelling blueprint, and carry out thorough research to make sure your book is authoritative, accurate, and relevant to your target readers.",
       checklist: [],
     },
     {
       title: "Original, High-Quality Writing",
-      description: "Every ebook is written from scratch, ensuring:",
+      description: "Every book is written from scratch, ensuring:",
       checklist: [
         "100% original content",
         "No plagiarism",
-        "Clear, engaging, and reader-focused writing",
+        "Clear, engaging, reader-focused writing",
       ],
     },
     {
-      title: "Voice Matching (Ghostwriting)",
+      title: "Authentic Voice Matching",
       description:
-        "For ghostwriting projects, we carefully adapt to your tone, style, and personality, so the finished book genuinely feels like you wrote it - with a ghostwriting service that offers unlimited revisions until it truly sounds like you.",
+        "For ghostwriting projects, we carefully adapt to your tone, style, and personal cadence so the finished book genuinely feels like you wrote every word. We provide dedicated ghostwriting services Australia authors trust, including unlimited revisions during draft stages until the manuscript truly sounds like you.",
       checklist: [],
     },
     {
       title: "Genres We Cover",
       description:
-        "As one of the best ebook ghostwriting services for a range of industries, we write across genres including:",
+        "As one of the best book ghostwriting services for a range of industries, we write across genres including:",
       checklist: [
         "Business & Entrepreneurship",
         "Self-Help & Personal Development",
@@ -49,7 +49,7 @@ export default function EbookWritingPage() {
         "Biographies & Memoirs",
       ],
       subDesc:
-        "Whether you need a ghostwriter for a self-help book, a professional ghostwriter for a memoir, or someone to hire a ghostwriter for a non-fiction book, our team has the experience to match.",
+        "Whether you need a dedicated non fiction ghostwriter, a ghostwriter for a self help book, or a professional memoir ghostwriter to capture your life story, our team pairs you with a specialist who understands your specific genre.",
     },
     {
       title: "Our Writing Process",
@@ -66,8 +66,8 @@ export default function EbookWritingPage() {
       title: "Who This Service Is For",
       description: "",
       checklist: [
-        "First-time authors looking for ghostwriting services for first-time authors",
-        "Entrepreneurs & coaches seeking an ebook writing service for coaches and entrepreneurs",
+        "First time authors looking for ghostwriting services for first-time authors",
+        "Entrepreneurs & coaches seeking an book writing service for coaches and entrepreneurs",
         "Business owners in need of a business ghostwriting service to put their expertise into a book",
       ],
     },
@@ -81,18 +81,12 @@ export default function EbookWritingPage() {
             <div className="contents lg:flex lg:w-full lg:flex-col lg:items-start lg:justify-center lg:px-1 lg:pl-12 xl:pl-20">
               <div className="contents lg:block lg:w-full lg:max-w-xl">
                 <h1 className="order-1 mb-0 w-full max-w-2xl text-center text-3xl font-semibold leading-tight text-black sm:text-4xl md:text-[48px] lg:mb-6 lg:text-left">
-                  eBook Writing & Ghostwriting Services
+                  Book Writing & Ghostwriting Services
                 </h1>
                 <p
                   className={`${robotoMono.className} order-3 w-full max-w-2xl text-center text-[13px] leading-[1.5] text-gray-700 sm:text-[14px] md:text-[15px] lg:max-w-none lg:text-left lg:leading-[1.65]`}
                 >
-                  At Ink Founders, our ebook ghostwriting services are built to
-                  bring your ideas into a unique, engaging, high-quality book.
-                  Whether you have a rough concept or a detailed outline, our
-                  experienced writers craft a publish-ready book with clarity,
-                  creativity, and precision. If you're ready to hire a
-                  ghostwriter for your ebook, our team can take it from a first
-                  conversation to a finished manuscript.
+                  At Ink Founders, our book ghostwriting services are built to transform your ideas into a unique, engaging, high quality book. Whether you have a rough concept, notes, or a detailed outline, our experienced writers craft a publish-ready manuscript with clarity, creativity, and precision. If you are looking to hire a book ghostwriter in Australia, our team guides you seamlessly from that first conversation to a finished manuscript ready for print and digital release.
                 </p>
               </div>
             </div>
@@ -148,7 +142,7 @@ export default function EbookWritingPage() {
                   "Experienced, professional ghostwriters",
                   "Transparent process & communication",
                   "Full author ownership and rights",
-                  "Global publishing expertise, with ghostwriting services available across the Australia",
+                  "Global publishing expertise, with ghostwriting services available across Australia",
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2">
                     <span className="mt-0.5 text-lg text-[#DADD39]">&#10003;</span>

@@ -6,45 +6,45 @@ import AOSProvider from "@/components/AOSProvider";
 const steps = [
   {
     id: "01",
-    title: "Submit Your Manuscript",
+    title: "Start with an introduction",
     description:
-      "Share your manuscript for a free initial review.",
+      "We begin with a conversation to get to know each other: who you are as an author, what your story is about, where you want it to go, and what you expect from us. This is your chance to ask questions, share your ideas, and let us help map out your publishing path.",
   },
   {
     id: "02",
-    title: "Manuscript Assessment",
+    title: "We learn what best describes your vision",
     description:
-      "Our editors evaluate structure, style, and readiness for publishing.",
+      "Once we understand your story's genre, audience, and message, whether fiction, non-fiction, Christian, self-help, historical, or poetry, we start building a plan around your goals.",
   },
   {
     id: "03",
-    title: "Editing & Proofreading",
+    title: "Our experts take over, page by page",
     description:
-      "Developmental editing, copy editing, and proofreading refine your work.",
+      "Your manuscript goes to our editorial team, who refine and structure it to professional standards, ensuring it reads and looks its best in every format.",
   },
   {
     id: "04",
-    title: "Design & Formatting",
+    title: "We give your story its shape through formatting",
     description:
-      "Cover design, interior layout, and typesetting prepare your book for print and digital formats.",
+      "Now we bring your story to life with professional book formatting services for self-publishing authors, covering both book and print-on-demand editions, along with a cover design that captures readers' attention and reflects the spirit of your work."
   },
   {
     id: "05",
-    title: "ISBN & Copyright Registration",
+    title: "Quality is always the priority",
     description:
-      "We handle the administrative and legal requirements.",
+      "Before launch, your book goes through a final review by our quality assurance team to make sure every step, from editing to publishing, meets our standards.",
   },
   {
     id: "06",
-    title: "Printing & Publishing",
+    title: "Time to publish your story",
     description:
-      "Your book is published as paperback, hardcover, and/or eBook.",
+      "Once everything is finalised, we publish your book on the leading global platforms. We also guide you through ISBN registration and sales set-up, so your book is easy for readers to find and buy.",
   },
   {
     id: "07",
-    title: "Distribution & Marketing",
+    title: "You're officially an author",
     description:
-      "Your book is made available through major retailers, with marketing support to help it reach readers."
+      "It's time to celebrate; you're a published author. We stay by your side after launch with strategies to help grow your author brand."
   },
 ];
 
@@ -96,10 +96,10 @@ const HowItWork = () => {
       <section className="w-full bg-[#F4F3E1] px-4 py-10 sm:px-6 sm:py-12 md:px-8 md:py-14 lg:px-8 lg:py-7">
         <div className="mx-auto flex w-full max-w-[1250px] flex-col items-center">
           <p className="mb-2 text-center text-[17px] font-semibold text-[#DADD39] sm:text-[20px] md:text-[23px] lg:mb-3 lg:text-[25px]">
-            Let's find a way
+            Let's Find a Way
           </p>
           <h2 className="mb-8 max-w-5xl text-center text-[23px] font-semibold leading-[1] text-black sm:text-[27px] md:mb-8 md:text-[31px] lg:mb-8 lg:text-[35px]">
-            How Our Publishing Process Works
+            A clear pathway to turn your dream into reality with Ink Founders
           </h2>
 
           <div className="grid w-full max-w-3xl grid-cols-1 gap-0 lg:max-w-none lg:grid-cols-2 lg:gap-12 xl:gap-16">

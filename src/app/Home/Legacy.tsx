@@ -8,50 +8,26 @@ export default function Lagacy() {
         {/* Content */}
         <div className="contents space-y-8 lg:block lg:w-full lg:max-w-2xl lg:text-left">
           <div>
-            <h2 className="order-1 mb-5 w-full max-w-3xl text-center text-[23px] font-semibold leading-[1] text-black sm:text-[25px] md:text-[27px] lg:order-none lg:max-w-none lg:text-left">
-              Meet the People Behind Your Book
+            <h2 className="order-1 mb-5 w-full max-w-3xl text-center text-[23px] font-semibold leading-[1] text-black sm:text-[25px] md:text-[29px] lg:order-none lg:max-w-none lg:text-left">
+              Your Ideas, Unfiltered. Your Achievement, Untouched.
             </h2>
             <div
               className={`order-3 w-full max-w-3xl space-y-3 text-left font-mono text-[13px] leading-[1.32] text-gray-700 sm:text-[14px] md:text-[15px] lg:order-none lg:max-w-none lg:space-y-4 lg:text-[16px] lg:leading-tight ${robotoMono.className}`}
             >
               <div className="space-y-2">
+                <h3 className="text-2xl font-semibold">Full creative freedom, professional results</h3>
                 <p>
-                  Publishing a book takes a team. Depending on your package,
-                  your book is supported by:
+                  At Ink Founders, we know your book is more than pages; it's your vision, your voice, and your achievement. We support you at every step, from that first spark of inspiration through to publication, without ever taking control of your creative freedom.
                 </p>{" "}
                 <p>
-                  <b>
-                    Publisher · Editor · Copy Editor · Proofreader · Illustrator
-                    · Book Designer · Cover Designer · Typesetter
-                  </b>
+                  Our editors are here to refine and clarify your story, not rewrite it. We sharpen the clarity while protecting the heart of what you wrote. Your story is your voice; our job is to amplify it, not dilute it. You stay in control of every element, from the cover design to the smallest final details. Your vision leads the way.
                 </p>{" "}
                 <p>
-                  Every role exists to move your manuscript closer to a
-                  professionally published book, not just a printed file.
+                  After publishing with Ink Founders, your work remains entirely yours, ownership, rights, and rewards included. We're here to guide you through publishing and marketing, not to take anything away from you.
+                </p>{" "}
+                <p>
+                  With Ink Founders, you don't just get your words turned into a professional, engaging book; you get to see your vision become real. Your finished book will reflect exactly what you imagined.
                 </p>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <h2 className="order-1 mb-5 w-full max-w-3xl text-center text-[23px] font-semibold leading-[1] text-black sm:text-[25px] md:text-[27px] lg:order-none lg:max-w-none lg:text-left">
-              Publishing Standards We Work To
-            </h2>
-            <div
-              className={`order-3 w-full max-w-3xl space-y-3 text-left font-mono text-[13px] leading-[1.32] text-gray-700 sm:text-[14px] md:text-[15px] lg:order-none lg:max-w-none lg:space-y-4 lg:text-[16px] lg:leading-tight ${robotoMono.className}`}
-            >
-              <div className="space-y-2">
-                <p>
-                  Every book we publish is produced to proper industry
-                  standards, including:
-                </p>{" "}
-                <ul className="list-inside list-disc space-y-1">
-                  <li><b>ISBN</b> and <b>Barcode</b> registration</li>
-                  <li><b>Copyright</b> registration and guidance</li>
-                  <li><b>CIP</b> (Cataloguing-in-Publication) data where required</li>
-                  <li>Correct <b>file formats</b> for print and digital: <b>EPUB, MOBI, PDF, DOCX</b></li>
-                  <li>Compatibility with <b>Amazon KDP, IngramSpark, Apple Books, Google Play Books, Kobo, Barnes & Noble Press,</b> and <b>Draft2Digital</b></li>
-                </ul>
               </div>
             </div>
           </div>

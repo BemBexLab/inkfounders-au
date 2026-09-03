@@ -18,9 +18,9 @@ import { createCanonicalMetadata } from "@/lib/seo";
 export const metadata: Metadata = {
   ...createCanonicalMetadata("/publishing-services"),
   title:
-    "Book Publishing Packages for Authors: Professional Book Publishing Services",
+    "Professional Book Publishing Services & Packages Australia | Ink Founders",
   description:
-    "Ink Founders offers professional book publishing services and self-publishing packages with an ISBN included, editing, design, global distribution, and marketing.",
+    "Ink Founders offers comprehensive services, including manuscript assessment Australia, book editing services Australia, design, and global distribution.",
 };
 
 export default function Home() {
@@ -45,10 +45,10 @@ export default function Home() {
             paragraphs: [
               <div>
                 <p>
-                  You've already taken the first step toward self-publishing success, but you may still have questions. If you're looking for expert guidance to bring your ideas and your voice to life, you're in the right place. Ink Founders is here to help.
+                  You've already taken the first step toward self publishing success, but you may still have questions. If you're looking for expert guidance to bring your ideas and your voice to life, you're in the right place. Ink Founders is here to help.
                 </p>
                 <p className="mt-3">
-                  We offer a free consultation where you can ask questions, share your story ideas, and explore our self-publishing services. Searching for self-publishing services near me? Ink Founders serves authors across the Australia, including our self-publishing agency in Miami, Florida, and is proud to be an affordable self-publishing company for authors at every budget.
+                  We offer a free consultation where you can ask questions, share your story ideas, and explore our self publishing services. Searching for self publishing services near me? Ink Founders serves authors across Australia, including our self publishing agency in Miami, Florida, and is proud to be an affordable self publishing company for authors on every budget.
                 </p>
                 <p>Take the next step. Connect with us today.</p>
               </div>,

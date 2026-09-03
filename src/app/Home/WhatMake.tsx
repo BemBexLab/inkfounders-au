@@ -19,20 +19,11 @@ type WhatMakeItem = {
 const whatMakeItems: WhatMakeItem[] = [
   {
     id: "integrated-publishing-services",
-    title: "Self-Publishing Australia",
+    title: "Integrated, straightforward publishing services",
     description: (
       <div className="space-y-3">
         <p>
-          Keep full creative control and higher royalties. Our{" "}
-          <b>self-publishing Australia</b> service guides independent authors
-          and self-published authors through manuscript formatting, ISBN
-          registration, book cover design, and distribution to Amazon KDP,
-          IngramSpark, and other major platforms without you needing to manage
-          the technical side alone.
-        </p>
-        <p>
-          A trusted alternative to traditional publishing for authors who want
-          speed and control.
+          As your publishing partner, Ink Founders offers a full-service publishing model covering editing, formatting, publishing, and marketing, all under one roof. Our team supports you at every stage, with clear communication so you always know where your book stands.
         </p>
       </div>
     ),
@@ -41,133 +32,29 @@ const whatMakeItems: WhatMakeItem[] = [
   },
   {
     id: "hybrid-publishing",
-    title: "Hybrid Publishing",
+    title: "Book Distribution Australia & Worldwide",
     description: (
       <div className="space-y-3">
         <p>
-          A partnership model that combines the creative control of
-          self-publishing with the professional support of traditional
-          publishing editorial guidance, professional book design, and full
-          distribution, backed by an experienced publishing house.
-        </p>
-        <p>
-          Ideal for authors who want a guided, professionally produced book
-          without giving up ownership.
+          We expand your reach with comprehensive book distribution in Australia and across 40+ global platforms. Whether you are looking for physical print management or digital e-book publishing in Australia, we ensure your work is accessible on Amazon, IngramSpark, and major global retailers.
         </p>
       </div>
     ),
-    icon: <MdCategory className="h-full w-full" aria-hidden="true" />,
+    image: '/Home/image 6 (traced).webp',
+    alt: 'Myriad Of Distribution Channels',
   },
   {
     id: "manuscript-assessment-editing",
-    title: "Manuscript Assessment & Editing",
+    title: "Marketing books and building brands, together",
     description: (
       <div className="space-y-3">
         <p>
-          Before your book goes to print, it needs a professional eye. Our
-          editing services include:
-        </p>
-        <ul className="list-disc list-outside">
-          <li>Manuscript Review & Manuscript Assessment</li>
-          <li>Developmental Editing for structure, pacing, and clarity</li>
-          <li>Copy Editing Services</li>
-          <li>Proofreading Services</li>
-          <li>
-            Feedback tailored for first-time authors, independent authors, and
-            experienced writers alike.
-          </li>
-        </ul>
-      </div>
-    ),
-    icon: <MdEditNote className="h-full w-full" aria-hidden="true" />,
-  },
-  {
-    id: "book-design-formatting",
-    title: "Book Design & Formatting",
-    description: (
-      <div className="space-y-3">
-        <ul className="list-disc list-outside">
-          <li>Book Cover Design & Book Illustration</li>
-          <li>Interior Book Design, Interior Layout & Typesetting</li>
-          <li>Book Formatting for paperback, hardcover, and eBook</li>
-          <li>
-            Print-ready file preparation in EPUB, MOBI, PDF, and DOCX formats
-          </li>
-        </ul>
-      </div>
-    ),
-    icon: <MdDesignServices className="h-full w-full" aria-hidden="true" />,
-  },
-  {
-    id: "book-printing-distribution",
-    title: "Book Printing & Distribution",
-    description: (
-      <div className="space-y-3">
-        <ul className="list-disc list-outside">
-          <li>Print-on-Demand (POD) and Offset Printing</li>
-          <li>Paperback Printing and Hardcover Printing across Australia</li>
-          <li>
-            Book Distribution setup for retailers, plus ISBN Registration and
-            barcode/CIP assistance
-          </li>
-          <li>
-            eBook Conversion and eBook Publishing across all major platforms
-          </li>
-        </ul>
-      </div>
-    ),
-    icon: <MdLocalShipping className="h-full w-full" aria-hidden="true" />,
-  },
-  {
-    id: "book-marketing-promotion",
-    title: "Book Marketing & Promotion",
-    description: (
-      <div className="space-y-3">
-        <ul className="list-disc list-outside">
-          <li>Author Marketing campaigns tailored to your genre</li>
-          <li>Amazon Book Marketing and launch day promotion</li>
-          <li>
-            Book Promotion strategies to help readers actually discover your
-            book after publication
-          </li>
-          <li>
-            Metadata and keyword optimisation so your book is genuinely
-            discoverable on retailer platforms
-          </li>
-        </ul>
-      </div>
-    ),
-    icon: <MdCampaign className="h-full w-full" aria-hidden="true" />,
-  },
-  {
-    id: "childrens-book-publishing",
-    title: "Children's Book Publishing",
-    description: (
-      <div className="space-y-3">
-        <p>
-          Specialised support for children's authors and picture books,
-          including illustration coordination, age appropriate book formatting,
-          and print quality suited to younger readers from picture books to
-          early educational books.
+          Publishing your book is only the beginning. Building your author brand is what creates a lasting impact. That's why Ink Founders offers author branding services designed to build your public image and connect you with the right audience.
         </p>
       </div>
     ),
-    icon: <MdChildCare className="h-full w-full" aria-hidden="true" />,
-  },
-  {
-    id: "publishing-for-every-genre",
-    title: "Publishing for Every Genre",
-    description: (
-      <div className="space-y-3">
-        <p>
-          We publish across every category, including: Novels · Memoirs · Poetry
-          Books · Cookbooks · Business Books · Educational Books · Fantasy Books
-          · Romance Books · Non-Fiction · Picture Books.
-        </p>
-        <p>Whatever your genre, our editors, designers, and publishing consultants tailor the process to fit it.</p>
-      </div>
-    ),
-    icon: <MdBrush className="h-full w-full" aria-hidden="true" />,
+    image: '/Home/material-symbols_book-4.webp',
+    alt: 'Book Marketing & Author Branding',
   },
 ];
 
@@ -178,11 +65,11 @@ const WhatMake = () => {
         <div className="flex w-full max-w-[1300px] flex-col items-center">
           {/* Headings */}
           <p className="text-center text-base font-semibold text-black mb-2 sm:text-lg md:text-xl">
-            Witness our Uniqueness
+            Witness Our Uniqueness
           </p>
           <h2 className="mb-6 max-w-[48rem] text-center text-[1.55rem] font-semibold leading-[0.9] sm:text-2xl md:mb-8 md:text-[1.85rem] lg:max-w-none lg:text-[2rem]">
             <span className="text-[#DADD39]">
-              Our E-book Publishing Services
+              At Ink Founders, Your Goals Are Our Commitment
             </span>
           </h2>
 

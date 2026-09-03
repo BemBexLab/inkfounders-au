@@ -12,7 +12,7 @@ const promiseItems = [
     alt: "Professional editing and proofreading",
     title: "Professional editing and proofreading",
     description:
-      "Every author deserves the spotlight their story has earned, and that only happens when a book is both well written and well structured. As part of our self-publishing package with editing and cover design, our expert editors fine-tune your manuscript, sharpening grammar and structure without changing your voice. Our proofreaders then complete a final review to catch every mistake, so your book is published flawlessly.",
+      "Every author deserves the spotlight. Before we begin, our expert editorial team conducts a thorough manuscript assessment alongside full editing and proofreading to ensure your work meets high publication standards.",
   },
   {
     id: "cover-design-the-soul-of-your-story",
@@ -28,20 +28,20 @@ const promiseItems = [
     alt: "ISBN and barcodes: your book's global identity",
     title: "ISBN and barcodes: your book's global identity",
     description:
-      "To keep your book unique, searchable, and easy to buy anywhere in the world, Ink Founders helps you secure an ISBN and barcode as part of our book publishing services for authors.",
+      "To keep your book unique and searchable worldwide, Ink Founders handles your ISBN registration in Australia and barcode allocation as part of our core publishing services.",
   },
   {
     id: "be-an-author-increase-your-reach",
     image: "/Home/Mask group (4).webp",
-    alt: "Be an author, increase your reach",
-    title: "Be an author, increase your reach",
+    alt: "Book Marketing Australia & Brand Building",
+    title: "Book Marketing Australia & Brand Building",
     description:
-      "Your book deserves to be read, not just published. As one of the top rated self publishing companies for author support, Ink Founders offers book marketing and promotion services for self-published authors, including social media campaigns and publicity strategies, so you can turn your passion into a lasting, recognised brand.",
+      "Publishing is only step one. Our customised book marketing in Australia includes social media strategy, press release creation, and author branding to connect you with real readers.",
   },
   {
     id: "your-ideas-your-control",
     image: "/Home/Mask group (5).webp",
-    alt: "Your ideas, your control, write it, own it",
+    alt: "Your ideas, your control, write it, own it ",
     title: "Your ideas, your control, write it, own it",
     description:
       "A story is more than words; it's your passion, your dream, your voice. When you publish with Ink Founders, you keep 100% ownership of your work. We help turn your words into a book, and your voice into inspiration, while you hold full rights, always.",
@@ -67,7 +67,7 @@ const OurPromise = () => {
           </p>
           <h2 className="mb-6 max-w-4xl text-center text-[23px] font-semibold leading-[1.05] md:text-[32px] lg:mb-5 lg:text-[35px]">
             <span className="text-[#DADD39]">
-              How You Turn Your Dreams Into Reality With Ink Founders
+              Your Choice for a Professional Book Publishing Package
             </span>
           </h2>
 

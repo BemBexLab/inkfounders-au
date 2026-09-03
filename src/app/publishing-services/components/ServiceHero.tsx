@@ -14,11 +14,11 @@ const ServiceHero = () => {
 	      <div className="flex w-full flex-col items-center justify-center px-0 lg:px-[60px]">
 	        <h1 className="mb-3 max-w-4xl text-center text-[clamp(2rem,7vw,3rem)] font-semibold leading-[1.05] text-black lg:text-[42px] xl:text-[48px]">
 	          <span className="lg:whitespace-nowrap">
-	            Comprehensive Book Publishing Services
+	            Comprehensive Professional Book Publishing Australia
 	          </span>
 	        </h1>
 	        <p className={`mb-7 max-w-5xl text-center text-[13px] leading-[1.35] text-gray-700 sm:text-[14px] md:text-[15px] lg:mb-8 lg:leading-tight ${robotoMono.className}`}>
-          Step into excellence with Ink Founders' full-service publishing solutions. From manuscript evaluation and expert editing to custom design, marketing, and global distribution, we're here to elevate your story. Whether you're a first-time author or a seasoned writer, our book publishing packages are built around professional support and personalised service, so your literary vision comes through exactly as you imagined it.
+          Step into excellence with Ink Founders' full-service publishing solutions. From manuscript assessment Australia authors rely on to expert editing, custom design, marketing, and global distribution, we are here to elevate your story. Whether you are exploring how to self-publish in Australia or are a seasoned writer looking for customised publishing support in Australia, our publishing packages are built around dedicated, personalised service.
         </p>
         <Link href="/contactus">
   <button

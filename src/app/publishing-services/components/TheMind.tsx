@@ -30,7 +30,7 @@ export default function TheMind() {
               className={`${robotoMono.className} mb-4 space-y-4 text-[13px] leading-[1.35] text-gray-700 sm:text-[14px] md:text-[15px] lg:space-y-6 lg:text-[16px] lg:leading-loose`}
             >
               <p>
-                From ghostwriting to editing and publishing, we offer end-to-end support tailored to your vision. Whether you need help shaping your story or perfecting your manuscript, our experienced team is here to guide you. At Ink Founders, we're committed to quality, creativity, and client success, turning your ideas into a professionally published book.
+                From ghostwriting to editing and publishing, we offer end-to-end support based on your vision. Whether you need help shaping your story or perfecting your manuscript, our experienced team is here to guide you. At Ink Founders, we're committed to quality, creativity, and client success, turning your ideas into a professionally published book.
               </p>
             </div>
 

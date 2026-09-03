@@ -10,21 +10,12 @@ export default function QuoteBanner() {
           Let Your Words Inspire the World
         </p>
         <h2 className="mb-3 max-w-[22rem] text-center text-[21px] font-semibold leading-[1] text-[#222] sm:max-w-[34rem] sm:text-[24px] md:max-w-[44rem] md:text-[28px] lg:mb-3 lg:max-w-none lg:text-[30px] lg:leading-[1]">
-          Publishing Support Across Australia
+          Let Ink Founders take the hassle out of publishing by simplifying the process for you.
         </h2>
         <div
-          className={`mx-auto mb-5 max-w-[28rem] text-center text-[12px] leading-[1.35] text-gray-700 sm:text-[13px] md:max-w-[62rem] md:text-[15px] lg:mb-4 ${robotoMono.className}`}
+          className={`mx-auto mb-5 max-w-[28rem] text-center text-[12px] leading-[1.35] text-gray-700 sm:text-[13px] md:max-w-[78rem] md:text-[15px] lg:mb-4 ${robotoMono.className}`}
         >
-          We work with authors nationwide, including: <br />{" "}
-          <p>
-            <b>
-              Sydney · Melbourne · Brisbane · Perth · Adelaide · Canberra · Gold
-              Coast
-            </b>
-          </p>{" "}
-          Serving authors across New South Wales, Victoria, Queensland, and
-          Western Australia with remote manuscript review and publishing support
-          available no matter where you're based in Australia.
+          Let Ink Founders take the hassle out of publishing by simplifying the process for you. Partner with us, focus on your story, and let our team handle the rest.
         </div>
         <div className="flex w-full flex-row items-center justify-center gap-3 sm:w-auto sm:gap-4">
           {/* Get a Quote */}

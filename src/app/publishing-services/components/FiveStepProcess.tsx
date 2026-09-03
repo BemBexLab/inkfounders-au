@@ -16,7 +16,7 @@ const STEPS = [
   {
     id: "printing-and-binding",
     title: "Printing and Binding",
-    desc: "We combine modern technology with careful craftsmanship to deliver crisp pages, vibrant colours, and premium binding for a refined reading experience, including print-on-demand publishing for authors who want to avoid bulk printing and inventory costs."
+    desc: "We combine modern technology with careful craftsmanship to deliver crisp pages, vibrant colours, and premium binding. Through our book printing Australia partners and print-on-demand networks, authors avoid heavy upfront inventory costs."
   },
   {
     id: "marketing-and-promotion",
