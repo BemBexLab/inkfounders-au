@@ -20,72 +20,72 @@ const TESTIMONIALS: Testimonial[] = [
   {
     id: 1,
     quote:
-      "Actually getting my children's books published was the culmination of many years of writing the stories down and never finding the opportunity to get it done...",
-    name: "Wanda",
+      "Overall, I had a positive experience with Ink Founders. Publishing a book can be complicated, but professional support made the process considerably easier...",
+    name: "Amelie Woodriff",
     role: "Writer",
   },
   {
     id: 2,
     quote:
-      "I have nothing but positive thoughts about Ink Founders. From my first conversation with Zack Martin, I knew that I had chosen the right people to help me create more than...",
-    name: "Gary Early",
+      "I always wanted a fancy cover for my book that represents my book, and Albert Hughes helped me in making the cover design, absolutely the way I wanted...",
+    name: "Ashley Wood",
     role: "Writer",
   },
   {
     id: 3,
     quote:
-      "Each member of the team paid close attention to my need for accuracy of editing, flow of the story content, and true to content illustrations...",
-    name: "Janet Paskins",
+      "InkFounders delivered what they promised, a beautifully formatted and edited memoir that finally feels ready for readers...",
+    name: "Liza",
     role: "Great Writer",
-    image: "/testimonials/Frame 66.webp",
+    // image: "/testimonials/Frame 66.webp",
   },
   {
     id: 4,
     quote:
-      "I recently had the pleasure of working with Franklin Jones from Ink Founders Publishing Services on the publication of my first book, and I cannot recommend...",
-    name: "Ralph Watkins",
+      "I was quite nervous about self publishing, but they made everything feel manageable. From editing to cover design, they managed...",
+    name: "Marie J.daiz",
     role: "Bestselling Author",
     // image: "/Home/review.webp",
   },
   {
     id: 5,
     quote:
-      "Hannah Collins was an absolute professional. She was a dream to work with and her team really brought my book to life. This was my first try at getting published...",
-    name: "Keith Cuvo",
+      "This was my first experience publishing a book, and I spent quite some time exploring different options before choosing INKFOUNDERS...",
+    name: "Megan Elizabeth",
     role: "Great Writer",
-    image: "/testimonials/Frame 68.webp",
+    // image: "/testimonials/Frame 68.webp",
   },
   {
     id: 6,
     quote:
-      "Much to my surprise, Lara found me on a weekend as I was in the midst of considering publishers. She was thoughtful and supportive offered great ideas considerate...",
-    name: "Scott JT Frank",
+      "Publishing a book can be a very stressful and scary experience, but Inkfounders Publishing made it easy! They guided me...",
+    name: "David L",
     role: "Professional Writer",
-    image: "/testimonials/Frame 66.webp",
+    // image: "/testimonials/Frame 66.webp",
   },
   {
     id: 7,
     quote:
-      "As a new author I am very pleased with the services provided to me by Ink Founder. I was recommended by my god granddaughter Rachel Anderson to do this project...",
-    name: "Bertha Stumon",
+      "“I really appreciate Franklin Jones and Anna Wilson and the rest of my team who took time and explained everything to me in detail...",
+    name: "Ed Murray",
     role: "Award-winning Author",
     // image: "/Home/review3.webp",
   },
   {
     id: 8,
     quote:
-      "I like how they took my book and made it easier for the audience to understand. Being a first time author Ink Founders publishing company made my experience easier...",
-    name: "Rachel Anderson",
+      "Anna Wilson has been an incredible coach and mentor in helping me publish my book. I truly appreciate all of her guidance, support...",
+    name: "John Albert",
     role: "Award-winning Author",
     // image: "/Home/review3.webp",
   },
   {
     id: 9,
     quote:
-      "What a journey this experience has been. Hannah and her team at Ink Founders have worked diligently with this first-time author. I'd been writing stories...",
-    name: "Carron H",
+      "Amazing experience from start to finish! What I really appreciated was how honest they were about the marketing side of things...",
+    name: "Chris Witt",
     role: "Award-winning Author",
-    image: "/testimonials/Frame 66 (1).webp",
+    // image: "/testimonials/Frame 66 (1).webp",
   },
 ];
 
