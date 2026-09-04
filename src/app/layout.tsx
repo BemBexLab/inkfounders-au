@@ -35,6 +35,9 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "/",
+    languages: {
+      "en-AU": "/",
+    },
   },
   verification: {
     // google: ["chIy7we8dy-XbVv1lNa36kZNuZgH_HCtWnDiGBB-uFA"],
@@ -48,7 +51,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en-AU">
       <head>
         <Script
           id="google-tag-manager"

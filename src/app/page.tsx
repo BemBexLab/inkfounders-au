@@ -27,7 +27,7 @@ import { createCanonicalMetadata } from "@/lib/seo";
 export const metadata: Metadata = {
   ...createCanonicalMetadata("/"),
   title:
-    "Self-Publishing Australia: Book Publishing Company & Services | Ink Founders",
+    "Ink Founders | Self-Publishing Company in Australia",
   description:
     "Looking for professional self-publishing in Australia? Ink Founders provides book editing, cover design, formatting, ISBN registration, publishing, distribution, and book marketing services.",
 };
@@ -52,7 +52,7 @@ export default function Home() {
           {
             question: "What is Ink Founders?",
             answerParagraphs: [
-              <>Ink Founders is one of the leading <b>Australian book publishing companies</b> that authors trust to bring their books to the world. We offer a complete suite of publishing services, including editing, proofreading, formatting, cover design, ISBN registration, and marketing, so authors can go from idea to published book without the stress of doing it alone.</>,
+              <>Ink Founders is one of the leading Australian book publishing companies that authors trust to bring their books to the world. We offer a complete suite of publishing services, including editing, proofreading, formatting, cover design, ISBN registration, and marketing, so authors can go from idea to published book without the stress of doing it alone.</>,
             ],
           },
           {
@@ -64,7 +64,7 @@ export default function Home() {
           {
             question: "Do you offer full-service book publishing, or just certain parts of the process?",
             answerParagraphs: [
-              <>As a full-service company for <b>book publishing Australia</b> authors rely on, we cover the entire journey: editing, proofreading, formatting, cover design, ISBN and barcode registration, publishing, and marketing. You can use one service or the complete package, depending on where you are in your writing journey.</>,
+              <>As a full-service company for book publishing Australia authors rely on, we cover the entire journey: editing, proofreading, formatting, cover design, ISBN and barcode registration, publishing, and marketing. You can use one service or the complete package, depending on where you are in your writing journey.</>,
             ],
           },
           {

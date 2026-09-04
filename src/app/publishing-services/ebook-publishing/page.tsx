@@ -39,7 +39,7 @@ export default function ServiceDetailPage() {
     },
     {
       title: "Design & Formatting",
-      subtitle: "eBook Cover Design",
+      subtitle: "Book Cover Design",
       description:
         "We design covers that are genuinely market-ready, built to Amazon KDP and other major platform standards, and tailored to your genre so the cover pulls readers in rather than blending into the background.",
       checklist: [
@@ -50,16 +50,16 @@ export default function ServiceDetailPage() {
     },
     {
       title: "Design & Formatting",
-      subtitle: "eBook Formatting & Layout",
+      subtitle: "Book Formatting & Layout",
       description:
-        "As an ebook formatting and publishing service, we get your book reading properly across every device and platform- no broken layouts, no formatting surprises after launch. Our ebook publishing service comes with formatting included, so you're not left figuring out EPUB specs on your own.",
+        "As an book formatting and publishing service, we get your book reading properly across every device and platform- no broken layouts, no formatting surprises after launch. Our book publishing service comes with formatting included, so you're not left figuring out EPUB specs on your own.",
       checklist: [
         "Kindle (KDP) Formatting",
         "EPUB & PDF Formatting",
         "Paperback & Hardcover Layouts",
       ],
       subDesc:
-        "We also handle the full conversion, from manuscript to ebook format, ready for upload, as part of the package, whether you're publishing on a single platform or want to self-publish your ebook across multiple platforms at once.",
+        "We also handle the full conversion, from manuscript to book format, ready for upload, as part of the package, whether you're publishing on a single platform or want to self-publish your book across multiple platforms at once.",
     },
     {
       title: "Marketing & Book Promotion",
@@ -87,7 +87,7 @@ export default function ServiceDetailPage() {
       title: "Consultation & Ongoing Support",
       subtitle: "Publishing Consultation",
       description:
-        "Not sure where to start? Our team offers one-on-one publishing consultations to help you figure out the right platform strategy and roadmap for your book, whether that's Kindle, Apple Books, or a print-and-ebook combination.",
+        "Not sure where to start? Our team offers one-on-one publishing consultations to help you figure out the right platform strategy and roadmap for your book, whether that's Kindle, Apple Books, or a print-and-book combination.",
       checklist: [
         "One on One Guidance",
         "Platform Strategy",

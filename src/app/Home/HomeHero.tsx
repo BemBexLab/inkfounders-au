@@ -276,7 +276,7 @@ const HomeHero = () => {
               Your Trusted Book Publishing Company in Australia
             </h2>
             <br />
-            <p>Ink Founders is leading the way for <b>Australian book publishing companies</b>, helping first time authors, independent writers, and established creators. From your initial idea to your finished manuscript, we offer complete support for <b>self-publishing in Australia.</b></p>
+            <p>Ink Founders is leading the way for Australian book publishing companies, helping first time authors, independent writers, and established creators. From your initial idea to your finished manuscript, we offer complete support for self-publishing in Australia.</p>
           </div>
 
           <div className="flex w-full flex-row justify-center gap-2 sm:gap-3">
@@ -389,7 +389,7 @@ const HomeHero = () => {
                   Your Trusted Book Publishing Company in Australia
                 </h2>
                 <p>
-                  Ink Founders is leading the way for <b>Australian book publishing companies</b>, helping first time authors, independent writers, and established creators. From your initial idea to your finished manuscript, we offer complete support for <b>self-publishing in Australia</b>.
+                  Ink Founders is leading the way for Australian book publishing companies, helping first time authors, independent writers, and established creators. From your initial idea to your finished manuscript, we offer complete support for self-publishing in Australia.
                 </p>
               </div>
               <div className="flex w-full flex-col gap-3 sm:flex-row sm:justify-center md:justify-start">

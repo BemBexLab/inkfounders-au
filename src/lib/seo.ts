@@ -154,7 +154,7 @@ export const GLOBAL_SCHEMA = {
       publisher: {
         "@id": "https://www.inkfounders.com/#localbusiness",
       },
-      inLanguage: "en-US",
+      inLanguage: "en-AU",
     },
     {
       "@type": "WebPage",
@@ -173,7 +173,7 @@ export const GLOBAL_SCHEMA = {
         "@type": "ImageObject",
         url: "https://www.inkfounders.com/",
       },
-      inLanguage: "en-US",
+      inLanguage: "en-AU",
     },
     {
       "@type": "BreadcrumbList",
@@ -218,9 +218,14 @@ export function getCanonicalUrl(path: string) {
 }
 
 export function createCanonicalMetadata(path: string): Metadata {
+  const canonicalPath = normalizeCanonicalPath(path);
+
   return {
     alternates: {
-      canonical: normalizeCanonicalPath(path),
+      canonical: canonicalPath,
+      languages: {
+        "en-AU": canonicalPath,
+      },
     },
   };
 }
