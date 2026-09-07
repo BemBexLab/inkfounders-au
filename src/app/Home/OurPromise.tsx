@@ -36,12 +36,12 @@ const promiseItems = [
     alt: "Book Marketing Australia & Brand Building",
     title: "Book Marketing Australia & Brand Building",
     description:
-      "Publishing is only step one. Our customised book marketing in Australia includes social media strategy, press release creation, and author branding to connect you with real readers.",
+      "Publishing is only step one. Our customised  book marketing in Australia includes social media strategy, press release creation, and author branding to connect you with real readers.",
   },
   {
     id: "your-ideas-your-control",
     image: "/Home/Mask group (5).webp",
-    alt: "Your ideas, your control, write it, own it ",
+    alt: "Your ideas, your control, write it, own it",
     title: "Your ideas, your control, write it, own it",
     description:
       "A story is more than words; it's your passion, your dream, your voice. When you publish with Ink Founders, you keep 100% ownership of your work. We help turn your words into a book, and your voice into inspiration, while you hold full rights, always.",

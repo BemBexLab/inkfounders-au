@@ -14,16 +14,10 @@ export default function OurMission() {
             className={`mb-8 space-y-3 text-[13px] text-[#444444] sm:text-[14px] md:text-[15px] lg:mb-10 ${robotoMono.className}`}
           >
             <p>
-              Our mission at Ink Founders is to help individuals and businesses
-              around the world share their stories through expert writing,
-              publishing, and marketing- the kind of full-service book
-              publishing company Australia authors can lean on from first draft
-              to final sale.
+              Our mission at Ink Founders is to help individuals and businesses around the world share their stories through expert writing, publishing, and marketing- the kind of full-service book publishing company Australia authors can lean on from first draft to final sale.
             </p>
             <p>
-              We're focused on building lasting partnerships built on trust,
-              transparency, and genuine craftsmanship, backed by a team that
-              shows up the same way for every project, not just the big ones.
+              We're focused on building lasting partnerships built on trust, transparency, and genuine craftsmanship, backed by a team that shows up the same way for every project, not just the big ones.
             </p>
           </div>
 

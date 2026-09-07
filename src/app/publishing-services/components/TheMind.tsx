@@ -44,7 +44,7 @@ export default function TheMind() {
               <li>Excellence in Every Detail</li>
               <li>On-Time Delivery, Every Time</li>
               <li>Client-Centred Experience</li>
-              <li>100% Ownership & Rights: Our self-publishing packages come with 100% royalty rights, always yours</li>
+              <li>100% Ownership & Rights: Our self-publishing packages come with 100% royalty rights, always yours.</li>
             </ul>
           </div>
         </div>

@@ -15,11 +15,7 @@ const WhatSet = () => {
             <p
               className={`text-center text-[13px] text-[#444444] sm:text-[14px] md:text-[15px] ${robotoMono.className}`}
             >
-              Ink Founders isn't just another name on a list of self-publishing
-              companies; we act as creative partners in turning your ideas into
-              a publishable story. Working with us means personalised support
-              and a team that's genuinely invested in your book, not just
-              processing it through a pipeline.
+              Ink Founders isn't just another name on a list of self-publishing companies; we act as creative partners in turning your ideas into a publishable story. Working with us means personalised support and a team that's genuinely invested in your book, not just processing it through a pipeline.
             </p>
           </div>
 

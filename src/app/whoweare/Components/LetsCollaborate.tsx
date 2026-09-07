@@ -7,10 +7,10 @@ export default function LetsCollaborate() {
         <p className="mb-2 text-center text-[18px] font-semibold text-[#DADD39] md:text-xl">
           Let's Collaborate
         </p>
-        <h2 className="mb-8 max-w-5xl text-center text-[22px] font-semibold leading-tight text-[#222] sm:text-[25px] md:text-[32px]">
-          <b>Dreaming of becoming a published author?</b> Ink Founders is here to bring
-          your vision to life, one carefully crafted page at a time.
+        <h2 className=" max-w-5xl text-center text-[22px] font-semibold leading-tight text-[#222] sm:text-[25px] md:text-[32px]">
+          Dreaming of becoming a published author?
         </h2>
+        <p className={`text-black mt-1 mb-8`}>Ink Founders is here to bring your vision to life, one carefully crafted page at a time.</p>
 
         <div className="flex flex-row items-center justify-center gap-4">
           <Link href="/contactus">

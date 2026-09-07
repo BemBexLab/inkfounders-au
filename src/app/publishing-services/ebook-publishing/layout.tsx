@@ -5,9 +5,9 @@ import { createCanonicalMetadata } from "@/lib/seo";
 export const metadata: Metadata = {
   ...createCanonicalMetadata("/publishing-services/ebook-publishing"),
   title:
-    "Ebook Publishing Service for Authors: Ink Founders",
+    "Book Publishing Service for Authors: Ink Founders",
   description:
-    "Ink Founders is an ebook publishing service for authors, with formatting included. Start today.",
+    "Book publishing services for Australian authors, including ghostwriting, editing, cover design, formatting, ISBN registration, and marketing.",
 };
 
 export default function EbookPublishingLayout({

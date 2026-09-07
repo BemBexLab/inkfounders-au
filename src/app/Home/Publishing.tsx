@@ -30,7 +30,7 @@ export default function Publishing() {
             </p>
 
             <p className="mt-1 lg:mt-2">
-              Our mission is simple: to make self-publishing stress-free, accessible, supportive, and successful. Whether you're just starting to think about your book or already have a spark of inspiration, our team is with you at every step- proofreading, editing, formatting, ghostwriting, or guiding you through the Amazon publishing process as your Amazon self-publishing company partner. As a full service book publishing company Australia authors rely on, we don't just help you publish your book; we help you reach the right readers and make a lasting impact. With Ink Founders, your ideas can become a powerful, authentic, professionally published book. Let's turn your story into a masterpiece the world can read.
+              Our mission is simple: to make self-publishing stress-free, accessible, supportive, and successful. Whether you're just starting to think about your book or already have a spark of inspiration, our team is with you at every step- proofreading, editing, formatting, ghostwriting, or guiding you through the Amazon publishing process as your Amazon self-publishing company partner. As a complete book publishing company authors rely on, we don't just help you publish your book; we help you reach the right readers and make a lasting impact. With Ink Founders, your ideas can become a powerful, authentic, professionally published book. Let's turn your story into a masterpiece the world can read.
             </p>
           </div>
         </div>

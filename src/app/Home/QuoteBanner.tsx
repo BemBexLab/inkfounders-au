@@ -15,7 +15,7 @@ export default function QuoteBanner() {
         <div
           className={`mx-auto mb-5 max-w-[28rem] text-center text-[12px] leading-[1.35] text-gray-700 sm:text-[13px] md:max-w-[78rem] md:text-[15px] lg:mb-4 ${robotoMono.className}`}
         >
-          Let Ink Founders take the hassle out of publishing by simplifying the process for you. Partner with us, focus on your story, and let our team handle the rest.
+          Partner with us, focus on your story, and let our team handle the rest.
         </div>
         <div className="flex w-full flex-row items-center justify-center gap-3 sm:w-auto sm:gap-4">
           {/* Get a Quote */}

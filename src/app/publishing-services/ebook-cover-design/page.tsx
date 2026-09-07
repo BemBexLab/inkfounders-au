@@ -8,9 +8,9 @@ import ServiceCard from "../components/ServiceCard";
 
 export const metadata: Metadata = {
   ...createCanonicalMetadata("/publishing-services/ebook-cover-design"),
-  title: "eBook Cover Design Services: Custom Book Cover Design for Authors",
+  title: "Book Cover Design Services: Custom Book Cover Design for Authors",
   description:
-    "Ink Founders offers professional ebook cover design services and custom book cover design for authors, Amazon KDP-approved, genre-specific, with unlimited revisions.",
+    "Ink Founders offers professional book cover design services in Australia. Custom, Amazon KDP-approved, genre-specific designs with unlimited revisions.",
 };
 
 export default function CoverDesignPage() {
@@ -18,7 +18,7 @@ export default function CoverDesignPage() {
     {
       title: "Custom Cover Design",
       description:
-        "Every cover we make is a custom book cover design for authors, built around your book, not pulled from a template, reflecting its theme, tone, and the readers you're trying to reach. Unlike AI ebook cover design tools that generate generic, recycled-looking art, our covers are designed by hand by real designers who read your book's premise first.",
+        "Every cover we make is a custom book cover design built specifically around your manuscript, never pulled from a generic template reflecting its theme, tone, and the readers you're trying to reach. Unlike AI book cover design tools that generate generic, recycled-looking art, our covers are designed by hand by real designers who read your book's premise first.",
       compactDescription: true,
       checklist: [
         "Unique concepts tailored to your story",
@@ -27,12 +27,12 @@ export default function CoverDesignPage() {
       ],
     },
     {
-      title: "Market-Optimized Design",
+      title: "Market-Optimised Design",
       description:
         "We design covers that meet marketplace requirements and current trends, which helps with visibility and click-through rates once your book is live.",
       checklist: [
         "Amazon KDP-approved book cover design, fully compliant with technical standards",
-        "High-resolution, print-ready designs",
+        "High-resolution output for physical book printing in Australia (paperback/hardcover) and digital formats",
         "Optimised for both thumbnail and full digital view",
       ],
     },
@@ -50,7 +50,7 @@ export default function CoverDesignPage() {
       title: "Who This Service Is For",
       description: "",
       checklist: [
-        "New authors launching their first ebook",
+        "New authors launching their first book",
         "Indie authors and self-publishers looking for custom book cover design that doesn't feel generic",
         "Business owners publishing guides or manuals",
         "Authors working on a series or multi-book project",
@@ -66,16 +66,12 @@ export default function CoverDesignPage() {
             <div className="contents lg:flex lg:w-full lg:flex-col lg:items-start lg:justify-center lg:px-1 lg:pl-12 xl:pl-20">
               <div className="contents lg:block lg:w-full lg:max-w-xl">
                 <h1 className="order-1 mb-0 w-full max-w-2xl text-center text-3xl font-semibold leading-tight text-black sm:text-4xl md:text-[48px] lg:mb-6 lg:text-left">
-                  eBook Cover Design Services
+                  Professional Book Cover Design Services Australia
                 </h1>
                 <p
                   className={`${robotoMono.className} order-3 w-full max-w-2xl text-center text-[13px] leading-[1.5] text-gray-700 sm:text-[14px] md:text-[15px] lg:max-w-none lg:text-left lg:leading-[1.65]`}
                 >
-                  At Ink Founders, we know a book cover is the first impression
-                  your readers get. Our ebook cover design services create
-                  visually striking, genre-appropriate covers that catch
-                  readers' attention and help your book perform on Amazon KDP,
-                  Apple Books, and other major platforms.
+                  At Ink Founders, we know your book cover is the first impression readers get. Our book cover design services in Australia create visually striking, genre appropriate covers that catch readers' attention and help your book stand out on Amazon KDP, Apple Books, IngramSpark, and in local Australian bookstores.
                 </p>
               </div>
             </div>
@@ -128,9 +124,9 @@ export default function CoverDesignPage() {
               <ul className="order-3 mb-4 w-full max-w-[360px] flex-grow space-y-1.5 sm:max-w-[380px] sm:space-y-2 lg:mb-8 lg:max-w-none lg:space-y-3">
                 {[
                   "Expert graphic designers with real publishing experience, not just design experience",
-                  "Affordable ebook cover design for self-publishers who want quality without an agency price tag",
+                  "Affordable book cover design for self-publishers who want quality without an agency price tag",
                   "Covers built for both digital and print formats",
-                  "Ebook cover design with unlimited revisions, until the cover actually feels right to you",
+                  "Book cover design with unlimited revisions, until the cover actually feels right to you",
                   "Genre-specific book cover design, whether you write fiction, non-fiction, romance, or business books",
                   "Quick turnaround without cutting corners on quality",
                 ].map((item, idx) => (

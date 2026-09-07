@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title:
     "Book Editing and Proofreading Services: Manuscript Editing for Authors",
   description:
-    "Ink Founders offers professional book editing and proofreading services, from developmental editing to final proofreading.",
+    "Ink Founders provides professional book editing services in Australia, from developmental editing to final proofreading.",
 };
 
 export default function EditingProofreadingPage() {
@@ -19,21 +19,21 @@ export default function EditingProofreadingPage() {
     {
       title: "Developmental Editing",
       description:
-        "Before we touch a comma, we look at the bigger picture: does the story flow, does the structure hold together, does each chapter earn its place? Our developmental editing service for first-time authors focuses on the shape of the book as a whole.",
+        "Before we touch a comma, we examine the bigger picture: does the narrative flow smoothly? Does the structure hold together? Does every chapter earn its place? Our developmental editing service for first-time authors focuses on the overall shape and impact of your manuscript.",
       checklist: [
-        "Storyline & content flow improvement",
-        "Chapter structure refinement",
-        "Clarity & logical consistency",
+        "Storyline, plot, and content flow improvement",
+        "Chapter structure and pacing refinement",
+        "Argument, clarity, and logical consistency",
       ],
     },
     {
-      title: "Copyediting",
+      title: "Copyediting & Line Editing",
       description:
-        "Once the structure is solid, our copyeditors go line by line, fixing the language-level issues without flattening your style.",
+        "Once the structure is solid, our copyeditors review your manuscript line by line, correcting language-level issues without flattening your writing style. Our line editing service for novels and non-fiction works ensures your prose reads effortlessly.",
       checklist: [
-        "Grammar, spelling & punctuation",
-        "Sentence clarity & tone consistency",
-        "Style and formatting alignment",
+        "Grammar, spelling, and punctuation correction",
+        "Sentence clarity, pacing, and tone consistency",
+        "Style guide and layout formatting alignment",
       ],
     },
     {
@@ -46,7 +46,7 @@ export default function EditingProofreadingPage() {
         "Publishing-ready manuscript",
       ],
       subDesc:
-        "Together, these three stages make up a full manuscript editing service before publishing, not just a single read-through, but a proper process.",
+        "Together, these three stages form a comprehensive manuscript editing service before publishing, a structured multi-pass process rather than a quick single read through.",
     },
     {
       title: "Types of Manuscripts We Edit",
@@ -71,14 +71,14 @@ export default function EditingProofreadingPage() {
         "Final polished delivery",
       ],
       subDesc:
-        "Our manuscript evaluation service for new authors starts every project; we read your work first and tell you honestly which level of editing it actually needs, rather than selling you more than you require.",
+        "Our manuscript evaluation service for new authors guides the start of every project: we review your work first and tell you honestly which level of editing it actually needs, ensuring you never pay for more editing than your manuscript requires.",
     },
     {
       title: "Who This Service Is For",
       description: "",
       checklist: [
         "First-time authors",
-        "Self-published writers looking for a proofreading service that understands indie publishing",
+        "Indie & Self-Published Writers: Independent authors looking for a proofreading service in Australia that understands self-publishing workflows.",
         "Business professionals",
         "Content creators",
       ],
@@ -93,16 +93,12 @@ export default function EditingProofreadingPage() {
             <div className="contents lg:flex lg:w-full lg:flex-col lg:items-start lg:justify-center lg:px-1 lg:pl-12 xl:pl-20">
               <div className="contents lg:block lg:w-full lg:max-w-xl">
                 <h1 className="order-1 mb-0 w-full max-w-2xl text-center text-3xl font-semibold leading-tight text-black sm:text-4xl md:text-[48px] lg:mb-6 lg:text-left">
-                  Editing & Proofreading Services
+                  Professional Book Editing Services Australia
                 </h1>
                 <p
                   className={`${robotoMono.className} order-3 w-full max-w-2xl text-center text-[13px] leading-[1.5] text-gray-700 sm:text-[14px] md:text-[15px] lg:max-w-none lg:text-left lg:leading-[1.65]`}
                 >
-                  At Ink Founders, our book editing and proofreading services
-                  are built to get your manuscript polished, error-free, and
-                  genuinely ready for publishing. We refine your writing without
-                  rewriting you, so your book meets international publishing
-                  standards while still sounding like the person who wrote it.
+                  At Ink Founders, our book editing and proofreading services are built to make your manuscript polished, error-free, and genuinely ready for publication. We refine your writing without rewriting your voice, ensuring your book meets traditional publishing standards while retaining the style and tone that make it uniquely yours.
                 </p>
               </div>
             </div>
@@ -158,7 +154,7 @@ export default function EditingProofreadingPage() {
                   "Native-level language quality",
                   "An editing service that keeps your writing voice, not one that overwrites it",
                   "Confidential and secure handling of your manuscript at every stage",
-                  "An affordable book editing service in the Australia, with a book editing package that includes unlimited revisions until you're satisfied",
+                  "Affordable Book Editing Services Australia: High-quality book editing packages in Australia with revision support to ensure complete satisfaction.",
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2">
                     <span className="mt-0.5 text-lg text-[#DADD39]">&#10003;</span>

@@ -22,26 +22,16 @@ export default function AuthorsPublishedSection() {
           className={`${robotoMono.className} mx-auto max-w-3xl space-y-3 text-left text-[13px] leading-[1.35] text-gray-700 sm:text-[14px] md:text-[15px]`}
         >
           <p>
-            Join over 1,000 authors who have turned their story into reality
-            with Ink Founders.
+            Join over 1,000 authors who have turned their story into reality with Ink Founders.
           </p>
           <p className="mt-2">
-            Every author starts with an idea or a dream; fulfil yours with Ink
-            Founders. You already have the words; we have the tools to turn them
-            into a book, not just any book, but a masterpiece. We've helped
-            amplify the voices of more than 1,000 authors whose books have
-            reached and moved millions of readers. Now it could be your turn.
+            Every author starts with an idea or a dream; fulfil yours with Ink Founders. You already have the words; we have the tools to turn them into a book, not just any book, but a masterpiece. We've helped amplify the voices of more than 1,000 authors whose books have reached and moved millions of readers. Now it could be your turn.
           </p>
           <p className="mt-2">
-            Whether you have a finished manuscript or just an idea, if you have
-            the passion and the drive to see it through, start today with Ink
-            Founders. We're with you at every step, offering a full suite of
-            self-publishing services, from editing and formatting to publishing
-            and marketing.
+            Whether you have a finished manuscript or just an idea, if you have the passion and the drive to see it through, start today with Ink Founders. We're with you at every step, offering a full suite of self-publishing services, from editing and formatting to publishing and marketing.
           </p>
           <p className="mt-2">
-            Take the first step and turn your dream into reality. The Ink
-            Founders team is here to guide you the whole way.
+            Take the first step and turn your dream into reality. The Ink Founders team is here to guide you the whole way.
           </p>
         </div>
       </div>
@@ -67,27 +57,16 @@ export default function AuthorsPublishedSection() {
             className={`${robotoMono.className} leading-tight space-y-4 text-gray-700 text-[12px] md:text-[16px]`}
           >
             <p>
-              Join over 1,000 authors who have turned their story into reality
-              with Ink Founders.
+              Join over 1,000 authors who have turned their story into reality with Ink Founders.
             </p>
             <p className="mt-2">
-              Every author starts with an idea or a dream; fulfil yours with Ink
-              Founders. You already have the words; we have the tools to turn
-              them into a book, not just any book, but a masterpiece. We've
-              helped amplify the voices of more than 1,000 authors whose books
-              have reached and moved millions of readers. Now it could be your
-              turn.
+              Every author starts with an idea or a dream; fulfil yours with Ink Founders. You already have the words; we have the tools to turn them into a book, not just any book, but a masterpiece. We've helped amplify the voices of more than 1,000 authors whose books have reached and moved millions of readers. Now it could be your turn.
             </p>
             <p className="mt-2">
-              Whether you have a finished manuscript or just an idea, if you
-              have the passion and the drive to see it through, start today with
-              Ink Founders. We're with you at every step, offering a full suite
-              of self-publishing services, from editing and formatting to
-              publishing and marketing.
+              Whether you have a finished manuscript or just an idea, if you have the passion and the drive to see it through, start today with Ink Founders. We're with you at every step, offering a full suite of self-publishing services, from editing and formatting to publishing and marketing.
             </p>
             <p className="mt-2">
-              Take the first step and turn your dream into reality. The Ink
-              Founders team is here to guide you the whole way.
+              Take the first step and turn your dream into reality. The Ink Founders team is here to guide you the whole way.
             </p>
           </div>
         </div>

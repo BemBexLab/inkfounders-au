@@ -19,7 +19,7 @@ export default function ServiceDetailPage() {
       title: "Writing & Content Development",
       subtitle: "Book Writing & Ghostwriting",
       description:
-        "We write fiction and non-fiction ebooks built around your idea, your niche, and the readers you want to reach. Our ghostwriters keep your voice, style, and message intact, so what lands on the page still sounds like you, not a copy of someone else's book.",
+        "We write fiction and non-fiction books built around your idea, your niche, and the readers you want to reach. Our ghostwriters keep your voice, style, and message intact, so what lands on the page still sounds like you, not a copy of someone else's book.",
       checklist: [
         "Fiction & Non-Fiction",
         "Business, Self-Help, Educational & Creative Genres",
@@ -76,7 +76,7 @@ export default function ServiceDetailPage() {
       title: "Publishing Support & Ownership",
       subtitle: "ISBN & Copyright Assistance",
       description:
-        "We guide you through ISBN registration and copyright, so your book is fully protected and fully yours. Our ebook publishing service with ISBN means you're not left chasing paperwork on your own.",
+        "We guide you through ISBN registration and copyright, so your book is fully protected and fully yours. Our book publishing service with ISBN means you're not left chasing paperwork on your own.",
       checklist: [
         "ISBN Guidance",
         "Copyright Support",
@@ -165,7 +165,7 @@ export default function ServiceDetailPage() {
                   "Experienced publishing professionals",
                   "Transparent process & communication",
                   "Full author ownership and rights",
-                  "Ebook publishing services with global distribution, so your book isn't limited to one market or platform",
+                  "book publishing services with global distribution, so your book isn't limited to one market or platform",
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2">
                     <span className="mt-0.5 text-lg text-[#DADD39]">&#10003;</span>

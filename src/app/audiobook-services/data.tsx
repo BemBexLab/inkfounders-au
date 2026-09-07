@@ -6,17 +6,17 @@ export const audiobookData = [
   {
     slug: "audiobook-narration",
     metaTitle:
-      "Audiobook Narration Services: Hire a Voice Actor for Your Audiobook",
+      "Audiobook Narration Services Australia | Ink Founders",
     metaDesc:
-      "Ink Founders offers professional audiobook narration services, including a professional audiobook narrator for fiction and non-fiction.",
+      "Ink Founders is an audiobook publishing service in Australia that handles narration, production, and distribution on Audible, ACX, Spotify, and Amazon.",
     hero: {
       title: (
         <>
-          Audiobook Narration Services: Versatile Narration That Fits Your Story
+          Professional Audiobook Narration Services in Australia
         </>
       ),
       description:
-        "Professional audiobook narration that turns your words into a listening experience people actually stick with. We help authors reach readers everywhere, through their ears.",
+        "Professional audiobook narration that converts your manuscript into an immersive listening experience people actually stick with. We help authors reach listeners everywhere, straight through their headphones.",
       buttonText: "Request a Call",
       buttonLink: "/contactus",
     },
@@ -35,7 +35,7 @@ export const audiobookData = [
           {
             title: "The Cinematic Performance (Professional Talent)",
             description:
-              "Prefer to hire a voice actor for your audiobook instead? We pair you with a professional narrator suited to your genre and characters, someone who can bring your book to life the way you imagined it, not just read it aloud.",
+              "Prefer to hire a voice actor for your audiobook instead? We pair you with a professional audiobook narrator for fiction or non-fiction suited to your genre, tone, and character roster, someone who brings your story to life exactly as you imagined it, rather than just reading words aloud.",
             imgSrc: "/audiobooks/headphones.webp",
           },
           {
@@ -47,9 +47,7 @@ export const audiobookData = [
         ],
         quote: (
           <>
-            "Great narrators, clean sound, and a story that works everywhere,
-            from morning commutes to late-night headphones. That's what we do at
-            Ink Founders."
+            "Great narrators, clean sound, and a story that works everywhere, from morning commutes to late-night headphones. That's what we do at Ink Founders."
           </>
         ),
         button: {
@@ -68,7 +66,7 @@ export const audiobookData = [
           <>
             What sets us apart is that we don't just record your audiobook and call it done. We match you with the right narrator, handle every technical detail, and make sure the finished product is something you're genuinely proud to put your name on. From a professional audiobook narrator for fiction to someone experienced in non-fiction narration, we find the right fit for your book, not just the next available voice.
           </>,
-          "Fair prices. Real timelines. No runaround, which is why we're an affordable audiobook narration service that indie and self-published authors keep coming back to.",
+          "Ink Founders provides affordable audiobook narration services for self-published and indie authors across Australia.",
         ],
         imgSrc: "/audiobooks/image2.webp",
         imgFirst: false,
@@ -76,8 +74,8 @@ export const audiobookData = [
       {
         title: "Why Audiobooks? Because Your Readers Are Busy",
         paragraphs: [
-          "People are listening more and reading less these days, not because they've stopped loving books, but because life gets in the way. Audiobooks let your story ride along during morning commutes, grocery runs, and late-night dog walks. It's your book, fitting into the pockets and schedules of people who want to read but can't always find the time.",
-          "Whether you need a voice actor for audiobook characters in a novel or a straightforward, credible narrator for a non-fiction title, Ink Founders offers audiobook narration services for self-published authors across the Australia, including our team based in Miami, Florida.",
+          "People are listening more and reading less these days, not because they've stopped loving books, but because life gets in the way. Audiobooks let your story ride along during morning commutes, grocery runs, and late-night dog walks. It's your book, fitting into the pockets and schedules of people who want to read but can't always find the time",
+          "Whether you need a voice actor for audiobook characters in a novel or a straightforward, credible narrator for a non-fiction title, Ink Founders offers audiobook narration services for self-published authors across Australia, including our team based in Miami, Florida.",
         ],
         imgSrc: "/audiobooks/image1.webp",
         imgFirst: true,

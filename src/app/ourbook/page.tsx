@@ -23,30 +23,14 @@ export default function Home() {
             heading: "Let Us Know If You Need Guidance",
             subheading: "Looking for an expert? Let's talk.",
             paragraphs: [
-              <div>
-                <p>
-                  You've already taken the first step toward self-publishing
-                  success, but you may still have questions. If you're looking
-                  for expert guidance to bring your ideas and your voice to
-                  life, you're in the right place. Ink Founders is here to help.
-                </p>
-                <p className="mt-3">
-                  We offer a free consultation where you can ask questions,
-                  share your story ideas, and explore our self-publishing
-                  services. Searching for self-publishing services near me? Ink
-                  Founders serves authors across the Australia, including our
-                  self-publishing agency in Miami, Florida, and is proud to be
-                  an affordable self-publishing company for authors at every
-                  budget.
-                </p>
-                <p>Take the next step. Connect with us today.</p>
-              </div>,
+              "You've already taken the first step toward self-publishing success, but you may still have questions. If you're looking for expert guidance to bring your ideas and your voice to life, you're in the right place. Ink Founders is here to help.",
+              "We offer a free consultation where you can ask questions, share your story ideas, and explore our self-publishing services. Searching for self-publishing services near me? Ink Founders serves authors across the australia, including our self-publishing agency in Miami, Florida, and is proud to be an affordable self-publishing company for authors at every budget.",
             ],
             contacts: [
               {
                 type: "phone",
                 label: "(0468) 285-539",
-                href: "tel:+61468285539",
+                href: "tel:0468285539",
               },
               {
                 type: "email",
@@ -61,7 +45,7 @@ export default function Home() {
             ],
           },
           form: {
-            title: "Get In Touch Now!",
+            title: "Take the next step.",
             fields: [
               [
                 { name: "firstName", type: "text", placeholder: "First name" },
@@ -75,7 +59,7 @@ export default function Home() {
             messagePlaceholder: "Message",
             consentText:
               "Please check the box to communicate via SMS or Email (Terms & Conditions & Privacy Policy) - Carrier charges may apply for SMS. Reply STOP or UNSUBSCRIBE to STOP to unsubscribe anytime",
-            submitText: "Let's Get Started",
+            submitText: "Connect with us today.",
             sendingText: "Sending...",
             consentError: "Please provide consent to communicate.",
             successMessage: "Thank you! Your message has been received.",
@@ -95,20 +79,14 @@ export default function Home() {
           },
           {
             question:
-              "What makes Ink Founders one of the best self-publishing companies for first-time authors?",
-            answerParagraphs: [
-              "We built our process specifically with first-time authors in mind. From your very first conversation with our team to the day your book is published, we guide you through every step, explain what to expect, and never rewrite your voice. Our 100+ qualified experts and clear, step-by-step process are why so many new authors choose us for their first book.",
-            ],
-          },
-          {
-            question:
               "How Do You Handle Editing and Proofreading? What Are the Qualifications of Your Editors?",
             answerParagraphs: [
               "Our editing and proofreading services are carried out by qualified, experienced editors with strong backgrounds in literature, publishing, and creative writing. Every manuscript is carefully reviewed to correct grammar, spelling, punctuation, structure, and consistency while preserving your unique voice and writing style. Our goal is to ensure your book is polished, professional, and ready for publication.",
             ],
           },
           {
-            question: "What Distribution Channels Do You Offer for My Book?",
+            question:
+              "What Distribution Channels Do You Offer for My Book?",
             answerParagraphs: [
               "We distribute books through leading online retailers and distribution networks, including Amazon, Barnes & Noble, and IngramSpark, helping your book reach readers across the globe.",
             ],

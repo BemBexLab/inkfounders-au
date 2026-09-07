@@ -386,7 +386,7 @@ const HomeHero = () => {
                 className={`mb-8 max-w-[70ch] h-[190px] space-y-3 overflow-y-auto text-center text-[clamp(0.92rem,3.2vw,0.95rem)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden leading-tight text-gray-700 md:text-left lg:text-left ${robotoMono.className}`}
               >
                 <h2 className="text-xl font-bold text-black sm:text-3xl">
-                  Your Trusted Book Publishing Company in Australia
+                 Your Trusted Book Publishing Company in Australia
                 </h2>
                 <p>
                   Ink Founders is leading the way for Australian book publishing companies, helping first time authors, independent writers, and established creators. From your initial idea to your finished manuscript, we offer complete support for self-publishing in Australia.
