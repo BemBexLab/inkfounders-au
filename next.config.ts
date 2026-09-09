@@ -2,6 +2,10 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
+    // Serve image sources directly instead of routing every request through the
+    // hosted `/_next/image` transformer. The transformer can return HTTP 402
+    // when the deployment's image-optimization allowance is exhausted.
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
