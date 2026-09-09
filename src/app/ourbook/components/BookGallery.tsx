@@ -159,8 +159,6 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Laflaps 1.webp",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
-    link: "https://a.co/d/0eB0OwID",
     tags: ["Biography / Autobiography"],
     link: "https://a.co/d/0eB0OwID",
   },
