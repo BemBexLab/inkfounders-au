@@ -110,7 +110,9 @@ const GetInTouch = ({ data }: GetInTouchProps) => {
               Let's Talk
             </h3>
 
-            <div className={`${robotoMono.className} space-y-3 text-[14px] text-[#333333] leading-relaxed mb-5`}>
+            <div
+              className={`${robotoMono.className} space-y-3 text-[14px] text-[#333333] leading-relaxed mb-5`}
+            >
               {typeof content.description === "string" ? (
                 content.description
                   .split("\n")
@@ -138,12 +140,12 @@ const GetInTouch = ({ data }: GetInTouchProps) => {
                     />
                   </svg>
                 </div>
-                  <a
-                    href="tel:0468285539"
-                    className={`text-[14px] ${robotoMono.className} text-[#333333] hover:underline focus:outline-none`}
-                  >
-                    (0468) 285-539
-                  </a>
+                <a
+                  href="tel:0468285539"
+                  className={`text-[14px] ${robotoMono.className} text-[#333333] hover:underline focus:outline-none`}
+                >
+                  (0468) 285-539
+                </a>
               </div>
 
               {/* Email */}
@@ -163,11 +165,11 @@ const GetInTouch = ({ data }: GetInTouchProps) => {
                   </svg>
                 </div>
                 <a
-                    href="mailto:info@inkfounders.com"
-                    className={`text-[14px] ${robotoMono.className} text-[#333333] hover:underline focus:outline-none`}
-                  >
-                    info@inkfounders.com
-                  </a>
+                  href="mailto:info@inkfounders.com"
+                  className={`text-[14px] ${robotoMono.className} text-[#333333] hover:underline focus:outline-none`}
+                >
+                  info@inkfounders.com
+                </a>
               </div>
 
               {/* Location */}
@@ -186,9 +188,11 @@ const GetInTouch = ({ data }: GetInTouchProps) => {
                     />
                   </svg>
                 </div>
-                <a href="https://www.google.com/maps/search/?api=1&query=16A%20Fox%20Cl%2C%20Kariong%20NSW%202250%2C%20Australia" className={`${robotoMono.className} max-w-[320px] text-left text-[14px] text-[#333333] hover:underline`}>
+                <p
+                  className={`${robotoMono.className} max-w-[320px] text-left text-[14px] text-[#333333]`}
+                >
                   16A Fox Cl, Kariong NSW 2250, Australia
-                </a>
+                </p>
               </div>
             </div>
           </div>
@@ -266,7 +270,10 @@ const GetInTouch = ({ data }: GetInTouchProps) => {
                   className="w-4 h-4 mt-0.5 cursor-pointer"
                   required
                 />
-                <label htmlFor="consent" className={`${robotoMono.className} text-[12px] text-[#9D9F9D] leading-relaxed cursor-pointer`}>
+                <label
+                  htmlFor="consent"
+                  className={`${robotoMono.className} text-[12px] text-[#9D9F9D] leading-relaxed cursor-pointer`}
+                >
                   Please check the box to communicate via SMS or Email (Terms &
                   Conditions & Privacy Policy) - Carrier charges may apply for
                   SMS. Reply STOP or UNSUBSCRIBE to STOP to unsubscribe anytime

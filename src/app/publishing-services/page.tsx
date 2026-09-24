@@ -60,7 +60,7 @@ export default function Home() {
               {
                 type: "location",
                 label: "16A Fox Cl, Kariong NSW 2250, Australia",
-                href: "https://www.google.com/maps/search/?api=1&query=16A%20Fox%20Cl%2C%20Kariong%20NSW%202250%2C%20Australia",
+                href: "",
               },
             ],
           },
