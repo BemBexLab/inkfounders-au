@@ -92,18 +92,6 @@ export function middleware(request: NextRequest) {
     return createRedirectResponse(request, US_TARGET_HOST);
   }
 
-  // Keep all page URLs on the temporary launch screen. API routes are left
-  // available so forms and other integrations can be restored without changes.
-  if (
-    !request.nextUrl.pathname.startsWith("/api/") &&
-    request.nextUrl.pathname !== "/coming-soon"
-  ) {
-    const comingSoonUrl = request.nextUrl.clone();
-    comingSoonUrl.pathname = "/coming-soon";
-    comingSoonUrl.search = "";
-    return NextResponse.rewrite(comingSoonUrl);
-  }
-
   return NextResponse.next();
 }
 

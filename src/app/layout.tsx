@@ -1,24 +1,21 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
+import SiteChrome from "@/components/SiteChrome";
 import { workSans } from "./fonts";
 import { GLOBAL_SCHEMA, SITE_LOGO_PATH, SITE_URL } from "@/lib/seo";
-import ComingSoon from "@/components/ComingSoon";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Coming Soon | Ink Founders",
+  title: "Ink Founders",
   description:
-    "Ink Founders is preparing a new home for authors. Our website will be back soon.",
-  robots: {
-    index: false,
-    follow: false,
-  },
+    "Ink Founders is an independent self-publishing platform dedicated to empowering authors with a full suite of digital services.",
   openGraph: {
     type: "website",
     siteName: "Ink Founders",
-    title: "Coming Soon | Ink Founders",
-    description: "Our website will be back soon.",
+    title: "Ink Founders",
+    description:
+      "Ink Founders is an independent self-publishing platform dedicated to empowering authors with a full suite of digital services.",
     url: SITE_URL,
     images: [
       {
@@ -31,8 +28,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Coming Soon | Ink Founders",
-    description: "Our website will be back soon.",
+    title: "Ink Founders",
+    description:
+      "Ink Founders is an independent self-publishing platform dedicated to empowering authors with a full suite of digital services.",
     images: [SITE_LOGO_PATH],
   },
   alternates: {
@@ -47,7 +45,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout() {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en-AU">
       <head>
@@ -115,7 +117,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           />
         </noscript>
 
-        <ComingSoon />
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );
